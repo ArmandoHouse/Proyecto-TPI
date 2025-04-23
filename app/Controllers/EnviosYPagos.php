@@ -2,11 +2,11 @@
 
 namespace App\Controllers;
 
-class Terminos extends BaseController
+class EnviosYPagos extends BaseController
 {
     public function index(): string
     {
-        return view('terminos/index');
+        return view('envios_y_pagos/index');
     }
 
 }

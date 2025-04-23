@@ -2,11 +2,11 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+class Contactos extends BaseController
 {
     public function index(): string
     {
-        return view('inicio');
+        return view('contacto/index');
     }
 
 }

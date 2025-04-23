@@ -9,22 +9,22 @@
       <!-- Enlaces principales -->
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Inicio</a>
+          <a class="nav-link" href="<?= base_url('/public') ?>">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Productos</a>
+          <a class="nav-link" href="<?= base_url('/public/productos') ?>">Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Envíos y Pagos</a>
+          <a class="nav-link" href="<?= base_url('/public/envios-y-pagos') ?>">Envios y Pagos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Nosotros</a>
+        <a class="nav-link" href="<?= base_url('/public/nosotros') ?>">Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
+          <a class="nav-link" href="<?= base_url('/public/contacto') ?>">Contacto</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Terminos</a>
+          <a class="nav-link" href="<?= base_url('/public/terminos') ?>">Terminos</a>
         </li>        
       </ul>
 

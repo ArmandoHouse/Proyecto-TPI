@@ -10,8 +10,10 @@ $routes->get('/', 'Home::index');
 
 $routes->get('/productos', 'Productos::index');
 
-$routes->get('/contactos', 'Contactos::index');
+$routes->get('/contacto', 'Contactos::index');
 
 $routes->get('/terminos', 'Terminos::index');
 
-$routes->get('/quienes-somos', 'QuienesSomos::index');
+$routes->get('/nosotros', 'Nosotros::index');
+
+$routes->get('/envios-y-pagos', 'EnviosYPagos::index');
