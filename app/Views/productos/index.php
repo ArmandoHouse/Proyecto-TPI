@@ -16,7 +16,7 @@ El Taller - Venta de Hardware
     <!-- Tarjeta 1 -->
     <div class="col-md-4 mb-4">
   <div class="card h-100">
-    <img src="<?= base_url('plublic/assets/img/productos/auriculares.jpeg') ?>" class="card-img-top" alt="Producto 1">
+    <img src="<?= base_url('public/assets/img/productos/auriculares.jpg') ?>" class="card-img-top" alt="Producto 1">
     <div class="card-body">
       <h5 class="card-title">Producto 1</h5>
       <p class="card-text">Esta es una breve descripción del producto.</p>
@@ -38,7 +38,37 @@ El Taller - Venta de Hardware
     <!-- Tarjeta 3 -->
     <div class="col-md-4 mb-4">
   <div class="card h-100">
-    <img src="<?= base_url('plublic/assets/img/productos/placa-madre.jpeg') ?>" class="card-img-top" alt="Producto 1">
+    <img src="<?= base_url('public/assets/img/productos/placa-madre.jpeg') ?>" class="card-img-top" alt="Producto 1">
+    <div class="card-body">
+      <h5 class="card-title">Producto 1</h5>
+      <p class="card-text">Esta es una breve descripción del producto.</p>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 mb-4">
+  <div class="card h-100">
+    <img src="<?= base_url('public/assets/img/productos/mouse-gamer.jpeg') ?>" class="card-img-top" alt="Producto 1">
+    <div class="card-body">
+      <h5 class="card-title">Producto 1</h5>
+      <p class="card-text">Esta es una breve descripción del producto.</p>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 mb-4">
+  <div class="card h-100">
+    <img src="<?= base_url('public/assets/img/productos/placa-madre.jpeg') ?>" class="card-img-top" alt="Producto 1">
+    <div class="card-body">
+      <h5 class="card-title">Producto 1</h5>
+      <p class="card-text">Esta es una breve descripción del producto.</p>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 mb-4">
+  <div class="card h-100">
+    <img src="<?= base_url('public/assets/img/productos/placa-madre.jpeg') ?>" class="card-img-top" alt="Producto 1">
     <div class="card-body">
       <h5 class="card-title">Producto 1</h5>
       <p class="card-text">Esta es una breve descripción del producto.</p>
