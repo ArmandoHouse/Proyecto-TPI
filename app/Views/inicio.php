@@ -4,6 +4,11 @@
 El Taller - Venta de Hardware
 <?= $this->endSection() ?>
 
+<?= $this->section('styles') ?>
+  <link rel="stylesheet" href="<?= base_url('public/assets/css/inicio/index.css') ?>">
+<?= $this->endSection() ?>
+
+
 <?= $this->section('contenido') ?>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -31,7 +36,7 @@ El Taller - Venta de Hardware
   </button>
 </div>
 
-<section class="py-5 .inicio">
+<section class="py-5 inicio">
   <div class="container">
     <h2 class="text-center mb-4">Productos Destacados</h2>
     <div class="row">

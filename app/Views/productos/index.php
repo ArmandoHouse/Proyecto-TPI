@@ -1,5 +1,9 @@
 <?= $this->extend('layouts/plantilla') ?>
 
+<?= $this->section('styles') ?>
+<link rel="stylesheet" href="<?= base_url('public/assets/css/productos/index.css') ?>">
+<?= $this->endSection() ?>
+
 <?= $this->section('titulo') ?>
 El Taller - Venta de Hardware
 <?= $this->endSection() ?>
