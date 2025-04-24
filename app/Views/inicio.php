@@ -31,7 +31,7 @@ El Taller - Venta de Hardware
   </button>
 </div>
 
-<section class="py-5">
+<section class="py-5 .inicio">
   <div class="container">
     <h2 class="text-center mb-4">Productos Destacados</h2>
     <div class="row">
