@@ -47,11 +47,30 @@ div.container-fluid {
   </div>
 </div>
 
-<<<<<<< HEAD
-<section class="py-5 inicio">
-  <div class="container">
-    <h2 class="text-center mb-4">Productos Destacados</h2>
-    <div class="row">
+
+
+<section class="py-5 carrousel-cards">
+
+<h2 class="text-center my-4">Productos Destacados</h2>
+
+  <!-- Carrousel con cards -->
+
+<div id="carouselCards" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="assets/img/admryzen.jpeg" class="card-img-top" alt="Producto 1">
+          <div class="card-body">
+            <h5 class="card-title">Procesador AMD Ryzen</h5>
+            <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+          </div>
+        </div>
+      </div>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
           <img src="assets/img/admryzen.jpeg" class="card-img-top" alt="Producto 1">
@@ -63,447 +82,154 @@ div.container-fluid {
       </div>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="assets/img/kingston480.jpeg" class="card-img-top" alt="Producto 2">
+          <img src="assets/img/admryzen.jpeg" class="card-img-top" alt="Producto 1">
           <div class="card-body">
-            <h5 class="card-title">SSD Kingston 480GB</h5>
-            <p class="card-text">Velocidad y confiabilidad para tu equipo.</p>
+            <h5 class="card-title">Procesador AMD Ryzen</h5>
+            <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+
+    <!--slide 2 -->
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="assets/img/ram16gb.jpg" class="card-img-top" alt="Producto 1">
+          <div class="card-body">
+            <h5 class="card-title">Procesador AMD Ryzen</h5>
+            <p class="card-text">Alto rendimiento para gaming y productividad.</p>
           </div>
         </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="assets/img/ram16gb.jpg" class="card-img-top" alt="Producto 3">
+          <img src="assets/img/ram16gb.jpg" class="card-img-top" alt="Producto 1">
           <div class="card-body">
-            <h5 class="card-title">Memoria RAM 16GB DDR4</h5>
-            <p class="card-text">Ideal para multitarea y cargas intensas.</p>
+            <h5 class="card-title">Procesador AMD Ryzen</h5>
+            <p class="card-text">Alto rendimiento para gaming y productividad.</p>
           </div>
-=======
-<div class="container my-5">
-  <h2 class="mb-4 text-center">Productos Destacados</h2>
-
-  <div class="row">
-    <div class="col-md-3 mb-4">
-      <div class="card h-100">
-        <img src="assets/img/card.jpg" lass="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">Producto 1</h5>
->>>>>>> mariano
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="assets/img/ram16gb.jpg" class="card-img-top" alt="Producto 1">
+          <div class="card-body">
+            <h5 class="card-title">Procesador AMD Ryzen</h5>
+            <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+          </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-3 mb-4">
-      <div class="card h-100">
-        <img src="assets/img/card.jpg" lass="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">Producto 1</h5>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3 mb-4">
-      <div class="card h-100">
-        <img src="assets/img/card.jpg" class="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">Producto 1</h5>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3 mb-4">
-      <div class="card h-100">
-        <img src="assets/img/card.jpg" class="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">Producto 1</h5>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3 mb-4">
-      <div class="card h-100">
-        <img src="assets/img/card.jpg" lass="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">Producto 1</h5>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3 mb-4">
-      <div class="card h-100">
-        <img src="assets/img/card.jpg" lass="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">Producto 1</h5>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3 mb-4">
-      <div class="card h-100">
-        <img src="assets/img/card.jpg" class="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">Producto 1</h5>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3 mb-4">
-      <div class="card h-100">
-        <img src="assets/img/card.jpg" class="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">Producto 1</h5>
-        </div>
-      </div>
-    </div>
   </div>
+
+  <!-- Controles -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselCards" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselCards" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
 </div>
+</section>
 
 
-<div class="container p-4">
-  <div class="row">
-    <h3 class="mb-3">Ofertas</h3>
-    <div class="col-12">
-      <div id="c-2" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<section class="py-5 carrousel-cards">
 
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+<h2 class="text-center my-4">Ofertas</h2>
+
+  <!-- Carrousel con cards -->
+
+<div id="carouselCards" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="assets/img/admryzen.jpeg" class="card-img-top" alt="Producto 1">
+          <div class="card-body">
+            <h5 class="card-title">Procesador AMD Ryzen</h5>
+            <p class="card-text">Alto rendimiento para gaming y productividad.</p>
           </div>
         </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#c-2" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#c-2" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="container p-4">
-  <div class="row">
-    <h3 class="mb-3">Destacados</h3>
-    <div class="col-12">
-      <div id="c-3" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="assets/img/admryzen.jpeg" class="card-img-top" alt="Producto 1">
+          <div class="card-body">
+            <h5 class="card-title">Procesador AMD Ryzen</h5>
+            <p class="card-text">Alto rendimiento para gaming y productividad.</p>
           </div>
         </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#c-3" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#c-3" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="container p-4">
-  <div class="row">
-    <h3 class="mb-3">Últimas novedades</h3>
-    <div class="col-12">
-      <div id="c-4" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="assets/img/admryzen.jpeg" class="card-img-top" alt="Producto 1">
+          <div class="card-body">
+            <h5 class="card-title">Procesador AMD Ryzen</h5>
+            <p class="card-text">Alto rendimiento para gaming y productividad.</p>
           </div>
         </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#c-4" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#c-4" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-
+      </div>
+        </div>
       </div>
     </div>
+
+    <!--slide 2 -->
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="assets/img/ram16gb.jpg" class="card-img-top" alt="Producto 1">
+          <div class="card-body">
+            <h5 class="card-title">Procesador AMD Ryzen</h5>
+            <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="assets/img/ram16gb.jpg" class="card-img-top" alt="Producto 1">
+          <div class="card-body">
+            <h5 class="card-title">Procesador AMD Ryzen</h5>
+            <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="assets/img/ram16gb.jpg" class="card-img-top" alt="Producto 1">
+          <div class="card-body">
+            <h5 class="card-title">Procesador AMD Ryzen</h5>
+            <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <!-- Controles -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselCards" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselCards" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
 </div>
+</section>
 
 <?= $this->endSection() ?>

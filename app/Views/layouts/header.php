@@ -21,13 +21,13 @@
           <a class="nav-link" href="#" >Principal</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Quienes Somos</a>
+          <a class="nav-link" href="<?= base_url('/public/productos') ?>">Comercializacion</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Comercialización</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Información de Contacto</a>
+        <a class="nav-link" href="<?= base_url('/public/nosotros') ?>">Quienes Somos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Términos y Usos</a>
