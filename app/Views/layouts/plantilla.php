@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -20,10 +21,9 @@
 </head>
 
 <body>
-
   <?= $this->include('layouts/header')?>
   <?= $this->renderSection('contenido')?>
-  <!-- <?= $this->include('layouts/footer')?>  -->
+  <?= $this->include('layouts/footer')?> 
 
 
   <script src="<?= base_url('public/assets/js/bootstrap.bundle.min.js') ?>"></script>
