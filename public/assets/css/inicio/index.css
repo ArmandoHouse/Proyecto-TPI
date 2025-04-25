@@ -1,10 +1,13 @@
 
-.carrousel-cards img {
+#carouselDestacados img, #carouselOfertas img {
     width: 100%;
-    height: 180px;
+    height: 150px;
     object-fit: contain;
-    padding: 0;
+    padding-top: 10px;
 }
+
+
+
 
 /* Personalizar el ícono de las flechas */
 .carousel-control-prev-icon,
@@ -19,11 +22,11 @@
 }
 
 .carousel-control-prev {
-  left: -0.5rem; /* Empuja la flecha a la izquierda fuera del contenido */
+  left: -0.25rem; /* Empuja la flecha a la izquierda fuera del contenido */
 }
 
 .carousel-control-next {
-  right: -0.5rem; /* Empuja la flecha a la derecha fuera del contenido */
+  right: -0.25rem; /* Empuja la flecha a la derecha fuera del contenido */
 }
 
 .carousel-control-prev-icon,
@@ -33,6 +36,12 @@
   border: 2px solid white;
 }
 
+.card {
+    box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.3);
+}
+
 .card:hover{
-    box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
 }

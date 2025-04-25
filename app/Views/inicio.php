@@ -55,7 +55,7 @@ div.container-fluid {
 
   <!-- Carrousel con cards -->
 
-<div id="carouselCards" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselDestacados" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
 
     <!-- Slide 1 -->
@@ -68,6 +68,7 @@ div.container-fluid {
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+            <p class="card-text fw-bold">$89.990</p>
           </div>
         </div>
       </div>
@@ -77,6 +78,7 @@ div.container-fluid {
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+            <p class="card-text fw-bold">$89.990</p>
           </div>
         </div>
       </div>
@@ -86,6 +88,7 @@ div.container-fluid {
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+            <p class="card-text fw-bold">$89.990</p>
           </div>
         </div>
       </div>
@@ -94,7 +97,7 @@ div.container-fluid {
     </div>
 
     <!--slide 2 -->
-    <div class="carousel-item active">
+    <div class="carousel-item">
       <div class="container">
         <div class="row">
         <div class="col-md-4 mb-4">
@@ -103,6 +106,7 @@ div.container-fluid {
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+            <p class="card-text fw-bold">$89.990</p>
           </div>
         </div>
       </div>
@@ -112,6 +116,7 @@ div.container-fluid {
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+            <p class="card-text fw-bold">$89.990</p>
           </div>
         </div>
       </div>
@@ -121,6 +126,7 @@ div.container-fluid {
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+            <p class="card-text fw-bold">$89.990</p>
           </div>
         </div>
       </div>
@@ -131,10 +137,10 @@ div.container-fluid {
   </div>
 
   <!-- Controles -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselCards" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestacados" data-bs-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselCards" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselDestacados" data-bs-slide="next">
     <span class="carousel-control-next-icon"></span>
   </button>
 </div>
@@ -147,7 +153,7 @@ div.container-fluid {
 
   <!-- Carrousel con cards -->
 
-  <div id="carouselCards" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselOfertas" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
 
     <!-- Slide 1 -->
@@ -160,6 +166,7 @@ div.container-fluid {
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+            <p class="card-text fw-bold">$89.990</p>
           </div>
         </div>
       </div>
@@ -169,6 +176,7 @@ div.container-fluid {
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+            <p class="card-text fw-bold">$89.990</p>
           </div>
         </div>
       </div>
@@ -178,6 +186,7 @@ div.container-fluid {
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+            <p class="card-text fw-bold">$89.990</p>
           </div>
         </div>
       </div>
@@ -186,7 +195,7 @@ div.container-fluid {
     </div>
 
     <!--slide 2 -->
-    <div class="carousel-item active">
+    <div class="carousel-item">
       <div class="container">
         <div class="row">
         <div class="col-md-4 mb-4">
@@ -195,6 +204,7 @@ div.container-fluid {
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+            <p class="card-text fw-bold">$89.990</p>
           </div>
         </div>
       </div>
@@ -204,6 +214,7 @@ div.container-fluid {
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+            <p class="card-text fw-bold">$89.990</p>
           </div>
         </div>
       </div>
@@ -213,6 +224,7 @@ div.container-fluid {
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
+            <p class="card-text fw-bold">$89.990</p>
           </div>
         </div>
       </div>
@@ -223,10 +235,10 @@ div.container-fluid {
   </div>
 
   <!-- Controles -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselCards" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselOfertas" data-bs-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselCards" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselOfertas" data-bs-slide="next">
     <span class="carousel-control-next-icon"></span>
   </button>
 </div>

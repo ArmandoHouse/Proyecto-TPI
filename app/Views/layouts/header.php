@@ -4,12 +4,21 @@
     border: none;
     border-radius: 50%;
   }
+
+  .logo img{
+    width: 100%;
+    height: 50px;
+  }
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-
-    <a class="navbar-brand" href="#">Logo</a>
+    
+    <div class="logo">
+      <a class="navbar-brand" href="<?= base_url('/public') ?>">
+      <img src="<?= base_url('/public/assets/img/logo.png') ?>" alt="" srcset="">
+      </a>
+    </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
       <span class="navbar-toggler-icon"></span>
