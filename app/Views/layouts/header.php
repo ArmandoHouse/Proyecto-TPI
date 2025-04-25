@@ -12,13 +12,13 @@
           <a class="nav-link" href="<?= base_url('/public') ?>">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= base_url('/public/productos') ?>">Productos</a>
+          <a class="nav-link" href="<?= base_url('/public/productos') ?>">Comercializacion</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('/public/envios-y-pagos') ?>">Envios y Pagos</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('/public/nosotros') ?>">Nosotros</a>
+        <a class="nav-link" href="<?= base_url('/public/nosotros') ?>">Quienes Somos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('/public/contacto') ?>">Contacto</a>
