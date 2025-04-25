@@ -64,7 +64,7 @@ div.container-fluid {
         <div class="row">
         <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="assets/img/admryzen.jpeg" class="card-img-top" alt="Producto 1">
+          <img src="assets/img/placa-madre.jpeg" class="card-img-top" alt="Producto 1">
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
@@ -73,7 +73,7 @@ div.container-fluid {
       </div>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="assets/img/admryzen.jpeg" class="card-img-top" alt="Producto 1">
+          <img src="assets/img/placa-madre.jpeg" class="card-img-top" alt="Producto 1">
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
@@ -82,7 +82,7 @@ div.container-fluid {
       </div>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="assets/img/admryzen.jpeg" class="card-img-top" alt="Producto 1">
+          <img src="assets/img/placa-madre.jpeg" class="card-img-top" alt="Producto 1">
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
@@ -99,7 +99,7 @@ div.container-fluid {
         <div class="row">
         <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="assets/img/ram16gb.jpg" class="card-img-top" alt="Producto 1">
+          <img src="assets/img/memoria8gb.jpeg" class="card-img-top" alt="Producto 1">
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
@@ -108,7 +108,7 @@ div.container-fluid {
       </div>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="assets/img/ram16gb.jpg" class="card-img-top" alt="Producto 1">
+          <img src="assets/img/memoria8gb.jpeg" class="card-img-top" alt="Producto 1">
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
@@ -117,7 +117,7 @@ div.container-fluid {
       </div>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="assets/img/ram16gb.jpg" class="card-img-top" alt="Producto 1">
+          <img src="assets/img/memoria8gb.jpeg" class="card-img-top" alt="Producto 1">
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
@@ -147,7 +147,7 @@ div.container-fluid {
 
   <!-- Carrousel con cards -->
 
-<div id="carouselCards" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselCards" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
 
     <!-- Slide 1 -->
@@ -156,7 +156,7 @@ div.container-fluid {
         <div class="row">
         <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="assets/img/admryzen.jpeg" class="card-img-top" alt="Producto 1">
+          <img src="assets/img/placa-madre.jpeg" class="card-img-top" alt="Producto 1">
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
@@ -165,7 +165,7 @@ div.container-fluid {
       </div>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="assets/img/admryzen.jpeg" class="card-img-top" alt="Producto 1">
+          <img src="assets/img/placa-madre.jpeg" class="card-img-top" alt="Producto 1">
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
@@ -174,7 +174,7 @@ div.container-fluid {
       </div>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="assets/img/admryzen.jpeg" class="card-img-top" alt="Producto 1">
+          <img src="assets/img/placa-madre.jpeg" class="card-img-top" alt="Producto 1">
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
@@ -191,7 +191,7 @@ div.container-fluid {
         <div class="row">
         <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="assets/img/ram16gb.jpg" class="card-img-top" alt="Producto 1">
+          <img src="assets/img/memoria8gb.jpeg" class="card-img-top" alt="Producto 1">
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
@@ -200,7 +200,7 @@ div.container-fluid {
       </div>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="assets/img/ram16gb.jpg" class="card-img-top" alt="Producto 1">
+          <img src="assets/img/memoria8gb.jpeg" class="card-img-top" alt="Producto 1">
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
@@ -209,7 +209,7 @@ div.container-fluid {
       </div>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="assets/img/ram16gb.jpg" class="card-img-top" alt="Producto 1">
+          <img src="assets/img/memoria8gb.jpeg" class="card-img-top" alt="Producto 1">
           <div class="card-body">
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
