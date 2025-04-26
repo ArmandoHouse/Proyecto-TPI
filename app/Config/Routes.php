@@ -6,14 +6,12 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Principal::index');
 
-$routes->get('/productos', 'Productos::index');
+$routes->get('/quienes_somos', 'QuienesSomos::index');
 
-$routes->get('/contacto', 'Contactos::index');
+$routes->get('/comercializacion', 'Comercializacion::index');
+
+$routes->get('/contacto', 'Contacto::index');
 
 $routes->get('/terminos', 'Terminos::index');
-
-$routes->get('/nosotros', 'Nosotros::index');
-
-$routes->get('/envios-y-pagos', 'EnviosYPagos::index');

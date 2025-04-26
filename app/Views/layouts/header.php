@@ -18,19 +18,19 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">      
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#" >Principal</a>
+          <a class="nav-link" href="<?= base_url('public/') ?>">Principal</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Quienes Somos</a>
+          <a class="nav-link" href="<?= base_url('public/quienes_somos') ?>">Quienes Somos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Comercialización</a>
+          <a class="nav-link" href="<?= base_url('public/comercializacion') ?>">Comercialización</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Información de Contacto</a>
+          <a class="nav-link" href="<?= base_url('public/contacto') ?>">Información de Contacto</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Términos y Usos</a>
+          <a class="nav-link" href="<?= base_url('public/terminos') ?>">Términos y Usos</a>
         </li>
       </ul>
     </div>

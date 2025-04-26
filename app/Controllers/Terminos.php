@@ -6,7 +6,7 @@ class Terminos extends BaseController
 {
     public function index(): string
     {
-        return view('terminos/index');
+        return view('terminos');
     }
 
 }

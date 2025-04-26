@@ -1,4 +1,4 @@
-<footer class="bg-dark text-white pt-4">
+<footer class="bg-dark text-white pt-4 pb-4">
   <div class="container">
     <div class="row">
       <div class="col-md-4 mb-3">
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="text-center border-top pt-3">
-      &copy; <?= date('Y') ?> El Taller. Todos los derechos reservados.
+      &copy; <?= date('Y') ?> Zona Hardware. Todos los derechos reservados.
     </div>
   </div>
 </footer>

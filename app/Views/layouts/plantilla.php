@@ -15,6 +15,7 @@
 <body>
   <?= $this->include('layouts/header')?>
   <?= $this->renderSection('contenido')?>
+  <?= $this->include('layouts/marcas')?> 
   <?= $this->include('layouts/footer')?> 
 
 

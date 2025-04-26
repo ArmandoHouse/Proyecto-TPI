@@ -7,11 +7,6 @@ ZonaHW - Venta de Hardware
 <?= $this->section('contenido') ?>
 
 <style>
-.carrousel-control-prev-icon, 
-.carrousel-control-next-icon {
-  background-color: red;
-}
-
 div.container-fluid {
     padding-left: 0 ;
     padding-right: 0 ;
@@ -21,10 +16,10 @@ div.container-fluid {
 <div class="container-fluid">
   <div id="c-1" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="1000">
+      <div class="carousel-item active">
         <img src="assets/img/slide4.jpg" class="d-block w-100" alt="...">
       </div>
-      <div class="carousel-item" data-bs-interval="500">
+      <div class="carousel-item">
         <img src="assets/img/slide2.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
@@ -43,7 +38,8 @@ div.container-fluid {
 </div>
 
 <div class="container my-5">
-  <h2 class="mb-4 text-center">Productos Destacados</h2>
+  
+  <h2 class="mb-4">Nuestras Categorías</h2>
 
   <div class="row">
     <div class="col-md-3 mb-4">
