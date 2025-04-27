@@ -7,10 +7,10 @@ ZonaHW - Venta de Hardware
 <?= $this->section('contenido') ?>
 
 <style>
-div.container-fluid {
-    padding-left: 0 ;
-    padding-right: 0 ;
-}
+  div.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
 </style>
 
 <div class="container-fluid">
@@ -38,11 +38,10 @@ div.container-fluid {
 </div>
 
 <div class="container my-5">
-  
-  <h2 class="mb-4">Nuestras Categorías</h2>
+  <h2 class="fw-bold mb-4">Nuestras Categorías</h2>
 
   <div class="row">
-    <div class="col-md-3 mb-4">
+    <div class="col-3 mb-4">
       <div class="card h-100">
         <img src="assets/img/card.jpg" lass="card-img-top" alt="">
         <div class="card-body">
@@ -51,7 +50,7 @@ div.container-fluid {
       </div>
     </div>
 
-    <div class="col-md-3 mb-4">
+    <div class="col-3 mb-4">
       <div class="card h-100">
         <img src="assets/img/card.jpg" lass="card-img-top" alt="">
         <div class="card-body">
@@ -60,7 +59,7 @@ div.container-fluid {
       </div>
     </div>
 
-    <div class="col-md-3 mb-4">
+    <div class="col-3 mb-4">
       <div class="card h-100">
         <img src="assets/img/card.jpg" class="card-img-top" alt="">
         <div class="card-body">
@@ -69,7 +68,7 @@ div.container-fluid {
       </div>
     </div>
 
-    <div class="col-md-3 mb-4">
+    <div class="col-3 mb-4">
       <div class="card h-100">
         <img src="assets/img/card.jpg" class="card-img-top" alt="">
         <div class="card-body">
@@ -78,7 +77,7 @@ div.container-fluid {
       </div>
     </div>
 
-    <div class="col-md-3 mb-4">
+    <div class="col-3 mb-4">
       <div class="card h-100">
         <img src="assets/img/card.jpg" lass="card-img-top" alt="">
         <div class="card-body">
@@ -87,7 +86,7 @@ div.container-fluid {
       </div>
     </div>
 
-    <div class="col-md-3 mb-4">
+    <div class="col-3 mb-4">
       <div class="card h-100">
         <img src="assets/img/card.jpg" lass="card-img-top" alt="">
         <div class="card-body">
@@ -96,7 +95,7 @@ div.container-fluid {
       </div>
     </div>
 
-    <div class="col-md-3 mb-4">
+    <div class="col-3 mb-4">
       <div class="card h-100">
         <img src="assets/img/card.jpg" class="card-img-top" alt="">
         <div class="card-body">
@@ -105,7 +104,7 @@ div.container-fluid {
       </div>
     </div>
 
-    <div class="col-md-3 mb-4">
+    <div class="col-3 mb-4">
       <div class="card h-100">
         <img src="assets/img/card.jpg" class="card-img-top" alt="">
         <div class="card-body">
@@ -117,352 +116,294 @@ div.container-fluid {
 </div>
 
 
-<div class="container p-4">
-  <div class="row">
-    <h3 class="mb-3">Ofertas</h3>
-    <div class="col-12">
-      <div id="c-2" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<div id="cont" class="container my-3">
+  <h2 class="fw-bold">Productos</h2>
 
-                  </div>
-                </div>
+  <div class="row justify-content-center">
+    <div id="mc-1" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
               </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
+              <div class="card-img-overlay">Slide 1</div>
             </div>
           </div>
         </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#c-2" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#c-2" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-
+        <div class="carousel-item">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
+              </div>
+              <div class="card-img-overlay">Slide 2</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
+              </div>
+              <div class="card-img-overlay">Slide 3</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
+              </div>
+              <div class="card-img-overlay">Slide 4</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
+              </div>
+              <div class="card-img-overlay">Slide 5</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
+              </div>
+              <div class="card-img-overlay">Slide 6</div>
+            </div>
+          </div>
+        </div>
       </div>
+      <a class="carousel-control-prev bg-transparent w-aut" href="#mc-1" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next bg-transparent w-aut" href="#mc-1" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
     </div>
   </div>
 </div>
 
-<div class="container p-4">
-  <div class="row">
-    <h3 class="mb-3">Destacados</h3>
-    <div class="col-12">
-      <div id="c-3" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<div id="cont" class="container my-3">
+  <h2 class="fw-bold">Productos</h2>
 
-                  </div>
-                </div>
+  <div class="row justify-content-center">
+    <div id="mc-2" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
               </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
+              <div class="card-img-overlay">Slide 1</div>
             </div>
           </div>
         </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#c-3" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#c-3" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-
+        <div class="carousel-item">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
+              </div>
+              <div class="card-img-overlay">Slide 2</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
+              </div>
+              <div class="card-img-overlay">Slide 3</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
+              </div>
+              <div class="card-img-overlay">Slide 4</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
+              </div>
+              <div class="card-img-overlay">Slide 5</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
+              </div>
+              <div class="card-img-overlay">Slide 6</div>
+            </div>
+          </div>
+        </div>
       </div>
+      <a class="carousel-control-prev bg-transparent w-aut" href="#mc-2" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next bg-transparent w-aut" href="#mc-2" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
     </div>
   </div>
 </div>
 
-<div class="container p-4">
-  <div class="row">
-    <h3 class="mb-3">Últimas novedades</h3>
-    <div class="col-12">
-      <div id="c-4" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<div id="cont" class="container my-3">
+  <h2 class="fw-bold mb-2 my-4">Productos</h2>
 
-                  </div>
-                </div>
+  <div class="row justify-content-center">
+    <div id="mc-3" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
               </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <img class="img-fluid" src="assets/img/card.jpg">
-                  <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
+              <div class="card-img-overlay">Slide 1</div>
             </div>
           </div>
         </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#c-4" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#c-4" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-
+        <div class="carousel-item">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
+              </div>
+              <div class="card-img-overlay">Slide 2</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
+              </div>
+              <div class="card-img-overlay">Slide 3</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
+              </div>
+              <div class="card-img-overlay">Slide 4</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
+              </div>
+              <div class="card-img-overlay">Slide 5</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/card.jpg" class="img-fluid">
+              </div>
+              <div class="card-img-overlay">Slide 6</div>
+            </div>
+          </div>
+        </div>
       </div>
+      <a class="carousel-control-prev bg-transparent w-aut" href="#mc-3" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next bg-transparent w-aut" href="#mc-3" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
     </div>
   </div>
 </div>
+
+<style>
+  @media (max-width: 767px) {
+    .carousel-inner .carousel-item>div {
+      display: none;
+    }
+
+    .carousel-inner .carousel-item>div:first-child {
+      display: block;
+    }
+  }
+
+  .carousel-item .card {
+    margin-right: 10px;
+  }
+
+  .carousel-inner .carousel-item.active,
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    display: flex;
+  }
+
+  /* medium and up screens */
+  @media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(25%);
+    }
+
+    .carousel-inner .carousel-item-start.active,
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-25%);
+    }
+  }
+
+  .carousel-inner .carousel-item-end,
+  .carousel-inner .carousel-item-start {
+    transform: translateX(0);
+  }
+</style>
+
+<script>
+  let items = document.querySelectorAll('#cont .carousel .carousel-item')
+
+  items.forEach((el) => {
+    const minPerSlide = 4
+    let next = el.nextElementSibling
+    for (var i = 1; i < minPerSlide; i++) {
+      if (!next) {
+        // wrap carousel by using first child
+        next = items[0]
+      }
+      let cloneChild = next.cloneNode(true)
+      el.appendChild(cloneChild.children[0])
+      next = next.nextElementSibling
+    }
+  })
+</script>
 
 <?= $this->endSection() ?>
