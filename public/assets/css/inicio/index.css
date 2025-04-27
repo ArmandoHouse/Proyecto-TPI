@@ -6,8 +6,40 @@
     padding-top: 10px;
 }
 
+#carouselDestacados h2 {
+  text-align: left;
+  padding-left: 75px;
+}
 
+#carouselOfertas h2 {
+  text-align: left;
+  padding-left: 75px;
+  margin-bottom: 0;
+}
 
+hr {
+  width: 88%;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+/* Carrousel sin flechas */
+.carousel-indicators {
+  bottom: -40px; /* los baja */
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #ffffff; /* color rojizo */
+  border: 1px solid black;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.carousel-indicators .active {
+  background-color: #787878; /* rojo más oscuro para el activo */
+}
 
 /* Personalizar el ícono de las flechas */
 .carousel-control-prev-icon,

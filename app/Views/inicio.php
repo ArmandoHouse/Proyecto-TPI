@@ -51,12 +51,16 @@ div.container-fluid {
 
 <section class="py-5 carrousel-cards">
 
-<h2 class="text-center my-4">Productos Destacados</h2>
+
 
   <!-- Carrousel con cards -->
 
 <div id="carouselDestacados" class="carousel slide" data-bs-ride="carousel">
+
+<h2 class="fw-bold mb-4">Productos Destacados</h2>
+
   <div class="carousel-inner">
+  
 
     <!-- Slide 1 -->
     <div class="carousel-item active">
@@ -146,14 +150,16 @@ div.container-fluid {
 </div>
 </section>
 
-
+<hr>
 <section class="py-5 carrousel-cards">
 
-<h2 class="text-center my-4">Ofertas</h2>
+
 
   <!-- Carrousel con cards -->
 
   <div id="carouselOfertas" class="carousel slide" data-bs-ride="carousel">
+  <h2 class="fw-bold mb-4">Ofertas Especiales!</h2>
+  
   <div class="carousel-inner">
 
     <!-- Slide 1 -->
@@ -243,5 +249,106 @@ div.container-fluid {
   </button>
 </div>
 </section>
+
+<hr>
+
+<div class="container mt-5">
+  <h2 class="fw-bold mb-4">Nuevas Categorías</h2>
+
+  <div id="categoriasCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicadores -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#categoriasCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#categoriasCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <!-- Agregá más botones si tenés más slides -->
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card">
+              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Producto A</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card">
+              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Producto B</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card">
+              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Producto C</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card">
+              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Producto D</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card">
+              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Producto E</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card">
+              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Producto F</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card">
+              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Producto G</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card">
+              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Producto H</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 <?= $this->endSection() ?>
