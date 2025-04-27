@@ -15,8 +15,8 @@
 <body>
   <?= $this->include('layouts/header')?>
   <?= $this->renderSection('contenido')?>
-  <?= $this->include('layouts/marcas')?> 
-  <?= $this->include('layouts/footer')?> 
+  <?= $this->include('layouts/marcas')?>
+  <?= $this->include('layouts/footer')?>
 
 
   <script src="<?= base_url('public/assets/js/bootstrap.bundle.min.js') ?>"></script>
