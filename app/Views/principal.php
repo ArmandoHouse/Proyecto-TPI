@@ -4,20 +4,11 @@
 ZonaHW - Venta de Hardware
 <?= $this->endSection() ?>
 
+<?= $this->section('contenido_style')?>
+  <link rel="stylesheet" href="<?= base_url('public/assets/css/views/principal.css') ?>">
+<?= $this->endSection() ?>
+
 <?= $this->section('contenido') ?>
-
-<style>
-  div.container-fluid {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .carousel .carousel-indicators button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-  }
-</style>
 
 <div class="container-fluid">
   <div id="c-1" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -364,49 +355,6 @@ ZonaHW - Venta de Hardware
     </div>
   </div>
 </div>
-
-<style>
-  @media (max-width: 767px) {
-    #cont .carousel-inner .carousel-item>div {
-      display: none;
-    }
-
-    #cont .carousel-inner .carousel-item>div:first-child {
-      display: block;
-    }
-  }
-
-
-
-  #cont .carousel-item .card {
-    margin-right: 10px;
-  }
-
-  #cont .carousel-inner .carousel-item.active,
-  #cont .carousel-inner .carousel-item-next,
-  #cont .carousel-inner .carousel-item-prev {
-    display: flex;
-  }
-
-  /* medium and up screens */
-  @media (min-width: 768px) {
-
-    #cont .carousel-inner .carousel-item-end.active,
-    #cont .carousel-inner .carousel-item-next {
-      transform: translateX(25%);
-    }
-
-    #cont .carousel-inner .carousel-item-start.active,
-    #cont .carousel-inner .carousel-item-prev {
-      transform: translateX(-25%);
-    }
-  }
-
-  #cont .carousel-inner .carousel-item-end,
-  #cont .carousel-inner .carousel-item-start {
-    transform: translateX(0);
-  }
-</style>
 
 <script>
   let items = document.querySelectorAll('#cont .carousel .carousel-item')
