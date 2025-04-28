@@ -11,9 +11,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- CSS fijos para header, marcas y footer -->
-  <link rel="stylesheet" href="<?= base_url('public/assets/css/layouts/header.css') ?>">
-  <link rel="stylesheet" href="<?= base_url('public/assets/css/layouts/marcas.css') ?>">
-  <link rel="stylesheet" href="<?= base_url('public/assets/css/layouts/footer.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('public/assets/css/views/layouts/header.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('public/assets/css/views/layouts/marcas.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('public/assets/css/views/layouts/footer.css') ?>">
 
 
   <title><?= $this->renderSection('titulo') ?></title>
