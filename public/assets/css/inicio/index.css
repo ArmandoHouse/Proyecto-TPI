@@ -14,13 +14,22 @@
 #carouselOfertas h2 {
   text-align: left;
   padding-left: 75px;
-  margin-bottom: 0;
+  
 }
 
-hr {
-  width: 88%;
+#categoriasCarousel img {
+  object-fit: cover;
   margin: auto;
-  padding-bottom: 20px;
+}
+
+.ofertas { 
+  background-color: #f1f3f5;
+}
+
+h2 {
+  color: #212529;
+  font-style: italic;
+  font-weight: 100;
 }
 
 /* Carrousel sin flechas */
@@ -77,3 +86,19 @@ hr {
     border: none;
     cursor: pointer;
 }
+
+
+.categoria-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.categoria-card img {
+  object-fit: cover;
+  height: 250px; /* Ajustá según necesites */
+}
+

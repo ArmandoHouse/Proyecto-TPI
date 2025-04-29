@@ -51,14 +51,13 @@ div.container-fluid {
 
 <section class="py-5 carrousel-cards">
 
-
-
   <!-- Carrousel con cards -->
 
 <div id="carouselDestacados" class="carousel slide" data-bs-ride="carousel">
 
-<h2 class="fw-bold mb-4">Productos Destacados</h2>
+<h2 class="mb-2">Conocé nuestros <span class="fw-bold">productos destacados</span></h2>
 
+  <hr class="mx-auto border-danger opacity-75" style="width: 780px; height: 3px;">
   <div class="carousel-inner">
   
 
@@ -73,6 +72,7 @@ div.container-fluid {
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
             <p class="card-text fw-bold">$89.990</p>
+            <a href="#" class="btn btn-danger mt-3">Ver más</a>
           </div>
         </div>
       </div>
@@ -83,6 +83,7 @@ div.container-fluid {
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
             <p class="card-text fw-bold">$89.990</p>
+            <a href="#" class="btn btn-danger mt-3">Ver más</a>
           </div>
         </div>
       </div>
@@ -93,6 +94,7 @@ div.container-fluid {
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
             <p class="card-text fw-bold">$89.990</p>
+            <a href="#" class="btn btn-danger mt-3">Ver más</a>
           </div>
         </div>
       </div>
@@ -111,6 +113,7 @@ div.container-fluid {
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
             <p class="card-text fw-bold">$89.990</p>
+            <a href="#" class="btn btn-danger mt-3">Ver más</a>
           </div>
         </div>
       </div>
@@ -121,6 +124,7 @@ div.container-fluid {
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
             <p class="card-text fw-bold">$89.990</p>
+            <a href="#" class="btn btn-danger mt-3">Ver más</a>
           </div>
         </div>
       </div>
@@ -131,6 +135,7 @@ div.container-fluid {
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
             <p class="card-text fw-bold">$89.990</p>
+            <a href="#" class="btn btn-danger mt-3">Ver más</a>
           </div>
         </div>
       </div>
@@ -150,16 +155,15 @@ div.container-fluid {
 </div>
 </section>
 
-<hr>
-<section class="py-5 carrousel-cards">
+<!-- SECCION OFERTAS ESPECIALES -->
 
-
+<section class="py-5 carrousel-cards ofertas">
 
   <!-- Carrousel con cards -->
 
   <div id="carouselOfertas" class="carousel slide" data-bs-ride="carousel">
-  <h2 class="fw-bold mb-4">Ofertas Especiales!</h2>
-  
+  <h2 class="mb-2">Aprovechá nuestras <span class="fw-bold">ofertas especiales</span></h2>
+  <hr class="mx-auto border-danger opacity-75" style="width: 780px; height: 3px;">
   <div class="carousel-inner">
 
     <!-- Slide 1 -->
@@ -173,6 +177,7 @@ div.container-fluid {
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
             <p class="card-text fw-bold">$89.990</p>
+            <a href="#" class="btn btn-danger mt-3">Ver más</a>
           </div>
         </div>
       </div>
@@ -183,6 +188,7 @@ div.container-fluid {
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
             <p class="card-text fw-bold">$89.990</p>
+            <a href="#" class="btn btn-danger mt-3">Ver más</a>
           </div>
         </div>
       </div>
@@ -193,12 +199,14 @@ div.container-fluid {
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
             <p class="card-text fw-bold">$89.990</p>
+            <a href="#" class="btn btn-danger mt-3">Ver más</a>
           </div>
         </div>
       </div>
         </div>
       </div>
     </div>
+
 
     <!--slide 2 -->
     <div class="carousel-item">
@@ -211,6 +219,7 @@ div.container-fluid {
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
             <p class="card-text fw-bold">$89.990</p>
+            <a href="#" class="btn btn-danger mt-3">Ver más</a>
           </div>
         </div>
       </div>
@@ -221,6 +230,7 @@ div.container-fluid {
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
             <p class="card-text fw-bold">$89.990</p>
+            <a href="#" class="btn btn-danger mt-3">Ver más</a>
           </div>
         </div>
       </div>
@@ -231,6 +241,7 @@ div.container-fluid {
             <h5 class="card-title">Procesador AMD Ryzen</h5>
             <p class="card-text">Alto rendimiento para gaming y productividad.</p>
             <p class="card-text fw-bold">$89.990</p>
+            <a href="#" class="btn btn-danger mt-3">Ver más</a>
           </div>
         </div>
       </div>
@@ -250,105 +261,229 @@ div.container-fluid {
 </div>
 </section>
 
-<hr>
+<!-- SECCION CATEGORIAS -->
 
-<div class="container mt-5">
-  <h2 class="fw-bold mb-4">Nuevas Categorías</h2>
+<section class="py-5">
+  <div class="container">
 
-  <div id="categoriasCarousel" class="carousel slide" data-bs-ride="carousel">
-    <!-- Indicadores -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#categoriasCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#categoriasCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <!-- Agregá más botones si tenés más slides -->
-    </div>
+    <h2 class="mb-2">Explorá nuestras <span class="fw-bold">categorías</span></h2>
+    <hr class="mx-auto border-danger opacity-75" style="width: 780px; height: 3px;">
 
-    <!-- Slides -->
-    <div class="carousel-inner">
+    <div id="categoriasCarousel" class="carousel slide" data-bs-ride="carousel">
+      
+      <div class="carousel-inner">
 
-      <div class="carousel-item active">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="card">
-              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Producto A</h5>
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row g-3">
+
+            <!-- Primera fila -->
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card categoria-card border-0 overflow-hidden rounded-4">
+                <div class="position-relative">
+                  <img src="assets/img/categorias/procesadores.jpg" class="card-img-top" alt="Procesadores">
+                  <div class="card-img-overlay d-flex align-items-end p-0">
+                    <div class="w-100 text-center bg-dark bg-opacity-50 py-2">
+                      <h5 class="card-title text-white mb-0">Procesadores</h5>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="card">
-              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Producto B</h5>
+            <!-- Más cards para completar 4 en la fila -->
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card categoria-card border-0 overflow-hidden rounded-4">
+                <div class="position-relative">
+                  <img src="assets/img/categorias/notebooks.jpg" class="card-img-top" alt="Procesadores">
+                  <div class="card-img-overlay d-flex align-items-end p-0">
+                    <div class="w-100 text-center bg-dark bg-opacity-50 py-2">
+                      <h5 class="card-title text-white mb-0">Notebooks</h5>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-md-3">
-            <div class="card">
-              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Producto C</h5>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card categoria-card border-0 overflow-hidden rounded-4">
+                <div class="position-relative">
+                  <img src="assets/img/categorias/monitores.jpg" class="card-img-top" alt="Procesadores">
+                  <div class="card-img-overlay d-flex align-items-end p-0">
+                    <div class="w-100 text-center bg-dark bg-opacity-50 py-2">
+                      <h5 class="card-title text-white mb-0">Monitores</h5>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-md-3">
-            <div class="card">
-              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Producto D</h5>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card categoria-card border-0 overflow-hidden rounded-4">
+                <div class="position-relative">
+                  <img src="assets/img/categorias/ram.jpg" class="card-img-top" alt="Procesadores">
+                  <div class="card-img-overlay d-flex align-items-end p-0">
+                    <div class="w-100 text-center bg-dark bg-opacity-50 py-2">
+                      <h5 class="card-title text-white mb-0">Memorias RAM</h5>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <!-- Segunda fila -->
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card categoria-card border-0 overflow-hidden rounded-4">
+                <div class="position-relative">
+                  <img src="assets/img/categorias/perifericos.jpg" class="card-img-top" alt="Memorias RAM">
+                  <div class="card-img-overlay d-flex align-items-end p-0">
+                    <div class="w-100 text-center bg-dark bg-opacity-50 py-2">
+                      <h5 class="card-title text-white mb-0">Perifericos</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Más cards para completar 4 en la fila -->
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card categoria-card border-0 overflow-hidden rounded-4">
+                <div class="position-relative">
+                  <img src="assets/img/categorias/placa-video.jpg" class="card-img-top" alt="Procesadores">
+                  <div class="card-img-overlay d-flex align-items-end p-0">
+                    <div class="w-100 text-center bg-dark bg-opacity-50 py-2">
+                      <h5 class="card-title text-white mb-0">Placas de Video</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card categoria-card border-0 overflow-hidden rounded-4">
+                <div class="position-relative">
+                  <img src="assets/img/categorias/gabinetes.jpg" class="card-img-top" alt="Procesadores">
+                  <div class="card-img-overlay d-flex align-items-end p-0">
+                    <div class="w-100 text-center bg-dark bg-opacity-50 py-2">
+                      <h5 class="card-title text-white mb-0">Gabinetes</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card categoria-card border-0 overflow-hidden rounded-4">
+                <div class="position-relative">
+                  <img src="assets/img/categorias/almacenamiento.jpg" class="card-img-top" alt="Procesadores">
+                  <div class="card-img-overlay d-flex align-items-end p-0">
+                    <div class="w-100 text-center bg-dark bg-opacity-50 py-2">
+                      <h5 class="card-title text-white mb-0">Almacenamiento</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
 
-      <div class="carousel-item">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="card">
-              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Producto E</h5>
+        <!-- Slide 2 (otras categorías) -->
+        <div class="carousel-item">
+          <div class="row g-3">
+            
+          <div class="col-6 col-sm-4 col-md-3">
+              <div class="card categoria-card border-0 overflow-hidden rounded-4">
+                <div class="position-relative">
+                  <img src="assets/img/categorias/placa-madre.jpg" class="card-img-top" alt="Procesadores">
+                  <div class="card-img-overlay d-flex align-items-end p-0">
+                    <div class="w-100 text-center bg-dark bg-opacity-50 py-2">
+                      <h5 class="card-title text-white mb-0">Placa Madre</h5>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-md-3">
-            <div class="card">
-              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Producto F</h5>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card categoria-card border-0 overflow-hidden rounded-4">
+                <div class="position-relative">
+                  <img src="assets/img/categorias/impresoras.jpg" class="card-img-top" alt="Procesadores">
+                  <div class="card-img-overlay d-flex align-items-end p-0">
+                    <div class="w-100 text-center bg-dark bg-opacity-50 py-2">
+                      <h5 class="card-title text-white mb-0">Impresoras</h5>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-md-3">
-            <div class="card">
-              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Producto G</h5>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card categoria-card border-0 overflow-hidden rounded-4">
+                <div class="position-relative">
+                  <img src="assets/img/categorias/equipos.jpg" class="card-img-top" alt="Procesadores">
+                  <div class="card-img-overlay d-flex align-items-end p-0">
+                    <div class="w-100 text-center bg-dark bg-opacity-50 py-2">
+                      <h5 class="card-title text-white mb-0">Equipos Armados</h5>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-md-3">
-            <div class="card">
-              <img src="assets/img/teclado-mecanico.webp" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Producto H</h5>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card categoria-card border-0 overflow-hidden rounded-4">
+                <div class="position-relative">
+                  <img src="assets/img/placa-madre.jpeg" class="card-img-top" alt="Procesadores">
+                  <div class="card-img-overlay d-flex align-items-end p-0">
+                    <div class="w-100 text-center bg-dark bg-opacity-50 py-2">
+                      <h5 class="card-title text-white mb-0">Procesadores</h5>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card categoria-card border-0 overflow-hidden rounded-4">
+                <div class="position-relative">
+                  <img src="assets/img/placa-madre.jpeg" class="card-img-top" alt="Procesadores">
+                  <div class="card-img-overlay d-flex align-items-end p-0">
+                    <div class="w-100 text-center bg-dark bg-opacity-50 py-2">
+                      <h5 class="card-title text-white mb-0">Procesadores</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card categoria-card border-0 overflow-hidden rounded-4">
+                <div class="position-relative">
+                  <img src="assets/img/placa-madre.jpeg" class="card-img-top" alt="Procesadores">
+                  <div class="card-img-overlay d-flex align-items-end p-0">
+                    <div class="w-100 text-center bg-dark bg-opacity-50 py-2">
+                      <h5 class="card-title text-white mb-0">Procesadores</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
+
+      </div>
+
+      <!-- Indicadores -->
+      <div class="carousel-indicators mt-4">
+        <button type="button" data-bs-target="#categoriasCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#categoriasCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
       </div>
 
     </div>
+
   </div>
-</div>
+</section>
+
 
 
 <?= $this->endSection() ?>
