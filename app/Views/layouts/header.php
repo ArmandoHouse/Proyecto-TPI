@@ -2,12 +2,18 @@
   <div class="fondo">
     <div class="container py-3">
       <div class="row align-items-center justify-content-between gx-2">
+
         <div class="col-6 col-md-2 logo fw-bold d-flex align-items-center">
+          <button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+            <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+          </button>
+
+
           <i class="bi fs-1 bi-cpu-fill me-2"></i>
           <span class="logo-text">ZH</span>
         </div>
 
-        <div class="col-12 col-md-6 my-2 my-md-0">
+        <div class="col-12 col-md-6 my-2 my-md-0 d-none d-lg-block">
           <div class="search-bar">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar" aria-describedby="search-addon">
@@ -19,6 +25,7 @@
         </div>
 
         <div class="col-6 col-md-2 d-flex justify-content-end">
+          <button type="button" class="d-block d-lg-none btn btn-circle me-2"><i class="icon fa-solid fa-cart-shopping"></i></button>
           <button type="button" class="btn btn-circle me-2"><i class="icon fa-solid fa-cart-shopping"></i></button>
           <button type="button" class="btn btn-circle"><i class="icon fa-solid fa-user"></i></button>
         </div>
@@ -27,8 +34,9 @@
   </div>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+    <div class="container ">
+
+      <button class="navbar-toggler d-none d-lg-block" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
         <span class="navbar-toggler-icon"></span>
       </button>
 
