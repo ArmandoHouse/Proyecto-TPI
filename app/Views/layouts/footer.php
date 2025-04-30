@@ -19,7 +19,7 @@
           </li>
           <li class="nav-item mb-2">
             <span class="nav-link p-0 text-secondary">
-              <i class="bi bi-geo-alt-fill me-2"></i>Buenos Aires, Argentina
+              <i class="bi bi-geo-alt-fill me-2"></i>Corrientes, Argentina
             </span>
           </li>
         </ul>
