@@ -1,23 +1,12 @@
 <?= $this->extend('layouts/plantilla') ?>
 
+<?= $this->section('styles') ?>
+  <link rel="stylesheet" href="<?= base_url('public/assets/css/views/quienes_somos.css') ?>">
+<?= $this->endSection() ?>
+
 <?= $this->section('contenido') ?>
 
-<style>
-    .about img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10%;
-    }
 
-    .text-col {
-        font-size: 20px;
-    }
-
-    .feature {
-        margin-right: 8px;
-    }
-</style>
 <div class="bg-body-secondary">
     <div class="container about">
         <div class="row justify-content-between">

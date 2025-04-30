@@ -1,8 +1,5 @@
-
-
 .carousel-item img {
   width: 100%;
-  height: 60vh; /* Altura relativa al viewport */
   object-fit: contain;
 }
 
@@ -77,76 +74,76 @@ h2 {
 }
 
 .card {
-    box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.3);
 }
 
 .card:hover{
-    box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.5);
-    border: none;
-    cursor: pointer;
+  box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
 }
 
 
 .categoria-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .categoria-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+transform: scale(1.05);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .categoria-card img {
-  object-fit: cover;
-  height: 250px; 
+object-fit: cover;
+height: 250px; 
 }
 
 .categoria-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+transform: scale(1.05);
+box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 @media (min-width: 768px) {
-  .col-md-2-4 {
-    flex: 0 0 auto;
-    width: 20%;
-  }
+.col-md-2-4 {
+  flex: 0 0 auto;
+  width: 20%;
+}
 }
 
 .scroll-snap-x {
-  scroll-snap-type: x mandatory;
+scroll-snap-type: x mandatory;
 }
 .scroll-snap-x > * {
-  scroll-snap-align: start;
+scroll-snap-align: start;
 }
 
 .card-destacados, .card-ofertas {
-  width: 240px; 
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  flex: 0 0 auto;
+width: 240px; 
+flex: 0 0 auto;
+scroll-snap-align: start;
+flex: 0 0 auto;
 }
 
 
 .carousel-slide {
-  scroll-behavior: smooth;
-  transition: all 0.5s ease-in-out;
+scroll-behavior: smooth;
+transition: all 0.5s ease-in-out;
 }
 
 .card-destacados {
-  transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
 }
 
 .card-destacados:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+transform: scale(1.05);
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .card-ofertas {
-  transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
 }
 
 .card-ofertas:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+transform: scale(1.05);
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

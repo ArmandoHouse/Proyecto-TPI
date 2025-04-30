@@ -1,5 +1,9 @@
 <?= $this->extend('layouts/plantilla') ?>
 
+<?= $this->section('styles') ?>
+  <link rel="stylesheet" href="<?= base_url('public/assets/css/views/comercializacion.css') ?>">
+<?= $this->endSection() ?>
+
 <?= $this->section('contenido') ?>
 
 <div class="container my-4">

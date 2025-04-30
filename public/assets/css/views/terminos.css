@@ -1,0 +1,5 @@
+.row .scrollspy-example-2{
+  height: 500px; /* o la altura que necesites */
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}

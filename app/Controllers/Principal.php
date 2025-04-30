@@ -6,7 +6,7 @@ class Principal extends BaseController
 {
     public function index(): string
     {
-        return view('inicio');
+        return view('principal');
     }
 
 }

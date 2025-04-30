@@ -1,0 +1,75 @@
+.search-bar {
+    width: 100%;
+}
+
+.search-bar .input-group {
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.search-bar .form-control {
+    border: none;
+    padding-left: 20px;
+}
+
+.search-bar .btn {
+    border: none;
+    padding: 10px 20px;
+    background-color: unset !important;
+    color: black !important;
+}
+
+.fondo {
+    background-color: #3a3a3a;
+    color: white;
+}
+
+.fondo .btn {
+    color: white;
+    background-color: #727271;
+}
+
+.btn-circle {
+    width: 40px;
+    height: 40px;
+    padding: 6px 0px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+.icon {
+    font-size: 1.25em !important;
+}
+
+.logo {
+    min-width: 100px;
+}
+
+.logo .logo-text {
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+.navbar li {
+    font-size: 1.1em;
+}
+
+/* Estilos responsive */
+@media (max-width: 767px) {
+    .btn-circle {
+        width: 36px;
+        height: 36px;
+        font-size: 10px;
+    }
+
+    .logo .logo-text {
+        font-size: 1.4rem;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0.5rem 0;
+    }
+}

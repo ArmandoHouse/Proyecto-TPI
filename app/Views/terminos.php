@@ -1,14 +1,10 @@
 <?= $this->extend('layouts/plantilla') ?>
 
-<?= $this->section('contenido') ?>
+<?= $this->section('styles') ?>
+  <link rel="stylesheet" href="<?= base_url('public/assets/css/views/terminos.css') ?>">
+<?= $this->endSection() ?>
 
-<style>
-    .row .scrollspy-example-2{
-        height: 500px; /* o la altura que necesites */
-        overflow-y: auto;
-        overscroll-behavior: contain;
-    }
-</style>
+<?= $this->section('contenido') ?>
 
 <div class="container my-4">
     <h3 class="fw-bold">Términos y Condiciones</h3>

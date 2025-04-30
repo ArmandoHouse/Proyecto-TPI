@@ -1,29 +1,10 @@
 <?= $this->extend('layouts/plantilla') ?>
 
+<?= $this->section('styles') ?>
+  <link rel="stylesheet" href="<?= base_url('public/assets/css/views/contacto.css') ?>">
+<?= $this->endSection() ?>
+
 <?= $this->section('contenido') ?>
-
-<style>
-    .card .icon {
-        padding: 25px;
-        max-height: 100%;
-        max-width: 100%;
-        object-fit: contain;
-    }
-
-
-    .google-map {
-        padding-bottom: 50%;
-        position: relative;
-    }
-
-    .google-map iframe {
-        height: 100%;
-        width: 100%;
-        left: 0;
-        top: 0;
-        position: absolute;
-    }
-</style>
 
 <div class="container text-center my-4 mb-4">
     <h1 class="text-center fw-bold">¿Cómo podemos ayudarte?</h1>
