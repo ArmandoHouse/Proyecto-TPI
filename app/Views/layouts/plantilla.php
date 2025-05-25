@@ -32,6 +32,7 @@
   <?= $this->renderSection('scripts') ?>
 
   <script src="<?= base_url('public/assets/js/bootstrap.bundle.min.js') ?>"></script>
+
 </body>
 
 </html>
