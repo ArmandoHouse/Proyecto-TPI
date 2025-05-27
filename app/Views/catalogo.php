@@ -29,12 +29,12 @@
   <div class="row">
     <!-- Card 1 -->
     <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
-      <div class="card card-destacados h-100">
-        <img src="assets/img/placa-madre.jpeg" class="card-img-top" alt="Producto">
+      <div class="card h-100">
+        <img src="<?= base_url('public/assets/img/categorias/' . $producto['imagen']) ?>" alt="Imagen del producto">
         <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Procesador AMD Ryzen</h5>
-          <p class="card-text">Alto rendimiento para gaming y productividad.</p>
-          <p class="fw-bold">$89.990</p>
+          <h5 class="card-title"><?php echo $producto['nombre']; ?></h5>
+          <p class="card-text"><?php echo $producto['descripcion']; ?></p>
+          <p class="fw-bold">$<?php echo $producto['precio']; ?></p>
           <a href="#" class="btn btn-primary mt-auto">Ver más</a>
         </div>
       </div>
