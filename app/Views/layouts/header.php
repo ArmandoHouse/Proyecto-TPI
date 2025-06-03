@@ -28,40 +28,40 @@
           <div class="dropdown-menu mega-dropdown" aria-labelledby="megaDropdown">
             <div class="row gx-4 gy-2 px-4 py-3">
               <div class="col-12 col-md-3">
-                <a class="dropdown-item" href="#">Notebooks</a>
-                <a class="dropdown-item" href="#">PCs Mini</a>
-                <a class="dropdown-item" href="#">Motherboards</a>
-                <a class="dropdown-item" href="#">Procesadores</a>
-                <a class="dropdown-item" href="#">Memorias Ram</a>
-                <a class="dropdown-item" href="#">Almacenamiento</a>
-                <a class="dropdown-item" href="#">Placas de Video</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Notebooks</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">PCs Mini</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Motherboards</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Procesadores</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Memorias Ram</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Almacenamiento</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Placas de Video</a>
               </div>
               <div class="col-12 col-md-3">
-                <a class="dropdown-item" href="#">Fuentes de Poder</a>
-                <a class="dropdown-item" href="#">Gabinetes</a>
-                <a class="dropdown-item" href="#">Refrigeración PC</a>
-                <a class="dropdown-item" href="#">Combos Actualización PC</a>
-                <a class="dropdown-item" href="#">Teclados, Mouses y Pads</a>
-                <a class="dropdown-item" href="#">Auriculares y Micrófonos</a>
-                <a class="dropdown-item" href="#">Cámaras Web e IP</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Fuentes de Poder</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Gabinetes</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Refrigeración PC</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Combos Actualización PC</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Teclados, Mouses y Pads</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Auriculares y Micrófonos</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Cámaras Web e IP</a>
               </div>
               <div class="col-12 col-md-3">
-                <a class="dropdown-item" href="#">Monitores</a>
-                <a class="dropdown-item" href="#">Impresoras y Plotters</a>
-                <a class="dropdown-item" href="#">Conectividad y Redes</a>
-                <a class="dropdown-item" href="#">Ups y Estabilizadores</a>
-                <a class="dropdown-item" href="#">Sillas Gamers</a>
-                <a class="dropdown-item" href="#">Consolas</a>
-                <a class="dropdown-item" href="#">Volantes y Gamepads</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Monitores</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Impresoras y Plotters</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Conectividad y Redes</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Ups y Estabilizadores</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Sillas Gamers</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Consolas</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Volantes y Gamepads</a>
               </div>
               <div class="col-12 col-md-3">
-                <a class="dropdown-item" href="#">Parlantes y Audio</a>
-                <a class="dropdown-item" href="#">Proyectores</a>
-                <a class="dropdown-item" href="#">Software</a>
-                <a class="dropdown-item" href="#">Tablets y eBooks</a>
-                <a class="dropdown-item" href="#">Tabletas Gráficas</a>
-                <a class="dropdown-item" href="#">TV</a>
-                <a class="dropdown-item" href="#">Outlet</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Parlantes y Audio</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Proyectores</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Software</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Tablets y eBooks</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Tabletas Gráficas</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">TV</a>
+                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Outlet</a>
               </div>
             </div>
           </div>
@@ -185,7 +185,8 @@
   }
 }
 
-  </style>
+</style>
+
 <div class="sticky-top">
   <!-- Top Bar: Sección Superior con la clase "fondo" -->
   <div class="fondo text-white">
@@ -220,9 +221,12 @@
           <button type="button" class="btn btn-circle me-2">
             <i class="fa-solid fa-cart-shopping"></i>
           </button>
-          <button type="button" class="btn btn-circle">
-            <i class="fa-solid fa-user"></i>
-          </button>
+          <a href="<?= base_url('public/login') ?>">
+            <button type="button" class="btn btn-circle">
+              <i class="fa-solid fa-user"></i>
+            </button>
+          </a>
+          
         </div>
       </div>
     </div>

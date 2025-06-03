@@ -18,4 +18,8 @@ $routes->get('/terminos', 'Terminos::index');
 
 $routes->get('/catalogo', 'Catalogo::index');
 
+$routes->get('/registro', 'Autenticacion::registrarse');
+
+$routes->get('/login', 'Autenticacion::login');
+
 $routes->get('/catalogo/(:num)', 'Catalogo::ver_producto/$1');
