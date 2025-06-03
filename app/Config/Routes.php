@@ -20,6 +20,12 @@ $routes->get('/catalogo', 'Catalogo::index');
 
 $routes->get('/registro', 'Autenticacion::registrarse');
 
+$routes->post('/registro', 'Autenticacion::registrarsePost');
+
 $routes->get('/login', 'Autenticacion::login');
+
+$routes->post('/login', 'Autenticacion::loginPost');
+
+$routes->get('/logout', 'Autenticacion::logout');
 
 $routes->get('/catalogo/(:num)', 'Catalogo::ver_producto/$1');

@@ -1,3 +1,5 @@
+<?php $session = session(); ?>
+
 <style>
     /* Estilos adicionales */
     .btn-circle {
@@ -221,12 +223,26 @@
           <button type="button" class="btn btn-circle me-2">
             <i class="fa-solid fa-cart-shopping"></i>
           </button>
-          <a href="<?= base_url('public/login') ?>">
-            <button type="button" class="btn btn-circle">
-              <i class="fa-solid fa-user"></i>
-            </button>
-          </a>
-          
+          <?php if ($session->get('logueado')): ?>
+            <div class="dropdown">
+              <a href="#" class="text-white text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown">
+                  <div class="rounded-circle bg-secondary p-2 d-flex align-items-center justify-content-center">
+                      <i class="bi bi-person-circle text-white fs-5 me-2"></i>
+                      <span class="d-none d-md-inline"><?= esc($session->get('nom_usuario')) ?></span>
+                  </div>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                  <li><a class="dropdown-item" href="<?= base_url('perfil') ?>">Mi perfil</a></li>
+                  <li><a class="dropdown-item" href="<?= base_url('public/logout') ?>">Cerrar sesión</a></li>
+              </ul>
+            </div>
+          <?php else: ?>
+            <a href="<?= base_url('public/login') ?>">
+              <button type="button" class="btn btn-circle">
+                <i class="fa-solid fa-user"></i>
+              </button>
+            </a>
+          <?php endif; ?>
         </div>
       </div>
     </div>

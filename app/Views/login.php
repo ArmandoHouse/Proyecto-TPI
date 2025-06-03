@@ -7,7 +7,7 @@ Inicio de Sesión
 <?= $this->section('contenido') ?>
 <div class="container mt-5" style="max-width: 500px;">
     <h2 class="mb-4 text-center">Iniciar Sesión</h2>
-    <form action="<?= base_url('auth/login') ?>" method="post">
+    <form action="<?= base_url('public/login') ?>" method="post">
         <div class="mb-3">
             <label for="email" class="form-label">Correo electrónico</label>
             <input type="email" class="form-control" id="email" name="email" required>

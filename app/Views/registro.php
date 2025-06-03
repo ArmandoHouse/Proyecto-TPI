@@ -7,7 +7,7 @@ Registro de Usuario
 <?= $this->section('contenido') ?>
 <div class="container mt-5" style="max-width: 500px;">
     <h2 class="mb-4 text-center">Crear Cuenta</h2>
-    <form action="<?= base_url('auth/register') ?>" method="post">
+    <form action="<?= base_url('public/registro') ?>" method="post">
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="nombre" name="nombre" required>
