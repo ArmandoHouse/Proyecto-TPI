@@ -167,7 +167,11 @@ ZonaHW - Venta de Hardware
 
   </div>
 </section>
+<?php $session = session(); ?>
 
+<?php if ($session->get('rol') == 'admin'): ?>
+  <button class="button">Cargar Producto</button>
+<?php endif; ?>
 
 <!-- SECCIÓN DESTACADOS -->
 
