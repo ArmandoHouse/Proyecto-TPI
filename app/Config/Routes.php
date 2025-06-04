@@ -28,4 +28,6 @@ $routes->post('/login', 'Autenticacion::loginPost');
 
 $routes->get('/logout', 'Autenticacion::logout');
 
+$routes->get('/admin/cargar-producto', 'Admin::cargarProducto');
+
 $routes->get('/catalogo/(:num)', 'Catalogo::ver_producto/$1');
