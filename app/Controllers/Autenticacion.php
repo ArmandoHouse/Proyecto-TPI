@@ -41,7 +41,7 @@ class Autenticacion extends BaseController
             return redirect()->to(base_url('public/'));
         } else {
             // Error de login
-            return redirect()->back()->withInput()->with('error', 'Email o contraseña incorrectos.');
+            return redirect()->to(base_url('public/login'))->withInput()->with('error', 'Email o contraseña incorrectos.');
         }
     }
 

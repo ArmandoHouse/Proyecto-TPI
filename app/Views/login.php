@@ -5,6 +5,13 @@ Inicio de Sesión
 <?= $this->endSection() ?>
 
 <?= $this->section('contenido') ?>
+
+<?php if (session()->getFlashdata('error')): ?>
+    <div class="alert alert-danger">
+        <?= session()->getFlashdata('error') ?>
+    </div>
+<?php endif; ?>
+
 <div class="container mt-5" style="max-width: 500px;">
     <h2 class="mb-4 text-center">Iniciar Sesión</h2>
     <form action="<?= base_url('public/login') ?>" method="post">
