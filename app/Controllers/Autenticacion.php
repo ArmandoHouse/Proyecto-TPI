@@ -45,6 +45,7 @@ class Autenticacion extends BaseController
         }
     }
 
+
     public function registrarsePost()
     {
         helper(['form']);

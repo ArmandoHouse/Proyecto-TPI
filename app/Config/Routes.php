@@ -30,6 +30,8 @@ $routes->get('/logout', 'Autenticacion::logout');
 
 $routes->get('/admin/cargar-producto', 'Admin::cargarProducto');
 
+$routes->get('/admin', 'Admin::panel');
+
 $routes->post('/admin/guardar-producto', 'Admin::guardarProducto');
 
 $routes->get('/catalogo/(:num)', 'Catalogo::ver_producto/$1');

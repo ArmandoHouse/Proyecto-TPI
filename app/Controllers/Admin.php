@@ -6,6 +6,18 @@ use App\Models\CategoriasModel;
 
 class Admin extends BaseController
 {
+
+    
+    public function panel()
+    {
+        // Verificar que esté logueado como admin
+        if (session('rol') !== 'admin') {
+            return redirect()->to(base_url('public/'));
+        }
+
+        return view('admin/panel');
+    }
+
     public function cargarProducto()
     {
         // Verificamos si es admin
