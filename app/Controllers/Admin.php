@@ -3,11 +3,13 @@
 namespace App\Controllers;
 
 use App\Models\CategoriasModel;
+use App\Models\ProductosModel;
+
 
 class Admin extends BaseController
 {
 
-    
+
     public function panel()
     {
         // Verificar que esté logueado como admin
@@ -50,7 +52,7 @@ class Admin extends BaseController
         }
 
         // Guardar en DB
-        $productoModel = new ProductoModel();
+        $productoModel = new ProductosModel();
         $productoModel->insert([
             'nombre'       => $request->getPost('nombre'),
             'descripcion'  => $request->getPost('descripcion'),

@@ -6,7 +6,7 @@ class Comercializacion extends BaseController
 {
     public function index(): string
     {
-        return view('comercializacion');
+        return view('frontend/comercializacion');
     }
 
 }

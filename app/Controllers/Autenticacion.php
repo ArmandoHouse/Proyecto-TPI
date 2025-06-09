@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\UsuariosModel;
 
 class Autenticacion extends BaseController
@@ -8,12 +9,12 @@ class Autenticacion extends BaseController
 
     public function registrarse(): string
     {
-        return view('registro');
+        return view('frontend/registro');
     }
 
-    public function login(): string 
+    public function login(): string
     {
-        return view('login');
+        return view('frontend/login');
     }
 
     public function loginPost()
@@ -68,10 +69,10 @@ class Autenticacion extends BaseController
         $data = [
             'nombre'     => $this->request->getPost('nombre'),
             'apellido'   => $this->request->getPost('apellido'),
-            'nom_usuario'=> $this->request->getPost('username'),
+            'nom_usuario' => $this->request->getPost('username'),
             'email'      => $this->request->getPost('email'),
             'password'   => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
-            'rol'        => 'cliente', 
+            'rol'        => 'cliente',
             'baja'       => 0
         ];
 
@@ -84,9 +85,8 @@ class Autenticacion extends BaseController
     public function logout()
     {
         $session = session();
-        $session->destroy();  
+        $session->destroy();
 
-        return redirect()->to(base_url('public/')); 
+        return redirect()->to(base_url('public/'));
     }
-
 }
