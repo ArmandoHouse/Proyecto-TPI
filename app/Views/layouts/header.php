@@ -1,192 +1,135 @@
 <?php $session = session(); ?>
 
 <style>
-    /* Estilos adicionales */
-    .btn-circle {
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .logo-text {
-      font-size: 1.5rem;
-    }
+  /* Estilos adicionales */
+  .btn-circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 
- 
-    <!-- Menú de Navegación: Fondo azul -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container">
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="<?= base_url('public/') ?>">Principal</a>
-        </li>
-        <li class="nav-item dropdown mx-2">
-          <a class="nav-link dropdown-toggle" href="#" id="megaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Catálogo de Productos
-          </a>
-          <div class="dropdown-menu mega-dropdown" aria-labelledby="megaDropdown">
-            <div class="row gx-4 gy-2 px-4 py-3">
-              <div class="col-12 col-md-3">
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Notebooks</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">PCs Mini</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Motherboards</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Procesadores</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Memorias Ram</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Almacenamiento</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Placas de Video</a>
-              </div>
-              <div class="col-12 col-md-3">
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Fuentes de Poder</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Gabinetes</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Refrigeración PC</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Combos Actualización PC</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Teclados, Mouses y Pads</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Auriculares y Micrófonos</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Cámaras Web e IP</a>
-              </div>
-              <div class="col-12 col-md-3">
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Monitores</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Impresoras y Plotters</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Conectividad y Redes</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Ups y Estabilizadores</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Sillas Gamers</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Consolas</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Volantes y Gamepads</a>
-              </div>
-              <div class="col-12 col-md-3">
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Parlantes y Audio</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Proyectores</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Software</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Tablets y eBooks</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Tabletas Gráficas</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">TV</a>
-                <a class="dropdown-item" href="<?= base_url('public/catalogo') ?>">Outlet</a>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="<?= base_url('public/quienes_somos') ?>">Quienes Somos</a>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="<?= base_url('public/comercializacion') ?>">Comercialización</a>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="<?= base_url('public/contacto') ?>">Información de Contacto</a>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="<?= base_url('public/terminos') ?>">Términos y Usos</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  .logo-text {
+    font-size: 1.5rem;
+  }
+</style>
+
 
 <style>
-/* Asegurar que el navbar tenga el z-index correcto */
-.navbar {
-  position: relative;
-  z-index: 1030;
-}
-
-/* Solo estilos para el mega dropdown - SOLO cuando esté activo */
-.mega-dropdown {
-  position: absolute !important;
-  top: 100% !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 800px;
-  max-width: calc(100vw - 40px);
-  background: white !important;
-  border: 1px solid rgba(0,0,0,0.15) !important;
-  border-radius: 8px !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
-  padding: 0 !important;
-  margin-top: 0 !important;
-  z-index: 1050 !important;
-}
-
-/* Ajuste para pantallas más pequeñas - evitar que se corte */
-@media (max-width: 900px) {
-  .mega-dropdown {
-    left: 20px !important;
-    right: 20px !important;
-    transform: none !important;
-    width: auto !important;
-    max-width: none !important;
+  /* Asegurar que el navbar tenga el z-index correcto */
+  .navbar {
+    position: relative;
+    z-index: 1030;
   }
-}
 
-/* Para pantallas muy grandes, centrar respecto al contenedor */
-@media (min-width: 1200px) {
-  .mega-dropdown {
-    left: 70% !important;
-    margin-left: -400px !important;
-    transform: none !important;
+  .sticky-top {
+    position: relative;
+    /* para que z-index funcione */
+    z-index: 1020;
+    /* z-index alto pero menor que dropdown */
   }
-}
 
-/* Mejorar los items del dropdown */
-.mega-dropdown .dropdown-item {
-  padding: 10px 15px !important;
-  font-size: 14px;
-  color: #212529 !important;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  border-radius: 4px;
-  margin: 2px 8px;
-  background: transparent !important;
-}
+  .dropdown-menu {
+    z-index: 1050 !important;
+    /* bootstrap usa 1050 para dropdown */
+  }
 
-.mega-dropdown .dropdown-item:hover {
-  background-color: #f8f9fa !important;
-  color: #0d6efd !important;
-}
-
-/* Ajustar el contenedor del dropdown */
-.mega-dropdown .row {
-  margin: 0 !important;
-  padding: 20px 0;
-}
-
-.mega-dropdown .col-12.col-md-3 {
-  padding: 0 20px;
-  border-right: 1px solid rgba(0,0,0,0.1);
-}
-
-.mega-dropdown .col-12.col-md-3:last-child {
-  border-right: none;
-}
-
-/* Responsive para el mega dropdown */
-@media (max-width: 768px) {
+  /* Solo estilos para el mega dropdown - SOLO cuando esté activo */
   .mega-dropdown {
-    position: static !important;
-    width: 100% !important;
-    transform: none !important;
-    left: 0 !important;
-    right: auto !important;
-    margin-left: 0 !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
-    border-radius: 0 !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 800px;
+    max-width: calc(100vw - 40px);
+    background: white !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+    padding: 0 !important;
     margin-top: 0 !important;
-    max-width: none !important;
+    z-index: 1050 !important;
   }
-  
-  .mega-dropdown .col-12.col-md-3 {
-    border-right: none;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-    padding: 15px 20px;
-  }
-  
-  .mega-dropdown .col-12.col-md-3:last-child {
-    border-bottom: none;
-  }
-}
 
+  /* Ajuste para pantallas más pequeñas - evitar que se corte */
+  @media (max-width: 900px) {
+    .mega-dropdown {
+      left: 20px !important;
+      right: 20px !important;
+      transform: none !important;
+      width: auto !important;
+      max-width: none !important;
+    }
+  }
+
+  /* Para pantallas muy grandes, centrar respecto al contenedor */
+  @media (min-width: 1200px) {
+    .mega-dropdown {
+      left: 70% !important;
+      margin-left: -400px !important;
+      transform: none !important;
+    }
+  }
+
+  /* Mejorar los items del dropdown */
+  .mega-dropdown .dropdown-item {
+    padding: 10px 15px !important;
+    font-size: 14px;
+    color: #212529 !important;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    border-radius: 4px;
+    margin: 2px 8px;
+    background: transparent !important;
+  }
+
+  .mega-dropdown .dropdown-item:hover {
+    background-color: #f8f9fa !important;
+    color: #0d6efd !important;
+  }
+
+  /* Ajustar el contenedor del dropdown */
+  .mega-dropdown .row {
+    margin: 0 !important;
+    padding: 20px 0;
+  }
+
+  .mega-dropdown .col-12.col-md-3 {
+    padding: 0 20px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .mega-dropdown .col-12.col-md-3:last-child {
+    border-right: none;
+  }
+
+  /* Responsive para el mega dropdown */
+  @media (max-width: 768px) {
+    .mega-dropdown {
+      position: static !important;
+      width: 100% !important;
+      transform: none !important;
+      left: 0 !important;
+      right: auto !important;
+      margin-left: 0 !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+      border-radius: 0 !important;
+      margin-top: 0 !important;
+      max-width: none !important;
+    }
+
+    .mega-dropdown .col-12.col-md-3 {
+      border-right: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 15px 20px;
+    }
+
+    .mega-dropdown .col-12.col-md-3:last-child {
+      border-bottom: none;
+    }
+  }
 </style>
 
 <div class="sticky-top">
@@ -194,18 +137,18 @@
   <div class="fondo text-white">
     <div class="container py-3">
       <div class="row align-items-center justify-content-between gx-2">
-        
+
         <!-- Logo y botón toggler (visible solo en móviles) -->
         <div class="col-6 col-md-2 d-flex align-items-center">
-          <button class="navbar-toggler d-block d-lg-none me-2" type="button" 
-                  data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" 
-                  aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler d-block d-lg-none me-2" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
           </button>
           <i class="bi fs-1 bi-cpu-fill me-2"></i>
           <span class="logo-text fw-bold">ZH</span>
         </div>
-        
+
         <!-- Barra de búsqueda (sólo visible en escritorio) -->
         <div class="col-12 col-md-6 d-none d-lg-block">
           <div class="search-bar">
@@ -217,20 +160,20 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Íconos (Se muestra solo un botón para el carrito y otro para usuario) -->
         <div class="col-6 col-md-2 d-flex justify-content-end align-items-center gap-2">
-          <button type="button"  class="btn btn-circle me-2">
+          <button type="button" class="btn btn-circle me-2">
             <i class="fa-solid fa-cart-shopping" style="width: 30px;"></i>
           </button>
           <?php if ($session->get('logueado')): ?>
             <div class="dropdown">
               <a href="#" class="text-white text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown">
-                  <span class="d-none d-md-inline"><?= esc($session->get('nom_usuario')) ?></span>
+                <span class="d-none d-md-inline"><?= esc($session->get('nom_usuario')) ?></span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                  <li><a class="dropdown-item" href="<?= base_url('perfil') ?>">Mi perfil</a></li>
-                  <li><a class="dropdown-item" href="<?= base_url('public/logout') ?>">Cerrar sesión</a></li>
+                <li><a class="dropdown-item" href="<?= base_url('perfil') ?>">Mi perfil</a></li>
+                <li><a class="dropdown-item" href="<?= base_url('public/logout') ?>">Cerrar sesión</a></li>
               </ul>
             </div>
           <?php else: ?>
@@ -244,76 +187,75 @@
       </div>
     </div>
   </div>
-  
+
   <!-- Menú de Navegación: Fondo azul -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container">
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="<?= base_url('public/') ?>">Principal</a>
-        </li>
-        <li class="nav-item dropdown mx-2">
-          <a class="nav-link dropdown-toggle" href="#" id="megaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Catálogo de Productos
-          </a>
-          <div class="dropdown-menu mega-dropdown" aria-labelledby="megaDropdown">
-            <div class="row gx-4 gy-2 px-4 py-3">
-              <div class="col-12 col-md-3">
-                <a class="dropdown-item" href="#">Notebooks</a>
-                <a class="dropdown-item" href="#">PCs Mini</a>
-                <a class="dropdown-item" href="#">Motherboards</a>
-                <a class="dropdown-item" href="#">Procesadores</a>
-                <a class="dropdown-item" href="#">Memorias Ram</a>
-                <a class="dropdown-item" href="#">Almacenamiento</a>
-                <a class="dropdown-item" href="#">Placas de Video</a>
-              </div>
-              <div class="col-12 col-md-3">
-                <a class="dropdown-item" href="#">Fuentes de Poder</a>
-                <a class="dropdown-item" href="#">Gabinetes</a>
-                <a class="dropdown-item" href="#">Refrigeración PC</a>
-                <a class="dropdown-item" href="#">Combos Actualización PC</a>
-                <a class="dropdown-item" href="#">Teclados, Mouses y Pads</a>
-                <a class="dropdown-item" href="#">Auriculares y Micrófonos</a>
-                <a class="dropdown-item" href="#">Cámaras Web e IP</a>
-              </div>
-              <div class="col-12 col-md-3">
-                <a class="dropdown-item" href="#">Monitores</a>
-                <a class="dropdown-item" href="#">Impresoras y Plotters</a>
-                <a class="dropdown-item" href="#">Conectividad y Redes</a>
-                <a class="dropdown-item" href="#">Ups y Estabilizadores</a>
-                <a class="dropdown-item" href="#">Sillas Gamers</a>
-                <a class="dropdown-item" href="#">Consolas</a>
-                <a class="dropdown-item" href="#">Volantes y Gamepads</a>
-              </div>
-              <div class="col-12 col-md-3">
-                <a class="dropdown-item" href="#">Parlantes y Audio</a>
-                <a class="dropdown-item" href="#">Proyectores</a>
-                <a class="dropdown-item" href="#">Software</a>
-                <a class="dropdown-item" href="#">Tablets y eBooks</a>
-                <a class="dropdown-item" href="#">Tabletas Gráficas</a>
-                <a class="dropdown-item" href="#">TV</a>
-                <a class="dropdown-item" href="#">Outlet</a>
+    <div class="container">
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="<?= base_url('public/') ?>">Principal</a>
+          </li>
+          <li class="nav-item dropdown mx-2">
+            <a class="nav-link dropdown-toggle" href="#" id="megaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Catálogo de Productos
+            </a>
+            <div class="dropdown-menu mega-dropdown" aria-labelledby="megaDropdown">
+              <div class="row gx-4 gy-2 px-4 py-3">
+                <div class="col-12 col-md-3">
+                  <a class="dropdown-item" href="#">Notebooks</a>
+                  <a class="dropdown-item" href="#">PCs Mini</a>
+                  <a class="dropdown-item" href="#">Motherboards</a>
+                  <a class="dropdown-item" href="#">Procesadores</a>
+                  <a class="dropdown-item" href="#">Memorias Ram</a>
+                  <a class="dropdown-item" href="#">Almacenamiento</a>
+                  <a class="dropdown-item" href="#">Placas de Video</a>
+                </div>
+                <div class="col-12 col-md-3">
+                  <a class="dropdown-item" href="#">Fuentes de Poder</a>
+                  <a class="dropdown-item" href="#">Gabinetes</a>
+                  <a class="dropdown-item" href="#">Refrigeración PC</a>
+                  <a class="dropdown-item" href="#">Combos Actualización PC</a>
+                  <a class="dropdown-item" href="#">Teclados, Mouses y Pads</a>
+                  <a class="dropdown-item" href="#">Auriculares y Micrófonos</a>
+                  <a class="dropdown-item" href="#">Cámaras Web e IP</a>
+                </div>
+                <div class="col-12 col-md-3">
+                  <a class="dropdown-item" href="#">Monitores</a>
+                  <a class="dropdown-item" href="#">Impresoras y Plotters</a>
+                  <a class="dropdown-item" href="#">Conectividad y Redes</a>
+                  <a class="dropdown-item" href="#">Ups y Estabilizadores</a>
+                  <a class="dropdown-item" href="#">Sillas Gamers</a>
+                  <a class="dropdown-item" href="#">Consolas</a>
+                  <a class="dropdown-item" href="#">Volantes y Gamepads</a>
+                </div>
+                <div class="col-12 col-md-3">
+                  <a class="dropdown-item" href="#">Parlantes y Audio</a>
+                  <a class="dropdown-item" href="#">Proyectores</a>
+                  <a class="dropdown-item" href="#">Software</a>
+                  <a class="dropdown-item" href="#">Tablets y eBooks</a>
+                  <a class="dropdown-item" href="#">Tabletas Gráficas</a>
+                  <a class="dropdown-item" href="#">TV</a>
+                  <a class="dropdown-item" href="#">Outlet</a>
+                </div>
               </div>
             </div>
-          </div>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="<?= base_url('public/quienes_somos') ?>">Quienes Somos</a>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="<?= base_url('public/comercializacion') ?>">Comercialización</a>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="<?= base_url('public/contacto') ?>">Información de Contacto</a>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="<?= base_url('public/terminos') ?>">Términos y Usos</a>
-        </li>
-      </ul>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="<?= base_url('public/quienes_somos') ?>">Quienes Somos</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="<?= base_url('public/comercializacion') ?>">Comercialización</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="<?= base_url('public/contacto') ?>">Información de Contacto</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="<?= base_url('public/terminos') ?>">Términos y Usos</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
 </div>
-

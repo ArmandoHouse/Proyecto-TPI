@@ -12,15 +12,12 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
-
-  <!-- CSS fijos para header, marcas y footer -->
   <link rel="stylesheet" href="<?= base_url('public/assets/css/views/layouts/header.css') ?>">
   <link rel="stylesheet" href="<?= base_url('public/assets/css/views/layouts/marcas.css') ?>">
   <link rel="stylesheet" href="<?= base_url('public/assets/css/views/layouts/footer.css') ?>">
 
   <title><?= $this->renderSection('titulo') ?></title>
-  
-  <!-- CSS por sección -->
+
   <?= $this->renderSection('styles') ?>
 </head>
 
