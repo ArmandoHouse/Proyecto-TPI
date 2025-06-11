@@ -18,6 +18,13 @@ $routes->get('/terminos', 'Terminos::index');
 
 $routes->get('/catalogo', 'Catalogo::index');
 
+$routes->get('/carrito', 'Carrito::index');
+
+$routes->post('carrito/agregar/(:num)', 'Carrito::agregar/$1');
+
+$routes->post('carrito/eliminar/(:num)', 'Carrito::eliminar/$1');
+
+
 $routes->get('/registro', 'Autenticacion::registrarse');
 
 $routes->post('/registro', 'Autenticacion::registrarsePost');

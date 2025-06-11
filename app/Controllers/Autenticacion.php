@@ -38,6 +38,22 @@ class Autenticacion extends BaseController
                 'logueado' => true
             ]);
 
+            // ✅ Buscar o crear carrito
+            $carritoModel = new \App\Models\CarritoModel();
+            $carrito = $carritoModel->where('usuario_id', $usuario['id'])->first();
+
+            if (!$carrito) {
+                // Crear uno nuevo si no existe
+                $carritoID = $carritoModel->insert([
+                    'usuario_id' => $usuario['id']
+                ]);
+            } else {
+                $carritoID = $carrito['id'];
+            }
+
+            // ✅ Guardar ID del carrito en la sesión
+            session()->set('carrito_id', $carritoID);
+
             return redirect()->to(base_url('public/'));
         } else {
             // Error de login
