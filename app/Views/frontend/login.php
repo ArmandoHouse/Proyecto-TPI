@@ -9,10 +9,9 @@ Inicio de Sesión
 <?php if (session()->getFlashdata('error')): ?>
     <div class="alert alert-danger">
         <?= session()->getFlashdata('error') ?>
-        <br>
-        <small>Verifica que el correo electrónico y la contraseña sean correctos.</small>
     </div>
 <?php endif; ?>
+
 
 <div class="container mt-5" style="max-width: 500px;">
     <h2 class="mb-4 text-center">Iniciar Sesión</h2>

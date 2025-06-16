@@ -132,6 +132,8 @@
   }
 </style>
 
+
+
 <div class="sticky-top">
   <!-- Top Bar: Sección Superior con la clase "fondo" -->
   <div class="fondo text-white">
@@ -163,9 +165,11 @@
 
         <!-- Íconos (Se muestra solo un botón para el carrito y otro para usuario) -->
         <div class="col-6 col-md-2 d-flex justify-content-end align-items-center gap-2">
-          <button type="button" class="btn btn-circle me-2">
-            <i class="fa-solid fa-cart-shopping" style="width: 30px;"></i>
-          </button>
+          <a href="<?= base_url('public/carrito') ?>">
+            <button type="button" class="btn btn-circle me-2">
+              <i class="fa-solid fa-cart-shopping" style="width: 30px;"></i>
+            </button>
+          </a>
           <?php if ($session->get('logueado')): ?>
             <div class="dropdown">
               <a href="#" class="text-white text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown">
@@ -188,6 +192,14 @@
     </div>
   </div>
 
+  <?php
+
+  use App\Models\CategoriasModel;
+
+  $categoriaModel = new CategoriasModel();
+  $categorias = $categoriaModel->findAll();
+  ?>
+
   <!-- Menú de Navegación: Fondo azul -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
@@ -200,46 +212,31 @@
             <a class="nav-link dropdown-toggle" href="#" id="megaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Catálogo de Productos
             </a>
+
             <div class="dropdown-menu mega-dropdown" aria-labelledby="megaDropdown">
               <div class="row gx-4 gy-2 px-4 py-3">
-                <div class="col-12 col-md-3">
-                  <a class="dropdown-item" href="#">Notebooks</a>
-                  <a class="dropdown-item" href="#">PCs Mini</a>
-                  <a class="dropdown-item" href="#">Motherboards</a>
-                  <a class="dropdown-item" href="#">Procesadores</a>
-                  <a class="dropdown-item" href="#">Memorias Ram</a>
-                  <a class="dropdown-item" href="#">Almacenamiento</a>
-                  <a class="dropdown-item" href="#">Placas de Video</a>
-                </div>
-                <div class="col-12 col-md-3">
-                  <a class="dropdown-item" href="#">Fuentes de Poder</a>
-                  <a class="dropdown-item" href="#">Gabinetes</a>
-                  <a class="dropdown-item" href="#">Refrigeración PC</a>
-                  <a class="dropdown-item" href="#">Combos Actualización PC</a>
-                  <a class="dropdown-item" href="#">Teclados, Mouses y Pads</a>
-                  <a class="dropdown-item" href="#">Auriculares y Micrófonos</a>
-                  <a class="dropdown-item" href="#">Cámaras Web e IP</a>
-                </div>
-                <div class="col-12 col-md-3">
-                  <a class="dropdown-item" href="#">Monitores</a>
-                  <a class="dropdown-item" href="#">Impresoras y Plotters</a>
-                  <a class="dropdown-item" href="#">Conectividad y Redes</a>
-                  <a class="dropdown-item" href="#">Ups y Estabilizadores</a>
-                  <a class="dropdown-item" href="#">Sillas Gamers</a>
-                  <a class="dropdown-item" href="#">Consolas</a>
-                  <a class="dropdown-item" href="#">Volantes y Gamepads</a>
-                </div>
-                <div class="col-12 col-md-3">
-                  <a class="dropdown-item" href="#">Parlantes y Audio</a>
-                  <a class="dropdown-item" href="#">Proyectores</a>
-                  <a class="dropdown-item" href="#">Software</a>
-                  <a class="dropdown-item" href="#">Tablets y eBooks</a>
-                  <a class="dropdown-item" href="#">Tabletas Gráficas</a>
-                  <a class="dropdown-item" href="#">TV</a>
-                  <a class="dropdown-item" href="#">Outlet</a>
-                </div>
+                <?php if (!empty($categorias)) : ?>
+                  <?php
+                  $maxFilasPorColumna = 4;
+                  $chunks = array_chunk($categorias, $maxFilasPorColumna);
+                  ?>
+                  <?php foreach ($chunks as $columna) : ?>
+                    <div class="col-12 col-md-3">
+                      <?php foreach ($columna as $categoria) : ?>
+                        <a class="dropdown-item" href="<?= base_url('public/catalogo/ver_catalogo/' . $categoria['id']) ?>">
+                          <?= esc($categoria['nombre']) ?>
+                        </a>
+                      <?php endforeach; ?>
+                    </div>
+                  <?php endforeach; ?>
+                <?php else : ?>
+                  <div class="col-12">
+                    <span class="dropdown-item text-muted">No hay categorías</span>
+                  </div>
+                <?php endif; ?>
               </div>
             </div>
+
           </li>
           <li class="nav-item mx-2">
             <a class="nav-link" href="<?= base_url('public/quienes_somos') ?>">Quienes Somos</a>

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\UsuariosModel;
+use App\Models\CarritoItemsModel;
 
 class Autenticacion extends BaseController
 {
@@ -23,7 +24,7 @@ class Autenticacion extends BaseController
         ];
 
         if (!$this->validate($reglasValidacion)) {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            return redirect()->to(base_url('public/registro'))->withInput()->with('errors', $this->validator->getErrors());
         }
 
         $datosUsuario = [
@@ -36,6 +37,7 @@ class Autenticacion extends BaseController
             'baja' => 0
         ];
 
+
         $usuariosModel = new UsuariosModel();
         $usuariosModel->insert($datosUsuario);
 
@@ -47,7 +49,6 @@ class Autenticacion extends BaseController
         return view('frontend/login');
     }
 
-
     public function loginPost()
     {
         $email = $this->request->getPost('email');
@@ -57,9 +58,9 @@ class Autenticacion extends BaseController
         $usuario = $usuarioModel->where('email', $email)->where('baja', 0)->first();
 
         if (!$usuario || !password_verify($password, $usuario['password'])) {
-            return redirect()->back()->withInput()->with('error', 'Email o contraseña incorrectos.');
+            return redirect()->to(base_url('public/login'))->withInput()->with('error', 'Email o contraseña incorrectos.');
         }
-
+   
         session()->set([
             'usuario_id' => $usuario['id'],
             'nom_usuario' => $usuario['nom_usuario'],

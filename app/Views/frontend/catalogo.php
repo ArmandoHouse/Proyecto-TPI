@@ -6,27 +6,36 @@
 
 <?= $this->section('contenido') ?>
 
-<h1>Catalogo de Productos</h1>
+<div class="container">
+    <h1><?= esc($nombreCategoria) ?></h1>
+</div>
 
-  <div class="container">
+<div class="container my-4">
     <div class="row">
-
-        <?php foreach($productos as $producto): ?>
-                
-                    <!-- Card 1 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
-                      <div class="card h-100">
-                        <img src="<?= base_url('public/assets/img/categorias/' . $producto['imagen']) ?>" alt="Imagen del producto">
-                        <div class="card-body d-flex flex-column">
-                          <h5 class="card-title"><?php echo $producto['nombre']; ?></h5>
-                          <p class="card-text"><?php echo $producto['descripcion']; ?></p>
-                          <p class="fw-bold">$<?php echo $producto['precio']; ?></p>
-                          <a href="#" class="btn btn-primary mt-auto">Ver más</a>
+        <?php foreach ($productos as $producto): ?>
+            <div class="col-md-4 mb-4">
+                <a href="<?= base_url('public/catalogo/ver_producto/' . $producto['id']) ?>" class="text-decoration-none text-dark" style="display:block;">
+                    <div class="card h-100">
+                        <?php if (!empty($producto['imagen'])): ?>
+                            <img src="<?= base_url('public/assets/img/card.jpg') ?>" class="card-img-top" alt="<?= esc($producto['nombre']) ?>">
+                        <?php else: ?>
+                            <img src="<?= base_url('public/assets/img/card.jpg') ?>" class="card-img-top" alt="Sin imagen">
+                        <?php endif; ?>
+                        <div class="card-body">
+                            <h5 class="card-title"><?= esc($producto['nombre']) ?></h5>
+                            <p class="card-text">$<?= number_format($producto['precio'], 2, ',', '.') ?></p>
                         </div>
+                    </div>
+                </a>
+            </div>
         <?php endforeach; ?>
-
+        <?php if (empty($productos)): ?>
+            <div class="col-12">
+                <div class="alert alert-info text-center">No hay productos en esta categoría.</div>
+            </div>
+        <?php endif; ?>
     </div>
-  </div>
-    
+</div>
+
 
 <?= $this->endSection() ?>

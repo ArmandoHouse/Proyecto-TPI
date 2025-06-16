@@ -1,28 +1,48 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\ProductosModel;
+use App\Models\CategoriasModel;
+
 
 class Catalogo extends BaseController
 {
     public function index(): string
     {
-        $productosModel = new ProductosModel();
-        $resultado = $productosModel->findAll();
-
-        $data = ['productos' => $resultado];
-
-        return view('catalogo', $data);
+        return view('frontend/catalogo');
     }
 
+    public function ver_catalogo($id)
+    {
+        $productosModel = new ProductosModel();
+        $categoriasModel = new CategoriasModel();
+        
+        $categoria = $categoriasModel->find($id);
 
-    public function ver_producto($id) {
+        if(!$categoria) {
+            return redirect()->to(base_url('public/'))->with('error', 'Categoría no encontrada');
+        }
+        
+        $productos = $productosModel->where('categoria_id', $id)->findAll();
+
+        $data = [
+            'productos' => $productos,
+            'nombreCategoria' => $categoria['nombre']
+        ];
+
+        return view('frontend/catalogo', $data);
+    }
+
+    public function ver_producto($id)
+    {
         $productosModel = new ProductosModel();
         $producto = $productosModel->find($id);
 
-        $data = ['producto' => $producto];
-
-        return view('ver_producto', $data);
+        if (!$producto) {
+            return redirect()->to(base_url('public/'))->with('error', 'Producto no encontrado');
+        }
+ 
+        return view('frontend/ver_producto', ['producto' => $producto]);
     }
-
 }
