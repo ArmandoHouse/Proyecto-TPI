@@ -25,6 +25,16 @@ $routes->post('carrito/agregar/(:num)', 'Carrito::agregar/$1');
 $routes->post('carrito/eliminar/(:num)', 'Carrito::eliminar/$1');
 
 
+$routes->get('/admin/categorias', 'Categorias::index');
+
+$routes->post('/admin/categorias/cargar_categoria', 'Categorias::cargarCategoria');
+
+$routes->get('/admin/categorias/nueva', 'Categorias::nueva');
+
+$routes->post('admin/categorias/eliminar/(:num)', 'Categorias::eliminar/$1');
+
+$routes->get('/admin/categorias/reactivar/(:num)', 'Categorias::reactivar/$1');
+
 $routes->get('/registro', 'Autenticacion::registrarse');
 
 $routes->post('/registro', 'Autenticacion::registrarsePost');

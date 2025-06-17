@@ -8,51 +8,48 @@
   <style>
     .sidebar {
       height: 100vh;
-      position: fixed;
     }
   </style>
 </head>
 <body>
-  <!-- Sidebar -->
-  <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="position-sticky pt-3 sidebar-sticky">
+
+<div class="container-fluid">
+  <div class="row">
+    
+    <!-- Sidebar -->
+    <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="<?= base_url('admin') ?>">
-              <i class="bi bi-house-door-fill"></i>
-              Dashboard
-            </a>
+            <a class="nav-link" href="<?= base_url('public/admin') ?>"><i class="bi bi-house-door-fill"></i> Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('admin/usuarios') ?>">
-              <i class="bi bi-people-fill"></i>
-              Usuarios
-            </a>
+            <a class="nav-link" href="<?= base_url('admin/usuarios') ?>"><i class="bi bi-people-fill"></i> Usuarios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('admin/productos') ?>">
-              <i class="bi bi-box-seam"></i>
-              Productos
-            </a>
+            <a class="nav-link" href="<?= base_url('admin/productos') ?>"><i class="bi bi-box-seam"></i> Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('admin/ordenes') ?>">
-              <i class="bi bi-receipt-cutoff"></i>
-              Órdenes
-            </a>
+            <a class="nav-link" href="<?= base_url('public/admin/categorias') ?>"><i class="bi bi-box-seam"></i> Categorias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-danger" href="<?= base_url('logout') ?>">
-                <i class="bi bi-box-arrow-right"></i>
-                Cerrar sesión
-            </a>
+            <a class="nav-link" href="<?= base_url('admin/ordenes') ?>"><i class="bi bi-receipt-cutoff"></i> Órdenes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-danger" href="<?= base_url('public/logout') ?>"><i class="bi bi-box-arrow-right"></i> Cerrar sesión</a>
           </li>
         </ul>
       </div>
     </nav>
 
-  <?= $this->renderSection('contenido') ?>
+    <!-- Contenido principal -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+      <?= $this->renderSection('contenido') ?>
+    </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

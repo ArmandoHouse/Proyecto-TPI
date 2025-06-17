@@ -61,4 +61,6 @@ class Admin extends BaseController
 
         return redirect()->to(base_url('public/admin/cargar-producto'))->with('mensaje', 'Producto guardado con éxito');
     }
+
+    
 }
