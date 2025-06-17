@@ -8,7 +8,7 @@ class Principal extends BaseController
     public function index(): string
     {
 
-        return view('principal');
+        return view('frontend/principal');
     }
 
 }

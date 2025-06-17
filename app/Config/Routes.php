@@ -6,25 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-$routes->get('/', 'Principal::index');
-
-$routes->get('/quienes_somos', 'QuienesSomos::index');
-
-$routes->get('/comercializacion', 'Comercializacion::index');
-
-$routes->get('/contacto', 'Contacto::index');
-
-$routes->get('/terminos', 'Terminos::index');
-
-$routes->get('/catalogo', 'Catalogo::index');
-
-$routes->get('/carrito', 'Carrito::index');
-
-$routes->post('carrito/agregar/(:num)', 'Carrito::agregar/$1');
-
-$routes->post('carrito/eliminar/(:num)', 'Carrito::eliminar/$1');
-
-
+// Categorias
 $routes->get('/admin/categorias', 'Categorias::index');
 
 $routes->post('/admin/categorias/cargar_categoria', 'Categorias::cargarCategoria');
@@ -35,20 +17,42 @@ $routes->post('admin/categorias/eliminar/(:num)', 'Categorias::eliminar/$1');
 
 $routes->get('/admin/categorias/reactivar/(:num)', 'Categorias::reactivar/$1');
 
-$routes->get('/registro', 'Autenticacion::registrarse');
-
-$routes->post('/registro', 'Autenticacion::registrarsePost');
-
+// Registro, Login
+$routes->get('/registro', 'Autenticacion::registro');
+$routes->post('/registro', 'Autenticacion::registroPost');
 $routes->get('/login', 'Autenticacion::login');
-
 $routes->post('/login', 'Autenticacion::loginPost');
 
-$routes->get('/logout', 'Autenticacion::logout');
+// Catalogo
+$routes->get('/catalogo/ver_catalogo/(:num)', 'Catalogo::ver_catalogo/$1');
+$routes->get('/catalogo/ver_producto/(:num)', 'Catalogo::ver_producto/$1');
 
-$routes->get('/admin/cargar-producto', 'Admin::cargarProducto');
 
-$routes->get('/admin', 'Admin::panel');
+// Filtro usuarios validos
+$routes->group('', ['filter' => 'sesion_valida'], function ($routes) {
 
-$routes->post('/admin/guardar-producto', 'Admin::guardarProducto');
+    $routes->get('/logout', 'Autenticacion::logout');
 
-$routes->get('/catalogo/(:num)', 'Catalogo::ver_producto/$1');
+    $routes->post('/carrito/agregar/(:num)', 'Carrito::agregar/$1');
+    $routes->post('/carrito/eliminar/(:num)', 'Carrito::eliminar/$1');
+
+
+    $routes->group('admin', ['filter' => 'sesion_admin'], function ($routes) {
+        $routes->get('', 'Admin::panel');
+
+        $routes->get('productos', 'Admin::productos');
+
+        $routes->get('productos/agregar', 'Admin::agregarProducto');
+        $routes->post('productos/agregar', 'Admin::agregarProductoPost');
+
+        $routes->get('productos/editar/(:num)', 'Admin::editarProducto/$1');
+        $routes->post('productos/editar/(:num)', 'Admin::editarProductoPost/$1');
+
+        $routes->post('productos/eliminar/(:num)', 'Admin::eliminarProducto/$1');
+
+        $routes->get('usuarios', 'Admin::usuarios');
+        $routes->get('usuarios/activar/(:num)', 'Admin::activarUsuario/$1');
+        $routes->get('usuarios/suspender/(:num)', 'Admin::suspenderUsuario/$1');
+        $routes->get('usuarios/eliminar/(:num)', 'Admin::eliminarUsuario/$1');
+    });
+});

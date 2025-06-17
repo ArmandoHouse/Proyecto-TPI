@@ -1,0 +1,800 @@
+CRITICAL - 2025-06-16 14:33:01 --> ErrorException: Undefined variable $nombreCategoria
+[Method: GET, Route: catalogo]
+in APPPATH\Views\frontend\catalogo.php on line 10.
+ 1 APPPATH\Views\frontend\catalogo.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nombreCategoria', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\frontend\\catalogo.php', 10)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\frontend\\catalogo.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('frontend/catalogo', [], true)
+ 5 APPPATH\Controllers\Catalogo.php(13): view('frontend/catalogo')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Catalogo->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Catalogo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-06-16 14:58:31 --> mysqli_sql_exception: Column 'usuario_id' cannot be null in E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `ca...', 0)
+#1 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ca...')
+#2 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ca...')
+#3 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ca...', Array, false)
+#4 E:\xampp\htdocs\Proyecto-TPI\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\xampp\htdocs\Proyecto-TPI\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 E:\xampp\htdocs\Proyecto-TPI\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\Carrito.php(50): CodeIgniter\Model->insert(Array)
+#8 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\Carrito->agregar('1')
+#9 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+#10 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-06-16 14:58:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'usuario_id' cannot be null
+[Method: POST, Route: carrito/agregar/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (:usuario_id:, :producto_id:, :cantidad:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Carrito.php(50): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Carrito->agregar('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 14:58:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'usuario_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'1\', 1)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'1\', 1)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (:usuario_id:, :producto_id:, :cantidad:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Carrito.php(50): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Carrito->agregar('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 14:58:32 --> [Caused by] mysqli_sql_exception: Column 'usuario_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'1\', 1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'1\', 1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'1\', 1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (:usuario_id:, :producto_id:, :cantidad:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Carrito.php(50): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Carrito->agregar('1')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-06-16 14:58:44 --> mysqli_sql_exception: Column 'usuario_id' cannot be null in E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `ca...', 0)
+#1 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ca...')
+#2 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ca...')
+#3 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ca...', Array, false)
+#4 E:\xampp\htdocs\Proyecto-TPI\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\xampp\htdocs\Proyecto-TPI\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 E:\xampp\htdocs\Proyecto-TPI\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\Carrito.php(50): CodeIgniter\Model->insert(Array)
+#8 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\Carrito->agregar('1')
+#9 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+#10 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-06-16 14:58:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'usuario_id' cannot be null
+[Method: POST, Route: carrito/agregar/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (:usuario_id:, :producto_id:, :cantidad:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Carrito.php(50): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Carrito->agregar('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 14:58:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'usuario_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'1\', 1)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'1\', 1)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (:usuario_id:, :producto_id:, :cantidad:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Carrito.php(50): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Carrito->agregar('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 14:58:44 --> [Caused by] mysqli_sql_exception: Column 'usuario_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'1\', 1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'1\', 1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'1\', 1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (:usuario_id:, :producto_id:, :cantidad:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Carrito.php(50): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Carrito->agregar('1')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-06-16 14:59:25 --> mysqli_sql_exception: Column 'usuario_id' cannot be null in E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `ca...', 0)
+#1 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ca...')
+#2 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ca...')
+#3 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ca...', Array, false)
+#4 E:\xampp\htdocs\Proyecto-TPI\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\xampp\htdocs\Proyecto-TPI\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 E:\xampp\htdocs\Proyecto-TPI\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\Carrito.php(50): CodeIgniter\Model->insert(Array)
+#8 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\Carrito->agregar('1')
+#9 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+#10 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-06-16 14:59:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'usuario_id' cannot be null
+[Method: POST, Route: carrito/agregar/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (:usuario_id:, :producto_id:, :cantidad:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Carrito.php(50): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Carrito->agregar('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 14:59:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'usuario_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'1\', 1)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'1\', 1)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (:usuario_id:, :producto_id:, :cantidad:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Carrito.php(50): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Carrito->agregar('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 14:59:25 --> [Caused by] mysqli_sql_exception: Column 'usuario_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'1\', 1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'1\', 1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'1\', 1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (:usuario_id:, :producto_id:, :cantidad:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Carrito.php(50): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Carrito->agregar('1')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-06-16 15:00:06 --> mysqli_sql_exception: Column 'usuario_id' cannot be null in E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `ca...', 0)
+#1 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ca...')
+#2 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ca...')
+#3 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ca...', Array, false)
+#4 E:\xampp\htdocs\Proyecto-TPI\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\xampp\htdocs\Proyecto-TPI\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 E:\xampp\htdocs\Proyecto-TPI\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\Carrito.php(50): CodeIgniter\Model->insert(Array)
+#8 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\Carrito->agregar('2')
+#9 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+#10 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-06-16 15:00:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'usuario_id' cannot be null
+[Method: POST, Route: carrito/agregar/2]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (:usuario_id:, :producto_id:, :cantidad:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Carrito.php(50): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Carrito->agregar('2')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 15:00:06 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'usuario_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'2\', 1)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'2\', 1)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (:usuario_id:, :producto_id:, :cantidad:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Carrito.php(50): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Carrito->agregar('2')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 15:00:06 --> [Caused by] mysqli_sql_exception: Column 'usuario_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'2\', 1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'2\', 1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (NULL, \'2\', 1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `carrito_items` (`usuario_id`, `producto_id`, `cantidad`) VALUES (:usuario_id:, :producto_id:, :cantidad:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Carrito.php(50): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Carrito->agregar('2')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 20:43:06 --> CodeIgniter\View\Exceptions\ViewException: Archivo inválido: backend/agregar_producto.php
+[Method: GET, Route: admin/agregar_producto]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('backend/agregar_producto.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/agregar_producto', [], true)
+ 3 APPPATH\Controllers\Admin.php(23): view('backend/agregar_producto')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 20:43:23 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/agregar_producto]
+in APPPATH\Views\backend\agregar_producto.php on line 42.
+ 1 APPPATH\Views\backend\agregar_producto.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\agregar_producto.php', 42)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\agregar_producto.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/agregar_producto', [], true)
+ 5 APPPATH\Controllers\Admin.php(23): view('backend/agregar_producto')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->agregar_producto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 20:43:38 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/agregar_producto]
+in APPPATH\Views\backend\agregar_producto.php on line 42.
+ 1 APPPATH\Views\backend\agregar_producto.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\agregar_producto.php', 42)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\agregar_producto.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/agregar_producto', [], true)
+ 5 APPPATH\Controllers\Admin.php(23): view('backend/agregar_producto')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->agregar_producto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:07:54 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:07:54 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:07:55 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:07:55 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:07:56 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:07:56 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:07:57 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:07:57 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:07:58 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:07:58 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:07:59 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:07:59 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:08:00 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:08:01 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:08:03 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:08:17 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 20.
+ 1 APPPATH\Views\backend\productos.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(18): view('backend/productos')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:09:55 --> ErrorException: Undefined array key "estado"
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 57.
+ 1 APPPATH\Views\backend\productos.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "estado"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 57)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(24): view('backend/productos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:10:29 --> ErrorException: Undefined array key "estado"
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 52.
+ 1 APPPATH\Views\backend\productos.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "estado"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 52)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(24): view('backend/productos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:10:43 --> ErrorException: Undefined array key "estado"
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 57.
+ 1 APPPATH\Views\backend\productos.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "estado"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 57)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(24): view('backend/productos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:10:58 --> ErrorException: Undefined array key "estado"
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 57.
+ 1 APPPATH\Views\backend\productos.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "estado"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 57)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(24): view('backend/productos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:11:05 --> ErrorException: Undefined array key "estado"
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 57.
+ 1 APPPATH\Views\backend\productos.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "estado"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 57)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(24): view('backend/productos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:13:12 --> ErrorException: Undefined array key "estado"
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 56.
+ 1 APPPATH\Views\backend\productos.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "estado"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 56)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(24): view('backend/productos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:13:16 --> ErrorException: Undefined array key "estado"
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 56.
+ 1 APPPATH\Views\backend\productos.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "estado"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 56)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(24): view('backend/productos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:13:20 --> ErrorException: Undefined array key "estado"
+[Method: GET, Route: admin/productos]
+in APPPATH\Views\backend\productos.php on line 56.
+ 1 APPPATH\Views\backend\productos.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "estado"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php', 56)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\productos.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/productos', [], true)
+ 5 APPPATH\Controllers\Admin.php(24): view('backend/productos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->productos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:26:25 --> ErrorException: Undefined array key "activo"
+[Method: GET, Route: admin/productos/editar_producto/1]
+in APPPATH\Views\backend\editar_producto.php on line 44.
+ 1 APPPATH\Views\backend\editar_producto.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "activo"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php', 44)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/editar_producto', [], true)
+ 5 APPPATH\Controllers\Admin.php(73): view('backend/editar_producto', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->editarProducto('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:26:50 --> ErrorException: Undefined array key "activo"
+[Method: GET, Route: admin/productos/editar_producto/1]
+in APPPATH\Views\backend\editar_producto.php on line 44.
+ 1 APPPATH\Views\backend\editar_producto.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "activo"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php', 44)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/editar_producto', [], true)
+ 5 APPPATH\Controllers\Admin.php(73): view('backend/editar_producto', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->editarProducto('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:43:42 --> ErrorException: Undefined array key "activo"
+[Method: GET, Route: admin/productos/editar_producto/1]
+in APPPATH\Views\backend\editar_producto.php on line 44.
+ 1 APPPATH\Views\backend\editar_producto.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "activo"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php', 44)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/editar_producto', [], true)
+ 5 APPPATH\Controllers\Admin.php(73): view('backend/editar_producto', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->editarProducto('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:43:47 --> ErrorException: Undefined array key "activo"
+[Method: GET, Route: admin/productos/editar_producto/1]
+in APPPATH\Views\backend\editar_producto.php on line 44.
+ 1 APPPATH\Views\backend\editar_producto.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "activo"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php', 44)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/editar_producto', [], true)
+ 5 APPPATH\Controllers\Admin.php(73): view('backend/editar_producto', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->editarProducto('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:44:19 --> ErrorException: Undefined array key "activo"
+[Method: GET, Route: admin/productos/editar_producto/1]
+in APPPATH\Views\backend\editar_producto.php on line 44.
+ 1 APPPATH\Views\backend\editar_producto.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "activo"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php', 44)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/editar_producto', [], true)
+ 5 APPPATH\Controllers\Admin.php(73): view('backend/editar_producto', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->editarProducto('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:45:56 --> ErrorException: Undefined array key "activo"
+[Method: GET, Route: admin/productos/editar_producto/1]
+in APPPATH\Views\backend\editar_producto.php on line 44.
+ 1 APPPATH\Views\backend\editar_producto.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "activo"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php', 44)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/editar_producto', [], true)
+ 5 APPPATH\Controllers\Admin.php(73): view('backend/editar_producto', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->editarProducto('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:48:37 --> ErrorException: Undefined array key "activo"
+[Method: GET, Route: admin/productos/editar_producto/1]
+in APPPATH\Views\backend\editar_producto.php on line 12.
+ 1 APPPATH\Views\backend\editar_producto.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "activo"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php', 12)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/editar_producto', [], true)
+ 5 APPPATH\Controllers\Admin.php(73): view('backend/editar_producto', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->editarProducto('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:48:46 --> ErrorException: Undefined array key "activo"
+[Method: GET, Route: admin/productos/editar_producto/1]
+in APPPATH\Views\backend\editar_producto.php on line 12.
+ 1 APPPATH\Views\backend\editar_producto.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "activo"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php', 12)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/editar_producto', [], true)
+ 5 APPPATH\Controllers\Admin.php(73): view('backend/editar_producto', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->editarProducto('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:49:39 --> ArgumentCountError: Too few arguments to function CodeIgniter\View\View::section(), 0 passed in E:\xampp\htdocs\Proyecto-TPI\app\Views\backend\editar_producto.php on line 52 and exactly 1 expected
+[Method: GET, Route: admin/productos/editar_producto/1]
+in SYSTEMPATH\View\View.php on line 411.
+ 1 APPPATH\Views\backend\editar_producto.php(52): CodeIgniter\View\View->section()
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/editar_producto', [], true)
+ 5 APPPATH\Controllers\Admin.php(73): view('backend/editar_producto', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->editarProducto('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 21:50:03 --> ArgumentCountError: Too few arguments to function CodeIgniter\View\View::section(), 0 passed in E:\xampp\htdocs\Proyecto-TPI\app\Views\backend\editar_producto.php on line 7 and exactly 1 expected
+[Method: GET, Route: admin/productos/editar_producto/1]
+in SYSTEMPATH\View\View.php on line 411.
+ 1 APPPATH\Views\backend\editar_producto.php(7): CodeIgniter\View\View->section()
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\backend\\editar_producto.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/editar_producto', [], true)
+ 5 APPPATH\Controllers\Admin.php(73): view('backend/editar_producto', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->editarProducto('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 22:32:25 --> ErrorException: unlink(public/assets/img/procesadores.jpg): No such file or directory
+[Method: POST, Route: admin/productos/eliminar/5]
+in APPPATH\Controllers\Admin.php on line 117.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(public/assets/img/procesadores.jpg): No such file or directory', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Controllers\\Admin.php', 117)
+ 2 APPPATH\Controllers\Admin.php(117): unlink('public/assets/img/procesadores.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->eliminarProducto('5')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 22:33:08 --> ErrorException: unlink(public/assets/img/procesadores.jpg): No such file or directory
+[Method: POST, Route: admin/productos/eliminar/5]
+in APPPATH\Controllers\Admin.php on line 117.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(public/assets/img/procesadores.jpg): No such file or directory', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Controllers\\Admin.php', 117)
+ 2 APPPATH\Controllers\Admin.php(117): unlink('public/assets/img/procesadores.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->eliminarProducto('5')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

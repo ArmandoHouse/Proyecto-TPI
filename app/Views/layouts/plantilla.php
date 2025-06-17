@@ -12,27 +12,24 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
-
-  <!-- CSS fijos para header, marcas y footer -->
   <link rel="stylesheet" href="<?= base_url('public/assets/css/views/layouts/header.css') ?>">
   <link rel="stylesheet" href="<?= base_url('public/assets/css/views/layouts/marcas.css') ?>">
   <link rel="stylesheet" href="<?= base_url('public/assets/css/views/layouts/footer.css') ?>">
 
   <title><?= $this->renderSection('titulo') ?></title>
-  
-  <!-- CSS por sección -->
+
   <?= $this->renderSection('styles') ?>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
   <?= $this->include('layouts/header') ?>
-  <?= $this->renderSection('contenido') ?>
+  <main class="flex-fill">
+    <?= $this->renderSection('contenido') ?>
+  </main>
   <?= $this->include('layouts/marcas') ?>
   <?= $this->include('layouts/footer') ?>
   <?= $this->renderSection('scripts') ?>
-
   <script src="<?= base_url('public/assets/js/bootstrap.bundle.min.js') ?>"></script>
-
 </body>
 
 </html>

@@ -6,7 +6,7 @@ class Contacto extends BaseController
 {
     public function index(): string
     {
-        return view('contacto');
+        return view('frontend/contacto');
     }
 
 }

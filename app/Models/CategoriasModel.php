@@ -4,7 +4,8 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class CategoriasModel extends Model {
+class CategoriasModel extends Model
+{
 
     protected $table      = 'categorias';
     protected $primaryKey = 'id';
@@ -21,5 +22,4 @@ class CategoriasModel extends Model {
 
     // Dates
     protected $useTimestamps = false;
-    
 }
