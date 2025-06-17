@@ -1,4 +1,4 @@
-<?= $this->extend('layouts/plantilla') ?>
+<?= $this->extend('layouts/plantilla_admin') ?>
 
 <?= $this->section('contenido') ?>
 
@@ -18,7 +18,7 @@
 
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
-            <form action="<?= base_url('public/admin/guardar-producto')?>"  method="post" enctype="multipart/form-data" class="p-4 border rounded shadow-sm bg-light">
+            <form action="<?= base_url('public/admin/agregar_producto')?>"  method="post" enctype="multipart/form-data" class="p-4 border rounded shadow-sm bg-light">
 
                 <div class="mb-3">
                     <label class="form-label">Nombre:</label>

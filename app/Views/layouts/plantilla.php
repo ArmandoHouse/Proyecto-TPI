@@ -21,15 +21,15 @@
   <?= $this->renderSection('styles') ?>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
   <?= $this->include('layouts/header') ?>
-  <?= $this->renderSection('contenido') ?>
+  <main class="flex-fill">
+    <?= $this->renderSection('contenido') ?>
+  </main>
   <?= $this->include('layouts/marcas') ?>
   <?= $this->include('layouts/footer') ?>
   <?= $this->renderSection('scripts') ?>
-
   <script src="<?= base_url('public/assets/js/bootstrap.bundle.min.js') ?>"></script>
-
 </body>
 
 </html>

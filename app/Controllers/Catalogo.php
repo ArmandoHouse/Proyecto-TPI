@@ -8,11 +8,6 @@ use App\Models\CategoriasModel;
 
 class Catalogo extends BaseController
 {
-    public function index(): string
-    {
-        return view('frontend/catalogo');
-    }
-
     public function ver_catalogo($id)
     {
         $productosModel = new ProductosModel();
@@ -31,7 +26,7 @@ class Catalogo extends BaseController
             'nombreCategoria' => $categoria['nombre']
         ];
 
-        return view('frontend/catalogo', $data);
+        return view('frontend/ver_catalogo', $data);
     }
 
     public function ver_producto($id)

@@ -9,10 +9,6 @@ class Carrito extends BaseController
 {
     public function index()
     {
-        if (!session()->has('usuario_id')) {
-            return redirect()->to(base_url('public/login'))->with('error', 'Debés iniciar sesión para ver tu carrito');
-        }
-
         $usuarioId = session('usuario_id');
         $db = \Config\Database::connect();
 
@@ -28,10 +24,6 @@ class Carrito extends BaseController
 
     public function agregar($productoId)
     {
-        if (!session()->has('usuario_id')) {
-            return redirect()->to(base_url('public/login'))->with('error', 'Debés iniciar sesión para agregar productos al carrito');
-        }
-
         $productoModel = new ProductosModel();
         $producto = $productoModel->find($productoId);
 
@@ -63,16 +55,11 @@ class Carrito extends BaseController
         }
 
         // Redirige de vuelta a la vista del producto con un mensaje de éxito
-        return redirect()->to(base_url('public/catalogo/ver_producto/' . $productoId))
-            ->with('success', 'Producto agregado al carrito');
+        return redirect()->to(base_url('public/catalogo/ver_producto/' . $productoId))->with('success', 'Producto agregado al carrito');
     }
 
     public function eliminar($carritoId)
     {
-        if (!session()->has('usuario_id')) {
-            return redirect()->to(base_url('public/login'))->with('mensaje', 'Debés iniciar sesión');
-        }
-
         $carritoItemModel = new CarritoItemsModel();
         $item = $carritoItemModel->find($carritoId);
 

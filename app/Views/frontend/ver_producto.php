@@ -1,7 +1,7 @@
 <?= $this->extend('layouts/plantilla') ?>
 
 <?= $this->section('styles') ?>
-<link rel="stylesheet" href="<?= base_url('public/assets/css/views/quienes_somos.css') ?>">
+<link rel="stylesheet" href="<?= base_url('public/assets/css/views/principal.css') ?>">
 <?= $this->endSection() ?>
 
 <?= $this->section('contenido') ?>

@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Models\UsuariosModel;
-use App\Models\CarritoItemsModel;
 
 class Autenticacion extends BaseController
 {
@@ -27,7 +26,7 @@ class Autenticacion extends BaseController
             return redirect()->to(base_url('public/registro'))->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        $datosUsuario = [
+        $usuario = [
             'nombre' => $this->request->getPost('nombre'),
             'apellido' => $this->request->getPost('apellido'),
             'nom_usuario' => $this->request->getPost('username'),
@@ -39,7 +38,7 @@ class Autenticacion extends BaseController
 
 
         $usuariosModel = new UsuariosModel();
-        $usuariosModel->insert($datosUsuario);
+        $usuariosModel->insert($usuario);
 
         return redirect()->to(base_url('public/login'));
     }

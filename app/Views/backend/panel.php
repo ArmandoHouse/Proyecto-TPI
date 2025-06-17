@@ -3,18 +3,16 @@
 <?= $this->section('contenido') ?>
 
 <div class="container-fluid">
-  <div class="row">
-    
+  <div class="row">    
 
-    <!-- Contenido principal -->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Panel de Administración</h1>
       </div>
 
-      <h4>Bienvenido, <?= session('nom_usuario') ?></h4>
-
-      <!-- Estadísticas rápidas -->
+      <!-- <h4>Bienvenido, <?= session('nom_usuario') ?></h4>
+      
+      Estadísticas rápidas
       <div class="row">
         <div class="col-md-4">
           <div class="card text-white bg-primary mb-3">
@@ -41,9 +39,7 @@
           </div>
         </div>
       </div>
-
-
-      <!-- Tabla ejemplo -->
+            
       <h5 class="mt-4">Últimos Usuarios Registrados</h5>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
@@ -71,7 +67,7 @@
           </tbody>
         </table>
       </div>
-    </main>
+    </main> -->
   </div>
 </div>
 

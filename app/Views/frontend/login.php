@@ -6,7 +6,11 @@ Inicio de Sesión
 
 <?= $this->section('contenido') ?>
 
-<?php if (session()->getFlashdata('error')): ?>
+<?php if (session()->getFlashdata('mensaje')): ?>
+    <div class="alert alert-success">
+        <?= session()->getFlashdata('mensaje') ?>
+    </div>
+<?php elseif (session()->getFlashdata('error')): ?>
     <div class="alert alert-danger">
         <?= session()->getFlashdata('error') ?>
     </div>

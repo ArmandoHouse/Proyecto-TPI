@@ -2,6 +2,10 @@
 
 <?= $this->section('titulo') ?>Carrito - ZonaHardware<?= $this->endSection() ?>
 
+<?= $this->section('styles') ?>
+<link rel="stylesheet" href="<?= base_url('public/assets/css/views/principal.css') ?>">
+<?= $this->endSection() ?>
+
 <?= $this->section('contenido') ?>
 <div class="container py-5">
     <h2 class="mb-4">Tu carrito</h2>
