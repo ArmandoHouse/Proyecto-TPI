@@ -6,16 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-// Categorias
-$routes->get('/admin/categorias', 'Categorias::index');
-
-$routes->post('/admin/categorias/cargar_categoria', 'Categorias::cargarCategoria');
-
-$routes->get('/admin/categorias/nueva', 'Categorias::nueva');
-
-$routes->post('admin/categorias/eliminar/(:num)', 'Categorias::eliminar/$1');
-
-$routes->get('/admin/categorias/reactivar/(:num)', 'Categorias::reactivar/$1');
+$routes->get('/', 'Principal::index');
 
 // Registro, Login
 $routes->get('/registro', 'Autenticacion::registro');
@@ -27,6 +18,11 @@ $routes->post('/login', 'Autenticacion::loginPost');
 $routes->get('/catalogo/ver_catalogo/(:num)', 'Catalogo::ver_catalogo/$1');
 $routes->get('/catalogo/ver_producto/(:num)', 'Catalogo::ver_producto/$1');
 
+// Páginas informativas
+$routes->get('/quienes_somos', 'QuienesSomos::index');
+$routes->get('/comercializacion', 'Comercializacion::index');
+$routes->get('/contacto', 'Contacto::index');
+$routes->get('/terminos', 'Terminos::index');
 
 // Filtro usuarios validos
 $routes->group('', ['filter' => 'sesion_valida'], function ($routes) {
@@ -54,5 +50,22 @@ $routes->group('', ['filter' => 'sesion_valida'], function ($routes) {
         $routes->get('usuarios/activar/(:num)', 'Admin::activarUsuario/$1');
         $routes->get('usuarios/suspender/(:num)', 'Admin::suspenderUsuario/$1');
         $routes->get('usuarios/eliminar/(:num)', 'Admin::eliminarUsuario/$1');
+
+        // Categorias
+        $routes->get('categorias', 'Categorias::index');
+
+        $routes->post('categorias/cargar_categoria', 'Categorias::cargarCategoria');
+
+        $routes->get('categorias/nueva', 'Categorias::nueva');
+
+        $routes->post('categorias/eliminar/(:num)', 'Categorias::eliminar/$1');
+
+        $routes->get('categorias/inactivas', 'Categorias::inactivas');
+
+        $routes->get('categorias/reactivar/(:num)', 'Categorias::reactivar/$1');
+
+        $routes->get('categorias/editar/(:num)', 'Categorias::editar/$1');
+
+        $routes->post('categorias/editar/(:num)', 'Categorias::editarPost/$1');
     });
 });

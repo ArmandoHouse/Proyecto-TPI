@@ -18,9 +18,6 @@ class Categorias extends BaseController
 
     public function nueva()
     {
-        if (session()->get('rol') !== 'admin') {
-            return redirect()->to('public/admin');
-        }
 
         return view('admin/categorias/cargar');
     }
@@ -28,10 +25,14 @@ class Categorias extends BaseController
     public function cargarCategoria()
     {
         $request = $this->request;
+        $categoriaModel = new CategoriasModel();
 
-        // Verificamos que sea admin
-        if (session()->get('rol') !== 'admin') {
-            return redirect()->to('public/');
+        // Obtener el nombre de la categoría desde el formulario
+        $nombre = $request->getPost('nombre');
+
+        // Validar que el nombre no esté vacío
+        if (empty($nombre)) {
+            return redirect()->back()->with('error', 'El nombre de la categoría es obligatorio.');
         }
 
          // Buscar si existe una categoría con ese nombre (aunque esté dada de baja)
@@ -41,28 +42,23 @@ class Categorias extends BaseController
             if ($existente['baja'] == 1) {
                 // Reactivar si estaba dada de baja
                 $categoriaModel->update($existente['id'], ['baja' => 0]);
-                return redirect()->to(base_url('admin/categorias'))->with('success', 'Categoría reactivada.');
+                return redirect()->to(base_url('public/admin/categorias'))->with('success', 'Categoría reactivada.');
             } else {
                 return redirect()->back()->with('error', 'Ya existe una categoría con ese nombre.');
             }
         }
 
-
-        // Guardar en DB
-        $categoriaModel = new CategoriasModel();
+        // Guardar en la base de datos
         $categoriaModel->insert([
-            'nombre'       => $request->getPost('nombre'),
+            'nombre'       => $nombre,
             'descripcion'  => $request->getPost('descripcion')
         ]);
 
-        return redirect()->to(base_url('public/admin/categorias'))->with('mensaje', 'Categoria guardada con éxito');
+        return redirect()->to(base_url('public/admin/categorias'))->with('success', 'Categoría guardada con éxito.');
     }
 
     public function eliminar($id)
     {
-        if (session()->get('rol') !== 'admin') {
-            return redirect()->to('/');
-        }
 
         $categoriaModel = new \App\Models\CategoriasModel();
 
@@ -73,10 +69,6 @@ class Categorias extends BaseController
 
     public function reactivar($id)
     {
-        if (session()->get('rol') !== 'admin') {
-            return redirect()->to('/');
-        }
-
         $categoriaModel = new \App\Models\CategoriasModel();
         $categoriaModel->update($id, ['baja' => 0]);
 
@@ -90,6 +82,37 @@ class Categorias extends BaseController
         $data['inactivas'] = true;
 
         return view('admin/categorias/index', $data);
+    }
+
+    public function editar($id)
+    {
+        $categoriaModel = new \App\Models\CategoriasModel();
+        $data['categoria'] = $categoriaModel->find($id);
+
+        if (!$data['categoria']) {
+            return redirect()->to(base_url('public/admin/categorias'))->with('error', 'Categoría no encontrada.');
+        }
+
+        return view('admin/categorias/editar', $data);
+    }
+
+    public function editarPost($id)
+    {
+        $categoriaModel = new \App\Models\CategoriasModel();
+        $nombre = $this->request->getPost('nombre');
+        $descripcion = $this->request->getPost('descripcion');
+
+        // Validar que el nombre no esté vacío
+        if (empty($nombre)) {
+            return redirect()->back()->with('error', 'El nombre de la categoría es obligatorio.');
+        }
+
+        $categoriaModel->update($id, [
+            'nombre' => $nombre,
+            'descripcion' => $descripcion
+        ]);
+
+        return redirect()->to(base_url('public/admin/categorias'))->with('success', 'Categoría actualizada correctamente.');
     }
 
 }

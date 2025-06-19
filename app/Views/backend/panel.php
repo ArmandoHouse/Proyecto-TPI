@@ -10,7 +10,7 @@
         <h1 class="h2">Panel de Administración</h1>
       </div>
 
-      <!-- <h4>Bienvenido, <?= session('nom_usuario') ?></h4>
+      <h4>Bienvenido, <?= session('nom_usuario') ?></h4>
       
       Estadísticas rápidas
       <div class="row">
@@ -67,7 +67,7 @@
           </tbody>
         </table>
       </div>
-    </main> -->
+    </main> 
   </div>
 </div>
 
