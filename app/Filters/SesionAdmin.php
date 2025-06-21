@@ -12,8 +12,8 @@ class SesionAdmin implements FilterInterface
     {
         $session = session();
 
-        if (!$session->get('rol') !== 'admin') {
-            return redirect()->to(base_url('public/login'))->with('error', 'Tu cuenta no tiene permisos suficientes.');
+        if (!in_array($session->get('rol'), ['admin', 'super_admin'])) {
+            return redirect()->to(base_url('login'))->with('error', 'Tu cuenta no tiene permisos suficientes.');
         }
     }
 

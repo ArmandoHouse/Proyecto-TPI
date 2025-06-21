@@ -13,9 +13,9 @@ class SesionValida implements FilterInterface
         $session = session();
 
         if (!$session->get('logueado') 
-        || $session->get('baja') == 1 
-        || !in_array($session->get('rol'), ['cliente', 'admin'])) {
-            return redirect()->to(base_url('public/login'))->with('error', 'Debes iniciar sesión.');
+        || $session->get('estado') == 'suspendido'
+        || !in_array($session->get('rol'), ['cliente', 'admin', 'super_admin'])) {
+            return redirect()->to(base_url('login'))->with('error', 'Debes iniciar sesión o tu cuenta no es válida');
         }
     }
 
