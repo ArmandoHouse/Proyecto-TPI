@@ -1482,7 +1482,7 @@ Stack trace:
 #5 E:\xampp\htdocs\Proyecto-TPI\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
 #6 E:\xampp\htdocs\Proyecto-TPI\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
 #7 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\front\Carrito.php(104): CodeIgniter\Model->insert(Array)
-#8 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\front\Carrito->finalizar()
+#8 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\front\Carrito->comprar()
 #9 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
 #10 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #11 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
@@ -1490,14 +1490,14 @@ Stack trace:
 #13 E:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 #14 {main}
 CRITICAL - 2025-06-21 20:59:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '7' for key 'fk_pedidos_usuarios'
-[Method: POST, Route: carrito/finalizar]
+[Method: POST, Route: carrito/comprar]
 in SYSTEMPATH\Database\BaseConnection.php on line 692.
  1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pedidos` (`usuario_id`, `direccion_envio`, `estado`, `total`, `created_at`, `updated_at`) VALUES (:usuario_id:, :direccion_envio:, :estado:, :total:, :created_at:, :updated_at:)', [...], false)
  2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
  3 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
  4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
  5 APPPATH\Controllers\front\Carrito.php(104): CodeIgniter\Model->insert([...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Carrito->finalizar()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Carrito->comprar()
  7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
  8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
@@ -1512,7 +1512,7 @@ in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
  5 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
  6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
  7 APPPATH\Controllers\front\Carrito.php(104): CodeIgniter\Model->insert([...])
- 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Carrito->finalizar()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Carrito->comprar()
  9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
 10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
@@ -1528,7 +1528,7 @@ in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
  6 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
  7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
  8 APPPATH\Controllers\front\Carrito.php(104): CodeIgniter\Model->insert([...])
- 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Carrito->finalizar()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Carrito->comprar()
 10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
 11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
@@ -1544,7 +1544,7 @@ Stack trace:
 #5 E:\xampp\htdocs\Proyecto-TPI\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
 #6 E:\xampp\htdocs\Proyecto-TPI\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
 #7 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\front\Carrito.php(104): CodeIgniter\Model->insert(Array)
-#8 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\front\Carrito->finalizar()
+#8 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\front\Carrito->comprar()
 #9 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
 #10 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #11 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()

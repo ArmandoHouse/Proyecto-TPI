@@ -76,7 +76,7 @@ class Carrito extends BaseController
         return redirect()->to(base_url('carrito'))->with('mensaje', 'Producto eliminado del carrito');
     }
 
-    public function finalizar()
+    public function comprar()
     {
         $usuarioId = session('usuario_id');
         $carritoItemModel = new CarritoItemModel();
