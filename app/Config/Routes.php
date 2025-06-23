@@ -43,6 +43,7 @@ $routes->group('/', ['namespace' => 'App\Controllers\front'], function ($routes)
         $routes->get('consultas/crear', 'Consulta::crear');
         $routes->post('consultas/crear', 'Consulta::crearPost');
         $routes->get('consultas/ver/(:num)', 'Consulta::ver/$1');
+        
         $routes->post('consultas/responder/(:num)', 'Consulta::responderPost/$1');
     });
 });
