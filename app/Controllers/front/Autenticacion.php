@@ -68,7 +68,6 @@ class Autenticacion extends BaseController
         }
 
         // Guardar datos si la validación es exitosa
-        $usuarioModel = new UsuarioModel();
         $usuario = [
             'nombre' => $this->request->getPost('nombre'),
             'apellido' => $this->request->getPost('apellido'),
@@ -79,6 +78,7 @@ class Autenticacion extends BaseController
             'estado' => 'activo'
         ];
 
+        $usuarioModel = new UsuarioModel();
         $usuarioModel->insert($usuario);
 
         return redirect()->to(base_url('login'));

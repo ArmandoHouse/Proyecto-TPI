@@ -30,6 +30,8 @@ $routes->group('/', ['namespace' => 'App\Controllers\front'], function ($routes)
 
     $routes->group('/', ['filter' => 'sesion_valida'], function ($routes) {
         $routes->get('perfil', 'Perfil::index');
+        $routes->post('perfil/actualizar', 'Perfil::actualizar');
+        
         $routes->get('logout', 'Autenticacion::logout');
 
         $routes->post('carrito/agregar/(:num)', 'Carrito::agregar/$1');

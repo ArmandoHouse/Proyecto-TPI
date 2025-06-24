@@ -41,7 +41,6 @@ class Pedidos extends BaseController
             ->findAll();
 
 
-
         $estados = [
             'pendiente' => 'Pendiente',
             'confirmado' => 'Confirmado',

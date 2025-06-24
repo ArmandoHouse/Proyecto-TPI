@@ -26,7 +26,7 @@ class Pedido extends BaseController
 
         $pedido = $pedidoModel
             ->where('pedidos.id', $id_pedido)
-            ->select('pedidos.*, usuarios.nombre, usuarios.apellido, usuarios.email')
+            ->select('pedidos.*, usuarios.nombre as usuario_nombre, usuarios.apellido as usuario_apellido, usuarios.email as usuario_email,  usuarios.direccion as usuario_direccion')
             ->join('usuarios', 'usuarios.id = pedidos.usuario_id')
             ->first();
 
@@ -34,7 +34,11 @@ class Pedido extends BaseController
             return redirect()->to(base_url('pedidos'))->with('error', 'Pedido no encontrado.');
         }
 
-        $items = $pedidoItemModel->where('pedido_id', $id_pedido)->findAll();
+        $items = $pedidoItemModel
+            ->where('pedidos_items.pedido_id', $id_pedido)
+            ->select('pedidos_items.*, productos.nombre as producto_nombre, productos.descripcion as producto_descripcion, productos.precio as producto_precio')
+            ->join('productos', 'productos.id = pedidos_items.producto_id')
+            ->findAll();
 
         return view('front/pedidos/ver', ['pedido' => $pedido, 'items' => $items]);
     }

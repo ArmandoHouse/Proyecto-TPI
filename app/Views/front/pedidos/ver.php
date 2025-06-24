@@ -14,8 +14,8 @@
 
     <div class="mb-3">
         <h5>Datos del Usuario</h5>
-        <p><strong>Nombre:</strong> <?= esc($pedido['nombre']) . ' ' . esc($pedido['apellido']) ?></p>
-        <p><strong>Email:</strong> <?= esc($pedido['email']) ?></p>
+        <p><strong>Nombre:</strong> <?= esc($pedido['usuario_nombre']) . ' ' . esc($pedido['usuario_apellido']) ?></p>
+        <p><strong>Email:</strong> <?= esc($pedido['usuario_email']) ?></p>
     </div>
 
     <h5>Productos del Pedido</h5>
@@ -34,7 +34,7 @@
                 <?php foreach ($items as $item): ?>
                     <?php $subtotal = $item['precio_unitario'] * $item['cantidad']; $total += $subtotal; ?>
                     <tr>
-                        <td></td>
+                        <td><?= esc($item['producto_nombre']) ?></td>
                         <td><?= $item['cantidad'] ?></td>
                         <td>$<?= number_format($item['precio_unitario'], 2, ',', '.') ?></td>
                         <td>$<?= number_format($subtotal, 2, ',', '.') ?></td>
