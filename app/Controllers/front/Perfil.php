@@ -54,4 +54,36 @@ class Perfil extends BaseController
 
         return redirect()->to(base_url('perfil'))->with('mensaje', 'Perfil actualizado correctamente.');
     }
+
+
+    public function chequearInformacion()
+    {
+        $usuarioModel = new UsuarioModel();
+        $usuarioId = session('usuario_id'); // Obtener el ID del usuario desde la sesión
+
+        // Verificar si el usuario existe
+        $usuario = $usuarioModel->find($usuarioId);
+        if (!$usuario) {
+            return redirect()->to(base_url('login'))->with('error', 'Usuario no encontrado.');
+        }
+
+        // Verificar si faltan campos obligatorios
+        $camposFaltantes = [];
+        if (empty($usuario['nombre'])) {
+            $camposFaltantes[] = 'nombre';
+        }
+        if (empty($usuario['apellido'])) {
+            $camposFaltantes[] = 'apellido';
+        }
+        if (empty($usuario['direccion'])) {
+            $camposFaltantes[] = 'dirección';
+        }
+        if (!empty($camposFaltantes)) {
+            $mensaje = 'Debe completar los siguientes campos obligatorios: ' . implode(', ', $camposFaltantes) . '.';
+            return view('front/perfil/faltan_datos', ['mensaje' => $mensaje]);
+        }
+
+        // Si todos los campos están completos, proceder normalmente
+        return redirect()->to(base_url('pedidos/checkout'))->with('success', 'Todos los datos están completos.');
+    }
 }

@@ -16,6 +16,7 @@
         <h5>Datos del Usuario</h5>
         <p><strong>Nombre:</strong> <?= esc($pedido['usuario_nombre']) . ' ' . esc($pedido['usuario_apellido']) ?></p>
         <p><strong>Email:</strong> <?= esc($pedido['usuario_email']) ?></p>
+        <p><strong>Direccion:</strong> <?= esc($pedido['usuario_direccion']) ?></p>
     </div>
 
     <h5>Productos del Pedido</h5>

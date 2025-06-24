@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\PedidoModel;
 use App\Models\PedidoItemModel;
 use App\Models\ProductoModel;
+use App\Models\UsuarioModel;
 
 class Pedido extends BaseController
 {
@@ -48,24 +49,36 @@ class Pedido extends BaseController
         $pedidoModel = new PedidoModel();
         $pedidoItemModel = new PedidoItemModel();
         $productoModel = new ProductoModel();
+        $usuarioModel = new UsuarioModel();
 
-        $usuarioId = session('usuario_id');
-        $cantidad = $this->request->getPost('cantidad'); // Obtener la cantidad desde el formulario
+        $usuarioId = session('usuario_id'); // Obtener el ID del usuario desde la sesión
+
+        // Verificar si el usuario existe
+        $usuario = $usuarioModel->find($usuarioId);
+        if (!$usuario) {
+            return redirect()->to(base_url('login'))->with('error', 'Usuario no encontrado.');
+        }
+
+        // Comprobar si la dirección del usuario está completa
+        if (empty($usuario['direccion'])) {
+            return redirect()->to(base_url('perfil/chequear_informacion'))->with('error', 'Debe completar su informacion personal antes de confirmar el pedido.');
+        }
 
         // Verificar si el producto existe
         $producto = $productoModel->find($productoId);
         if (!$producto) {
-            return redirect()->to(base_url('catalogo'))->with('error', 'Producto no encontrado');
+            return redirect()->to(base_url('catalogo'))->with('error', 'Producto no encontrado.');
         }
 
         // Calcular el total del pedido
+        $cantidad = 1; // Por defecto, se genera el pedido con una unidad
         $total = $producto['precio'] * $cantidad;
 
         // Crear el pedido
         $pedidoId = $pedidoModel->insert([
             'usuario_id'       => $usuarioId,
-            'direccion_envio'  => '', // Puedes agregar lógica para capturar la dirección de envío
-            'estado'           => 'pendiente', // Estado inicial del pedido
+            'direccion_envio'  => $usuario['direccion'],
+            'estado'           => 'pendiente',
             'total'            => $total,
             'fecha'            => date('Y-m-d H:i:s')
         ]);
@@ -79,6 +92,6 @@ class Pedido extends BaseController
         ]);
 
         // Redirigir al detalle del pedido
-        return redirect()->to(base_url('pedidos/ver/' . $pedidoId))->with('success', 'Pedido generado exitosamente');
+        return redirect()->to(base_url('pedidos/ver/' . $pedidoId))->with('success', 'Pedido generado exitosamente.');
     }
 }

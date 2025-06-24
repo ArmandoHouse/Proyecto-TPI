@@ -24,24 +24,30 @@ class Consultas extends BaseController
     public function ver($id_consulta)
     {
         $consultaModel = new ConsultaModel();
+        $consultaMensajeModel = new ConsultaMensajeModel();
 
+        // Obtener la consulta con los datos del usuario
         $consulta = $consultaModel
             ->select('consultas.*, usuarios.nombre, usuarios.apellido, usuarios.email')
             ->join('usuarios', 'usuarios.id = consultas.usuario_id')
-            ->find($id_consulta);
+            ->where('consultas.id', $id_consulta)
+            ->first();
 
+        // Verificar si la consulta existe
         if (!$consulta) {
-            return redirect()->back()->with('error', 'Consulta no encontrada.');
+            return redirect()->to(base_url('admin/consultas'))->with('error', 'Consulta no encontrada.');
         }
 
-        $consultaMensajeModel = new ConsultaMensajeModel();
-        $mensajes = $consultaMensajeModel->where('consulta_id', $id_consulta)->findAll();
+        // Obtener los mensajes relacionados con la consulta
+        $mensajes = $consultaMensajeModel
+            ->where('consulta_id', $id_consulta)
+            ->findAll();
 
-        if (!$consulta || $consulta['usuario_id'] != session()->get('usuario_id')) {
-            return redirect()->to(base_url('consulta'))->with('error', 'Consulta no encontrada.');
-        }
-
-        return view('back/consultas/ver', ['consulta' => $consulta, 'mensajes' => $mensajes]);
+        // Cargar la vista con los datos de la consulta y los mensajes
+        return view('back/consultas/ver', [
+            'consulta' => $consulta,
+            'mensajes' => $mensajes
+        ]);
     }
 
     public function responder($id_consulta)

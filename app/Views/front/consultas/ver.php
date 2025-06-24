@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between mb-1">
                         <strong>
-                            <?= $mensaje['usuario_id'] ? 'Vos' : 'Staff' ?>
+                            <?= $mensaje['usuario_id'] == session()->get('usuario_id') ? 'Vos' : 'Administrador' ?>
                         </strong>
                         <small class="text-muted"><?= date('d/m/Y H:i', strtotime($mensaje['fecha'])) ?></small>
                     </div>

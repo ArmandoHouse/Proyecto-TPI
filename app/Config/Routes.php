@@ -31,6 +31,8 @@ $routes->group('/', ['namespace' => 'App\Controllers\front'], function ($routes)
     $routes->group('/', ['filter' => 'sesion_valida'], function ($routes) {
         $routes->get('perfil', 'Perfil::index');
         $routes->post('perfil/actualizar', 'Perfil::actualizar');
+
+        $routes->get('perfil/chequear_informacion', 'Perfil::chequearInformacion');
         
         $routes->get('logout', 'Autenticacion::logout');
 
