@@ -26,16 +26,20 @@ class Catalogo extends BaseController
         $paginaParam = $this->request->getGet('pagina');
         $porPagina = 6; // Cantidad de productos por página
 
-        // Obtener el total de productos de esta categoría
-        $totalProductos = $productoModel->where('categoria_id', $id)->countAllResults();
+        // Obtener el total de productos de esta categoría y disponibles
+        $totalProductos = $productoModel
+            ->where('categoria_id', $id)
+            ->where('estado', 'disponible')
+            ->countAllResults();
 
         // Calcular total de páginas
         $totalPaginas = ceil($totalProductos / $porPagina);
 
-        // Si la página es 'todo', mostrar todos los productos de la categoría
+        // Si la página es 'todo', mostrar todos los productos de la categoría y disponibles
         if ($paginaParam === 'todo') {
             $productos = $productoModel
                 ->where('categoria_id', $id)
+                ->where('estado', 'disponible')
                 ->orderBy('id', 'DESC')
                 ->findAll();
             $paginaActual = 'todo';
@@ -43,6 +47,7 @@ class Catalogo extends BaseController
             $paginaActual = (int)($paginaParam ?? 1);
             $productos = $productoModel
                 ->where('categoria_id', $id)
+                ->where('estado', 'disponible')
                 ->orderBy('id', 'DESC')
                 ->paginate($porPagina, 'productos', $paginaActual);
         }
