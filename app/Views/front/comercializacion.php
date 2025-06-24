@@ -46,7 +46,7 @@
             <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <strong>¿Cuánto cuesta el envío?</strong> <br><br>
-                    El costo varía según la zona de entrega y el peso del producto. Al momento de finalizar la compra, el sistema calcula automáticamente el valor. Para compras superiores a $25.000, el envío es gratuito.
+                    El costo varía según la zona de entrega y el peso del producto. Al momento de comprar la compra, el sistema calcula automáticamente el valor. Para compras superiores a $25.000, el envío es gratuito.
                 </div>
             </div>
         </div>

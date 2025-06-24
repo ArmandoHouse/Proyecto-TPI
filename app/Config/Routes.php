@@ -34,10 +34,11 @@ $routes->group('/', ['namespace' => 'App\Controllers\front'], function ($routes)
 
         $routes->post('carrito/agregar/(:num)', 'Carrito::agregar/$1');
         $routes->post('carrito/eliminar/(:num)', 'Carrito::eliminar/$1');
-        $routes->post('carrito/finalizar', 'Carrito::finalizar');
+        $routes->post('carrito/comprar', 'Carrito::comprar');
 
         $routes->get('pedidos', 'Pedido::index');
         $routes->get('pedidos/ver/(:num)', 'Pedido::ver/$1');
+        $routes->post('pedidos/generar/(:num)', 'Pedido::generar/$1');
 
         $routes->get('consultas', 'Consulta::index');
         $routes->get('consultas/crear', 'Consulta::crear');
@@ -87,4 +88,7 @@ $routes->group('admin', ['namespace' => 'App\Controllers\back', 'filter' => 'ses
     $routes->get('contactos/ver/(:num)', 'Contactos::ver/$1');
     $routes->get('contactos/cambiar_estado/(:num)', 'Contactos::cambiarEstado/$1');
 
+    $routes->get('pedidos', 'Pedidos::index');
+    $routes->get('pedidos/ver/(:num)', 'Pedidos::ver/$1');
+    $routes->post('pedidos/editar/(:num)', 'Pedidos::editar/$1');
 });

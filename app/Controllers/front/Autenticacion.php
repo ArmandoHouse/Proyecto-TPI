@@ -14,12 +14,61 @@ class Autenticacion extends BaseController
 
     public function registroPost()
     {
-        $usuarioModel = new UsuarioModel();
+        $validation = \Config\Services::validation();
 
-        if (!$usuarioModel->validate($this->request->getPost())) {
-            return redirect()->to(base_url('registro'))->withInput()->with('errors', $usuarioModel->getErrors());
+        // Reglas de validación
+        $validation->setRules([
+            'nombre' => [
+                'label' => 'Nombre',
+                'rules' => 'required|alpha_space',
+                'errors' => [
+                    'required' => 'El nombre es obligatorio.',
+                    'alpha_space' => 'El nombre solo puede contener letras y espacios.'
+                ]
+            ],
+            'apellido' => [
+                'label' => 'Apellido',
+                'rules' => 'required|alpha_space',
+                'errors' => [
+                    'required' => 'El apellido es obligatorio.',
+                    'alpha_space' => 'El apellido solo puede contener letras y espacios.'
+                ]
+            ],
+            'username' => [
+                'label' => 'Nombre de Usuario',
+                'rules' => 'required|is_unique[usuarios.username]',
+                'errors' => [
+                    'required' => 'El nombre de usuario es obligatorio.',
+                    'is_unique' => 'El nombre de usuario ya está en uso.'
+                ]
+            ],
+            'email' => [
+                'label' => 'Correo Electrónico',
+                'rules' => 'required|valid_email|is_unique[usuarios.email]',
+                'errors' => [
+                    'required' => 'El correo electrónico es obligatorio.',
+                    'valid_email' => 'Debe proporcionar un correo electrónico válido.',
+                    'is_unique' => 'El correo electrónico ya está registrado.'
+                ]
+            ],
+            'password' => [
+                'label' => 'Contraseña',
+                'rules' => 'required|min_length[8]|max_length[20]',
+                'errors' => [
+                    'required' => 'La contraseña es obligatoria.',
+                    'min_length' => 'La contraseña debe tener al menos 8 caracteres.',
+                    'max_length' => 'La contraseña no puede exceder los 20 caracteres.'
+                ]
+            ]
+        ]);
+
+        // Validar entrada
+        if (!$validation->withRequest($this->request)->run()) {
+            return redirect()->to(base_url('registro'))->withInput()->with('errors', $validation->getErrors());
         }
 
+        // Guardar datos si la validación es exitosa
+        $usuarioModel = new UsuarioModel();
         $usuario = [
             'nombre' => $this->request->getPost('nombre'),
             'apellido' => $this->request->getPost('apellido'),

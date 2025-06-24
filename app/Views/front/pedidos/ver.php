@@ -50,7 +50,7 @@
         <button class="btn btn-secondary" onclick="window.print()">
             <i class="bi bi-printer"></i> Imprimir pedido
         </button>
-        <a href="<?= base_url('principal') ?>" class="btn btn-primary">
+        <a href="<?= base_url('/') ?>" class="btn btn-primary">
             <i class="bi bi-arrow-left"></i> Seguir comprando
         </a>
     </div>

@@ -1,0 +1,453 @@
+CRITICAL - 2025-06-22 14:28:16 --> ErrorException: Undefined variable $data
+[Method: GET, Route: catalogo/ver_catalogo/6]
+in APPPATH\Views\front\catalogo.php on line 313.
+ 1 APPPATH\Views\front\catalogo.php(313): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\catalogo.php', 313)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\catalogo.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/catalogo', [], true)
+ 5 APPPATH\Controllers\front\Catalogo.php(30): view('front/catalogo', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Catalogo->ver_catalogo('6')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Catalogo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 14:38:21 --> TypeError: Unsupported operand types: array + int
+[Method: GET, Route: catalogo/ver_catalogo/6]
+in APPPATH\Views\front\catalogo.php on line 78.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/catalogo', [], true)
+ 4 APPPATH\Controllers\front\Catalogo.php(30): view('front/catalogo', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Catalogo->ver_catalogo('6')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Catalogo))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 14:38:37 --> TypeError: Unsupported operand types: array + int
+[Method: GET, Route: catalogo/ver_catalogo/6]
+in APPPATH\Views\front\catalogo.php on line 78.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/catalogo', [], true)
+ 4 APPPATH\Controllers\front\Catalogo.php(30): view('front/catalogo', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Catalogo->ver_catalogo('6')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Catalogo))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 14:38:46 --> ErrorException: Undefined array key "precio_unitario"
+[Method: GET, Route: catalogo/ver_catalogo/6]
+in APPPATH\Views\front\catalogo.php on line 73.
+ 1 APPPATH\Views\front\catalogo.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "precio_unitario"', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\catalogo.php', 73)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\catalogo.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/catalogo', [], true)
+ 5 APPPATH\Controllers\front\Catalogo.php(30): view('front/catalogo', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Catalogo->ver_catalogo('6')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Catalogo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 14:40:01 --> TypeError: Unsupported operand types: array + int
+[Method: GET, Route: catalogo/ver_catalogo/6]
+in APPPATH\Views\front\catalogo.php on line 78.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/catalogo', [], true)
+ 4 APPPATH\Controllers\front\Catalogo.php(30): view('front/catalogo', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Catalogo->ver_catalogo('6')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Catalogo))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 15:01:15 --> CodeIgniter\Pager\Exceptions\PagerException: bootstrap no es un modelo válido de paginador.
+[Method: GET, Route: catalogo/ver_catalogo/6]
+in SYSTEMPATH\Pager\Pager.php on line 124.
+ 1 SYSTEMPATH\Pager\Pager.php(124): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('bootstrap')
+ 2 SYSTEMPATH\Pager\Pager.php(114): CodeIgniter\Pager\Pager->displayLinks('default', 'bootstrap')
+ 3 APPPATH\Views\front\catalogo.php(33): CodeIgniter\Pager\Pager->makeLinks(1, 6, 10, 'bootstrap')
+ 4 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\catalogo.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/catalogo', [], true)
+ 7 APPPATH\Controllers\front\Catalogo.php(42): view('front/catalogo', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Catalogo->ver_catalogo('6')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Catalogo))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 15:01:35 --> CodeIgniter\Pager\Exceptions\PagerException: bootstrap no es un modelo válido de paginador.
+[Method: GET, Route: catalogo/ver_catalogo/6]
+in SYSTEMPATH\Pager\Pager.php on line 124.
+ 1 SYSTEMPATH\Pager\Pager.php(124): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('bootstrap')
+ 2 SYSTEMPATH\Pager\Pager.php(114): CodeIgniter\Pager\Pager->displayLinks('default', 'bootstrap')
+ 3 APPPATH\Views\front\catalogo.php(33): CodeIgniter\Pager\Pager->makeLinks(1, 6, 10, 'bootstrap')
+ 4 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\catalogo.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/catalogo', [], true)
+ 7 APPPATH\Controllers\front\Catalogo.php(42): view('front/catalogo', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Catalogo->ver_catalogo('6')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Catalogo))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 18:53:06 --> ErrorException: Undefined variable $facturas
+[Method: GET, Route: admin]
+in APPPATH\Views\back\panel.php on line 103.
+ 1 APPPATH\Views\back\panel.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $facturas', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\back\\panel.php', 103)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\back\\panel.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/panel', [], true)
+ 5 APPPATH\Controllers\back\Admin.php(34): view('back/panel', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\back\Admin->panel()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 18:53:53 --> ErrorException: Undefined variable $facturas
+[Method: GET, Route: admin]
+in APPPATH\Views\back\panel.php on line 103.
+ 1 APPPATH\Views\back\panel.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $facturas', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\back\\panel.php', 103)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\back\\panel.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/panel', [], true)
+ 5 APPPATH\Controllers\back\Admin.php(32): view('back/panel', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\back\Admin->panel()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-06-22 19:06:51 --> mysqli_sql_exception: Unknown column 'pedidos.fecha' in 'order clause' in E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pedidos...', 0)
+#1 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedidos...')
+#2 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedidos...')
+#3 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos...', Array, false)
+#4 E:\xampp\htdocs\Proyecto-TPI\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\xampp\htdocs\Proyecto-TPI\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\back\Pedidos.php(22): CodeIgniter\BaseModel->findAll()
+#7 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\back\Pedidos->index()
+#8 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+#9 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-06-22 19:06:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pedidos.fecha' in 'order clause'
+[Method: GET, Route: admin/pedidos]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos`.*, `usuarios`.`nombre`, `usuarios`.`apellido`, `usuarios`.`email`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`deleted_at` IS NULL
+ORDER BY `pedidos`.`fecha` DESC', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\back\Pedidos.php(22): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\back\Pedidos->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 19:06:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pedidos.fecha' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedidos`.*, `usuarios`.`nombre`, `usuarios`.`apellido`, `usuarios`.`email`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`deleted_at` IS NULL
+ORDER BY `pedidos`.`fecha` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedidos`.*, `usuarios`.`nombre`, `usuarios`.`apellido`, `usuarios`.`email`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`deleted_at` IS NULL
+ORDER BY `pedidos`.`fecha` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos`.*, `usuarios`.`nombre`, `usuarios`.`apellido`, `usuarios`.`email`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`deleted_at` IS NULL
+ORDER BY `pedidos`.`fecha` DESC', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\back\Pedidos.php(22): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\back\Pedidos->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 19:06:51 --> [Caused by] mysqli_sql_exception: Unknown column 'pedidos.fecha' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pedidos`.*, `usuarios`.`nombre`, `usuarios`.`apellido`, `usuarios`.`email`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`deleted_at` IS NULL
+ORDER BY `pedidos`.`fecha` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedidos`.*, `usuarios`.`nombre`, `usuarios`.`apellido`, `usuarios`.`email`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`deleted_at` IS NULL
+ORDER BY `pedidos`.`fecha` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedidos`.*, `usuarios`.`nombre`, `usuarios`.`apellido`, `usuarios`.`email`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`deleted_at` IS NULL
+ORDER BY `pedidos`.`fecha` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos`.*, `usuarios`.`nombre`, `usuarios`.`apellido`, `usuarios`.`email`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`deleted_at` IS NULL
+ORDER BY `pedidos`.`fecha` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\back\Pedidos.php(22): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\back\Pedidos->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-06-22 19:07:03 --> mysqli_sql_exception: Unknown column 'pedidos.fecha' in 'order clause' in E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pedidos...', 0)
+#1 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedidos...')
+#2 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedidos...')
+#3 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos...', Array, false)
+#4 E:\xampp\htdocs\Proyecto-TPI\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\xampp\htdocs\Proyecto-TPI\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\back\Pedidos.php(22): CodeIgniter\BaseModel->findAll()
+#7 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\back\Pedidos->index()
+#8 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+#9 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-06-22 19:08:30 --> mysqli_sql_exception: Unknown table 'zonahw.pedido_items' in E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pedido_...', 0)
+#1 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedido_...')
+#2 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedido_...')
+#3 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedido_...', Array, false)
+#4 E:\xampp\htdocs\Proyecto-TPI\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\xampp\htdocs\Proyecto-TPI\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\back\Pedidos.php(43): CodeIgniter\BaseModel->findAll()
+#7 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\back\Pedidos->ver('4')
+#8 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+#9 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-06-22 19:08:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'zonahw.pedido_items'
+[Method: GET, Route: admin/pedidos/ver/4]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = :pedido_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\back\Pedidos.php(43): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\back\Pedidos->ver('4')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 19:08:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'zonahw.pedido_items'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = \'4\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = :pedido_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\back\Pedidos.php(43): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\back\Pedidos->ver('4')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 19:08:30 --> [Caused by] mysqli_sql_exception: Unknown table 'zonahw.pedido_items'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = \'4\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = \'4\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = :pedido_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\back\Pedidos.php(43): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\back\Pedidos->ver('4')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-06-22 19:08:51 --> mysqli_sql_exception: Unknown table 'zonahw.pedido_items' in E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pedido_...', 0)
+#1 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedido_...')
+#2 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedido_...')
+#3 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedido_...', Array, false)
+#4 E:\xampp\htdocs\Proyecto-TPI\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\xampp\htdocs\Proyecto-TPI\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\back\Pedidos.php(43): CodeIgniter\BaseModel->findAll()
+#7 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\back\Pedidos->ver('4')
+#8 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+#9 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-06-22 19:09:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'zonahw.pedido_items'
+[Method: GET, Route: admin/pedidos/ver/4]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = :pedido_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\back\Pedidos.php(43): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\back\Pedidos->ver('4')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 19:09:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'zonahw.pedido_items'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = \'4\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = :pedido_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\back\Pedidos.php(43): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\back\Pedidos->ver('4')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 19:09:13 --> [Caused by] mysqli_sql_exception: Unknown table 'zonahw.pedido_items'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = \'4\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = \'4\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedido_items`.*, `productos`.`nombre`, `productos`.`imagen`
+FROM `pedidos_items`
+JOIN `productos` ON `productos`.`id` = `pedido_items`.`producto_id`
+WHERE `pedido_id` = :pedido_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\back\Pedidos.php(43): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\back\Pedidos->ver('4')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 19:45:59 --> ErrorException: Undefined variable $estados
+[Method: GET, Route: admin/pedidos/ver/4]
+in APPPATH\Views\back\pedidos\ver.php on line 14.
+ 1 APPPATH\Views\back\pedidos\ver.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estados', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\back\\pedidos\\ver.php', 14)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\back\\pedidos\\ver.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/pedidos/ver', [], true)
+ 5 APPPATH\Controllers\back\Pedidos.php(51): view('back/pedidos/ver', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\back\Pedidos->ver('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 19:46:19 --> ErrorException: Undefined variable $estados
+[Method: GET, Route: admin/pedidos/ver/4]
+in APPPATH\Views\back\pedidos\ver.php on line 14.
+ 1 APPPATH\Views\back\pedidos\ver.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estados', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\back\\pedidos\\ver.php', 14)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\back\\pedidos\\ver.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/pedidos/ver', [], true)
+ 5 APPPATH\Controllers\back\Pedidos.php(51): view('back/pedidos/ver', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\back\Pedidos->ver('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 19:46:42 --> ErrorException: Undefined variable $estados
+[Method: GET, Route: admin/pedidos/ver/4]
+in APPPATH\Views\back\pedidos\ver.php on line 14.
+ 1 APPPATH\Views\back\pedidos\ver.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estados', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\back\\pedidos\\ver.php', 14)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\back\\pedidos\\ver.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/pedidos/ver', [], true)
+ 5 APPPATH\Controllers\back\Pedidos.php(51): view('back/pedidos/ver', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\back\Pedidos->ver('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-22 19:47:39 --> ErrorException: Undefined variable $estados
+[Method: GET, Route: admin/pedidos/ver/4]
+in APPPATH\Views\back\pedidos\ver.php on line 14.
+ 1 APPPATH\Views\back\pedidos\ver.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estados', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\back\\pedidos\\ver.php', 14)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\back\\pedidos\\ver.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/pedidos/ver', [], true)
+ 5 APPPATH\Controllers\back\Pedidos.php(51): view('back/pedidos/ver', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\back\Pedidos->ver('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\back\Pedidos))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

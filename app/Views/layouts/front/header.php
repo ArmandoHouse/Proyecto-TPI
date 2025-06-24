@@ -132,8 +132,6 @@
   }
 </style>
 
-
-
 <div class="sticky-top">
   <!-- Top Bar: Sección Superior con la clase "fondo" -->
   <div class="fondo text-white">
@@ -176,6 +174,12 @@
                 <span class="d-none d-md-inline"><?= esc($session->get('username')) ?></span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                <?php if (in_array($session->get('rol'), ['admin', 'super_admin'])): ?>
+                  <li><a class="dropdown-item" href="<?= base_url('admin') ?>">Panel admin</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                <?php endif; ?>
                 <li><a class="dropdown-item" href="<?= base_url('perfil') ?>">Mi perfil</a></li>
                 <li><a class="dropdown-item" href="<?= base_url('consultas') ?>">Mis consultas</a></li>
                 <li><a class="dropdown-item" href="<?= base_url('pedidos') ?>">Mis pedidos</a></li>

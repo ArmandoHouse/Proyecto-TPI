@@ -1,0 +1,98 @@
+CRITICAL - 2025-06-24 00:40:49 --> ErrorException: Undefined array key "telefono"
+[Method: GET, Route: perfil]
+in APPPATH\Views\front\perfil.php on line 51.
+ 1 APPPATH\Views\front\perfil.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "telefono"', 'C:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\perfil.php', 51)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/perfil', [], true)
+ 5 APPPATH\Controllers\front\Perfil.php(17): view('front/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Perfil->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Perfil))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-24 00:42:42 --> ErrorException: Undefined array key "telefono"
+[Method: GET, Route: perfil]
+in APPPATH\Views\front\perfil.php on line 51.
+ 1 APPPATH\Views\front\perfil.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "telefono"', 'C:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\perfil.php', 51)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/perfil', [], true)
+ 5 APPPATH\Controllers\front\Perfil.php(17): view('front/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Perfil->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Perfil))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-24 00:44:07 --> ErrorException: Undefined array key "telefono"
+[Method: GET, Route: perfil]
+in APPPATH\Views\front\perfil.php on line 45.
+ 1 APPPATH\Views\front\perfil.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "telefono"', 'C:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\perfil.php', 45)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/perfil', [], true)
+ 5 APPPATH\Controllers\front\Perfil.php(17): view('front/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Perfil->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Perfil))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-24 00:44:26 --> ErrorException: Undefined array key "telefono"
+[Method: GET, Route: perfil]
+in APPPATH\Views\front\perfil.php on line 43.
+ 1 APPPATH\Views\front\perfil.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "telefono"', 'C:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\perfil.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/perfil', [], true)
+ 5 APPPATH\Controllers\front\Perfil.php(17): view('front/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Perfil->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Perfil))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-24 00:46:33 --> ErrorException: Undefined array key "telefono"
+[Method: GET, Route: perfil]
+in APPPATH\Views\front\perfil.php on line 26.
+ 1 APPPATH\Views\front\perfil.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "telefono"', 'C:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\perfil.php', 26)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/perfil', [], true)
+ 5 APPPATH\Controllers\front\Perfil.php(17): view('front/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Perfil->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Perfil))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-24 00:53:47 --> ErrorException: Undefined array key "telefono"
+[Method: GET, Route: perfil]
+in APPPATH\Views\front\perfil.php on line 35.
+ 1 APPPATH\Views\front\perfil.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "telefono"', 'C:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\perfil.php', 35)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/perfil', [], true)
+ 5 APPPATH\Controllers\front\Perfil.php(22): view('front/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Perfil->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Perfil))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-24 00:56:39 --> ErrorException: Undefined array key "telefono"
+[Method: GET, Route: perfil]
+in APPPATH\Views\front\perfil.php on line 35.
+ 1 APPPATH\Views\front\perfil.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "telefono"', 'C:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\perfil.php', 35)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/perfil', [], true)
+ 5 APPPATH\Controllers\front\Perfil.php(22): view('front/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Perfil->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Perfil))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

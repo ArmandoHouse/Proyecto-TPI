@@ -24,7 +24,7 @@
 
     <?php if (empty($carrito)) : ?>
         <div class="alert alert-info">Tu carrito está vacío.</div>
-        <a href="<?= site_url('catalogo') ?>" class="btn btn-primary">Ir al catálogo</a>
+        <a href="<?= site_url('catalogo/ver_catalogo/1') ?>" class="btn btn-primary">Ir al catálogo</a>
     <?php else : ?>
         <table class="table table-bordered align-middle">
             <thead class="table-light">
@@ -69,9 +69,9 @@
             </tfoot>
         </table>
         <a href="<?= base_url('') ?>" class="btn btn-outline-secondary">← Seguir comprando</a>
-        <form action="<?= base_url('carrito/finalizar') ?>" method="post">
+        <form action="<?= base_url('carrito/comprar') ?>" method="post">
             <?= csrf_field() ?>
-            <button type="submit" class="btn btn-success">Finalizar compra</button>
+            <button type="submit" class="btn btn-success">comprar compra</button>
         </form>
     <?php endif; ?>
 </div>
