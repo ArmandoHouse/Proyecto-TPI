@@ -199,7 +199,6 @@
   </div>
 
   <?php
-
   use App\Models\CategoriaModel;
 
   $categoriaModel = new CategoriaModel();

@@ -16,10 +16,10 @@
         <div class="mb-3">
             <label class="form-label">Imagen actual</label><br>
             <?php if (!empty($producto['imagen'])): ?>
-                <img src="<?= base_url('uploads/' . $producto['imagen']) ?>" alt="Imagen actual" class="img-thumbnail mb-2" style="max-height:100px;">
-            <?php else: ?>
-                <span class="text-muted">Sin imagen</span>
-            <?php endif; ?>
+                                    <img src="<?= base_url('assets/img/' . $producto['imagen']) ?>" alt="<?= esc($producto['nombre']) ?>" class="img-fluid" style="max-height: 100px;">
+                                <?php else: ?>
+                                    <img src="<?= base_url('assets/img/not-found.jpg') ?>" alt="Sin imagen" class="img-fluid" style="max-height: 60px;">
+                                <?php endif; ?>
         </div>
         <div class="mb-3">
             <label for="imagen" class="form-label">Nueva imagen (opcional)</label>
