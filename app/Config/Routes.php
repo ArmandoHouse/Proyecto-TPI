@@ -95,4 +95,16 @@ $routes->group('admin', ['namespace' => 'App\Controllers\back', 'filter' => 'ses
     $routes->get('pedidos', 'Pedidos::index');
     $routes->get('pedidos/ver/(:num)', 'Pedidos::ver/$1');
     $routes->post('pedidos/editar/(:num)', 'Pedidos::editar/$1');
+
+    $routes->get('grupos', 'GrupoPersonalizado::index');
+    $routes->get('grupos/crear', 'GrupoPersonalizado::crear');
+    $routes->post('grupos/crear', 'GrupoPersonalizado::crearPost');
+
+    $routes->get('grupos/editar/(:num)', 'GrupoPersonalizado::editar/$1');
+    $routes->post('grupos/editar/(:num)', 'GrupoPersonalizado::editarPost/$1');
+    $routes->post('grupos/eliminar/(:num)', 'GrupoPersonalizado::eliminar/$1');
+
+    $routes->get('grupos/agregar_producto/(:num)', 'GrupoPersonalizado::agregarProducto/$1');
+
+
 });

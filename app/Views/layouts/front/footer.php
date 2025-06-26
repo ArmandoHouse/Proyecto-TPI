@@ -29,21 +29,13 @@
       <div class="col-lg-3 col-md-6 mb-4">
         <h5 class="footer-title mb-3" style="color: var(--zonahw-white); font-weight: 600;">Acerca de</h5>
         <ul class="nav flex-column">
-          <li class="mb-2"><a href="#" class="footer-link">Quiénes somos</a></li>
-          <li class="mb-2"><a href="#" class="footer-link">Nuestro equipo</a></li>
-          <li class="mb-2"><a href="#" class="footer-link">Historia</a></li>
+          <li class="mb-2"><a href="<?=base_url('quienes_somos') ?>" class="footer-link">Quiénes somos</a></li>
+          <li class="mb-2"><a href="<?=base_url('comercializacion') ?>" class="footer-link">Comercialización</a></li>
+          <li class="mb-2"><a href="<?=base_url('terminos') ?>" class="footer-link">Terminos y Usos</a></li>
         </ul>
       </div>
 
-      <!-- Más Información -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <h5 class="footer-title mb-3" style="color: var(--zonahw-white); font-weight: 600;">Más Información</h5>
-        <ul class="nav flex-column">
-          <li class="mb-2"><a href="#" class="footer-link">FAQs</a></li>
-          <li class="mb-2"><a href="#" class="footer-link">Políticas de privacidad</a></li>
-          <li class="mb-2"><a href="#" class="footer-link">Términos y condiciones</a></li>
-        </ul>
-      </div>
+
 
       <!-- Redes Sociales -->
       <div class="col-lg-3 col-md-6 mb-4">

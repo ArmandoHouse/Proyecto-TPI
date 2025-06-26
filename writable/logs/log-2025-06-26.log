@@ -1,0 +1,16 @@
+CRITICAL - 2025-06-26 00:20:36 --> ErrorException: Namespace declaration statement has to be the very first statement or after any declare call in the script
+[Method: GET, Route: catalogo/ver_catalogo/6]
+in APPPATH\Controllers\front\Catalogo.php on line 3.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-06-26 00:20:47 --> ErrorException: Namespace declaration statement has to be the very first statement or after any declare call in the script
+[Method: GET, Route: catalogo/ver_catalogo/7]
+in APPPATH\Controllers\front\Catalogo.php on line 3.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-06-26 00:23:17 --> ErrorException: Namespace declaration statement has to be the very first statement or after any declare call in the script
+[Method: GET, Route: catalogo/ver_catalogo/6]
+in APPPATH\Controllers\front\Catalogo.php on line 3.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-06-26 00:24:34 --> ErrorException: Namespace declaration statement has to be the very first statement or after any declare call in the script
+[Method: GET, Route: catalogo/ver_catalogo/6]
+in APPPATH\Controllers\front\Catalogo.php on line 3.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
