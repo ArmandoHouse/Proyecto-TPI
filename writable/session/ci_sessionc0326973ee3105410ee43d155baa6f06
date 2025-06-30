@@ -1,1 +1,0 @@
-__ci_last_regenerate|i:1749596661;_ci_previous_url|s:47:"http://localhost/Proyecto-TPI/index.php/carrito";usuario_id|s:1:"7";nom_usuario|s:13:"administrador";email|s:15:"admin@email.com";rol|s:5:"admin";logueado|b:1;carrito_id|i:3;carrito|a:1:{i:1;a:4:{s:2:"id";s:1:"1";s:6:"nombre";s:11:"Memoria RAM";s:6:"precio";s:8:"45000.99";s:8:"cantidad";i:1;}}

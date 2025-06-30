@@ -6,47 +6,53 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
+
+
+
 $routes->group('/', ['namespace' => 'App\Controllers\front'], function ($routes) {
-    $routes->get('', 'Principal::index');
-    $routes->get('quienes_somos', 'QuienesSomos::index');
-    $routes->get('comercializacion', 'Comercializacion::index');
-    $routes->get('terminos', 'Terminos::index');
-    $routes->get('carrito', 'Carrito::index');
-   
-    $routes->get('contacto', 'Contacto::index');   
-    $routes->post('contacto/enviar', 'Contacto::enviar'); 
-   
-   
-    // Registro, Login
-    $routes->get('registro', 'Autenticacion::registro');
-    $routes->post('registro', 'Autenticacion::registroPost');
-    $routes->get('login', 'Autenticacion::login');
-    $routes->post('login', 'Autenticacion::loginPost');
-    
-    // Catalogo
-    $routes->get('catalogo/ver_catalogo/(:num)', 'Catalogo::ver_catalogo/$1');
-    $routes->get('catalogo/ver_producto/(:num)', 'Catalogo::ver_producto/$1');
+
+    $routes->get('logout', 'Autenticacion::logout', ['filter' => ['sesion_valida']]);
+
+    $routes->group('', ['filter' => 'no_sesion'], function ($routes) {
+        $routes->get('login', 'Autenticacion::login');
+        $routes->post('login', 'Autenticacion::loginPost');
+        $routes->get('registro', 'Autenticacion::registro');
+        $routes->post('registro', 'Autenticacion::registroPost');
+    });
+
+    $routes->group('', ['filter' => 'no_admin'], function ($routes) {
+        $routes->get('', 'Principal::index');
+        $routes->get('quienes_somos', 'QuienesSomos::index');
+        $routes->get('comercializacion', 'Comercializacion::index');
+        $routes->get('terminos', 'Terminos::index');
+        $routes->get('carrito', 'Carrito::index');
+
+        $routes->get('contacto', 'Contacto::index');
+        $routes->post('contacto/enviar', 'Contacto::enviar');
+
+        // Catalogo
+        $routes->get('catalogo/ver_catalogo/(:num)', 'Catalogo::ver_catalogo/$1');
+        $routes->get('catalogo/ver_producto/(:num)', 'Catalogo::ver_producto/$1');
 
 
-    $routes->group('/', ['filter' => 'sesion_valida'], function ($routes) {
-        $routes->get('perfil', 'Perfil::index');
-        $routes->post('perfil/actualizar', 'Perfil::actualizar');
-        
-        $routes->get('logout', 'Autenticacion::logout');
+        $routes->group('/', ['filter' => 'sesion_valida'], function ($routes) {
+            $routes->get('perfil', 'Perfil::index');
+            $routes->post('perfil/actualizar', 'Perfil::actualizar');
 
-        $routes->post('carrito/agregar/(:num)', 'Carrito::agregar/$1');
-        $routes->post('carrito/eliminar/(:num)', 'Carrito::eliminar/$1');
-        $routes->post('carrito/comprar', 'Carrito::comprar');
+            $routes->post('carrito/agregar/(:num)', 'Carrito::agregar/$1');
+            $routes->post('carrito/eliminar/(:num)', 'Carrito::eliminar/$1');
+            $routes->post('carrito/comprar', 'Carrito::comprar');
 
-        $routes->get('pedidos', 'Pedido::index');
-        $routes->get('pedidos/ver/(:num)', 'Pedido::ver/$1');
-        $routes->post('pedidos/generar/(:num)', 'Pedido::generar/$1');
+            $routes->get('pedidos', 'Pedido::index');
+            $routes->get('pedidos/ver/(:num)', 'Pedido::ver/$1');
+            $routes->post('pedidos/generar/(:num)', 'Pedido::generar/$1');
 
-        $routes->get('consultas', 'Consulta::index');
-        $routes->get('consultas/crear', 'Consulta::crear');
-        $routes->post('consultas/crear', 'Consulta::crearPost');
-        $routes->get('consultas/ver/(:num)', 'Consulta::ver/$1');
-        $routes->post('consultas/responder/(:num)', 'Consulta::responderPost/$1');
+            $routes->get('consultas', 'Consulta::index');
+            $routes->get('consultas/crear', 'Consulta::crear');
+            $routes->post('consultas/crear', 'Consulta::crearPost');
+            $routes->get('consultas/ver/(:num)', 'Consulta::ver/$1');
+            $routes->post('consultas/responder/(:num)', 'Consulta::responderPost/$1');
+        });
     });
 });
 

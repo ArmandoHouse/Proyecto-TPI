@@ -10,6 +10,14 @@
 
 <?= $this->section('contenido') ?>
 <div class="container py-5">
+
+  <?php if (session()->getFlashdata('error')): ?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <?= session()->getFlashdata('error') ?>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+  <?php endif; ?>
+
   <div class="row">
     <div class="col-md-6">
       <?php if (!empty($producto['imagen'])): ?>
@@ -28,7 +36,7 @@
           <!-- Input de cantidad fuera de los formularios -->
           <div>
             <label for="cantidad" class="form-label">Cantidad</label>
-            <input type="number" name="cantidad" id="cantidad" value="1" min="1" class="form-control" style="width: 100px;">
+            <input type="number" name="cantidad" id="cantidad" value="1" min="1" max="<?= esc($producto['stock']) ?>" class="form-control" style="width: 100px;">
           </div>
 
           <!-- Formulario para agregar al carrito -->
@@ -51,10 +59,30 @@
   </div>
 </div>
 
+
 <script>
-  document.getElementById('cantidad').addEventListener('input', function () {
-    document.getElementById('cantidad_carrito').value = this.value;
-    document.getElementById('cantidad_comprar').value = this.value;
+  function validarCantidad(e) {
+    const cantidad = parseInt(document.getElementById('cantidad').value, 10);
+    if (isNaN(cantidad) || cantidad < 1) {
+      e.preventDefault();
+      alert('La cantidad debe ser mayor o igual a 1.');
+      return false;
+    }
+    return true;
+  }
+
+  // Al enviar el formulario de agregar al carrito
+  document.querySelector('form[action*="carrito/agregar"]').addEventListener('submit', function(e) {
+    if (!validarCantidad(e)) return;
+    const cantidad = document.getElementById('cantidad').value;
+    document.getElementById('cantidad_carrito').value = cantidad;
+  });
+
+  // Al enviar el formulario de comprar ahora
+  document.querySelector('form[action*="pedidos/generar"]').addEventListener('submit', function(e) {
+    if (!validarCantidad(e)) return;
+    const cantidad = document.getElementById('cantidad').value;
+    document.getElementById('cantidad_comprar').value = cantidad;
   });
 </script>
 

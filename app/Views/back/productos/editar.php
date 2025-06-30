@@ -16,7 +16,7 @@
         <div class="mb-3">
             <label class="form-label">Imagen actual</label><br>
             <?php if (!empty($producto['imagen'])): ?>
-                <img src="<?= base_url('uploads/' . $producto['imagen']) ?>" alt="Imagen actual" class="img-thumbnail mb-2" style="max-height:100px;">
+                <img src="<?= base_url('assets/img/' . $producto['imagen']) ?>" alt="Imagen actual" class="img-thumbnail mb-2" style="max-height:100px;">
             <?php else: ?>
                 <span class="text-muted">Sin imagen</span>
             <?php endif; ?>

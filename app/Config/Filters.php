@@ -12,8 +12,10 @@ use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\PageCache;
 use CodeIgniter\Filters\PerformanceMetrics;
 use CodeIgniter\Filters\SecureHeaders;
-use App\Filters\SesionValida;
-use App\Filters\SesionAdmin;
+use App\Filters\SesionValidaFilter;
+use App\Filters\SesionAdminFilter;
+use App\Filters\NoAdminFilter;
+use App\Filters\NoSesionFilter;
 
 
 class Filters extends BaseFilters
@@ -37,8 +39,11 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
-        'sesion_valida' => SesionValida::class,
-        'sesion_admin'  => SesionAdmin::class
+        'sesion_valida' => SesionValidaFilter::class,
+        'sesion_admin'  => SesionAdminFilter::class,
+        'no_admin' => NoAdminFilter::class,
+        'no_sesion' => NoSesionFilter::class
+
     ];
 
     /**

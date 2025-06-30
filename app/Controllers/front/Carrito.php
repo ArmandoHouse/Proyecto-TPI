@@ -26,6 +26,7 @@ class Carrito extends BaseController
         return view('front/carrito', ['carrito' => $carrito]);
     }
 
+
     public function agregar($productoId)
     {
         $productoModel = new ProductoModel();
@@ -36,8 +37,13 @@ class Carrito extends BaseController
         }
 
         $cantidad = (int) ($this->request->getPost('cantidad') ?? 1);
-        $usuarioId = session('usuario_id');
 
+        // Validar stock
+        if ($cantidad > $producto['stock']) {
+            return redirect()->back()->withInput()->with('error', 'La cantidad seleccionada supera el stock disponible.');
+        }
+
+        $usuarioId = session('usuario_id');
         $carritoItemModel = new CarritoItemModel();
 
         $item = $carritoItemModel
@@ -45,12 +51,14 @@ class Carrito extends BaseController
             ->where('producto_id', $productoId)
             ->first();
 
+        // Valida si la nueva cantidad más la ya existente en el carrito supera el stock del producto
         if ($item) {
-            // Si el producto ya está en el carrito, actualizamos la cantidad         
             $nuevaCantidad = $item['cantidad'] + $cantidad;
+            if ($nuevaCantidad > $producto['stock']) {
+                return redirect()->back()->withInput()->with('error', 'La cantidad total en el carrito supera el stock disponible.');
+            }
             $carritoItemModel->update($item['id'], ['cantidad' => $nuevaCantidad]);
         } else {
-            // Si el producto no está en el carrito, lo agregamos          
             $carritoItemModel->insert([
                 'usuario_id'  => $usuarioId,
                 'producto_id' => $productoId,
@@ -58,7 +66,6 @@ class Carrito extends BaseController
             ]);
         }
 
-        // Redirige de vuelta a la vista del producto con un mensaje de éxito
         return redirect()->to(base_url('catalogo/ver_producto/' . $productoId))->with('success', 'Producto agregado al carrito');
     }
 
@@ -80,9 +87,7 @@ class Carrito extends BaseController
     {
         $usuarioId = session('usuario_id');
         $carritoItemModel = new CarritoItemModel();
-        $productoModel = new ProductoModel();
         $pedidoModel = new PedidoModel();
-        $pedidoItemModel = new PedidoItemModel();
 
         // Obtener los items del carrito del usuario
         $carritoItems = $carritoItemModel->where('usuario_id', $usuarioId)->findAll();
@@ -91,32 +96,7 @@ class Carrito extends BaseController
             return redirect()->to(base_url('carrito'))->with('error', 'No hay productos en el carrito.');
         }
 
-        // Calcular el total del pedido
-        $total = 0;
-        foreach ($carritoItems as $item) {
-            $producto = $productoModel->find($item['producto_id']);
-            if ($producto) {
-                $total += $producto['precio'] * $item['cantidad'];
-            }
-        }
-
-        // Crear el pedido
-        $pedidoId = $pedidoModel->insert([
-            'usuario_id' => $usuarioId,
-            'direccion_envio'      => '' ,
-            'estado'     => 'pendiente',
-            'total'      => $total
-        ]);
-
-        // Crear los items del pedido
-        foreach ($carritoItems as $item) {
-            $pedidoItemModel->insert([
-                'pedido_id'   => $pedidoId,
-                'producto_id' => $item['producto_id'],
-                'cantidad'    => $item['cantidad'],
-                'precio_unitario'      => $productoModel->find($item['producto_id'])['precio']
-            ]);
-        }
+        $pedidoModel = $pedidoModel->crearPedido($usuarioId, $carritoItems);
 
         // Soft delete de los items del carrito
         foreach ($carritoItems as $item) {
