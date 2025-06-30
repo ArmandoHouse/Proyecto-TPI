@@ -13,6 +13,8 @@ use CodeIgniter\Filters\PageCache;
 use CodeIgniter\Filters\PerformanceMetrics;
 use CodeIgniter\Filters\SecureHeaders;
 use App\Filters\SesionValida;
+use App\Filters\SesionAdmin;
+
 
 class Filters extends BaseFilters
 {
@@ -36,7 +38,7 @@ class Filters extends BaseFilters
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
         'sesion_valida' => SesionValida::class,
-        'sesion_admin'  => SesionValida::class
+        'sesion_admin'  => SesionAdmin::class
     ];
 
     /**
