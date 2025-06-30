@@ -8,7 +8,18 @@ ZonaHW - Venta de Hardware
 <link rel="stylesheet" href="<?= base_url('assets/css/views/principal.css') ?>">
 <?= $this->endSection() ?>
 
+<?php if (session()->getFlashdata('mensaje')): ?>
+    <div class="alert alert-success">
+        <?= session()->getFlashdata('mensaje') ?>
+    </div>
+<?php elseif (session()->getFlashdata('error')): ?>
+    <div class="alert alert-danger">
+        <?= session()->getFlashdata('error') ?>
+    </div>
+<?php endif; ?>
+
 <?= $this->section('contenido') ?>
+
 
 <div class="container-fluid p-0">
   <div id="c-1" class="carousel carousel-fade slide" data-bs-ride="carousel">

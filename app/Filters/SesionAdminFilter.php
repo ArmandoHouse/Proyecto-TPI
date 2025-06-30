@@ -13,7 +13,7 @@ class SesionAdminFilter implements FilterInterface
         $session = session();
 
         if (!in_array($session->get('rol'), ['admin', 'super_admin'])) {
-            return redirect()->to(base_url('login'))->with('error', 'Tu cuenta no tiene permisos suficientes.');
+            return redirect()->to(base_url(''))->with('error', 'Tu cuenta no tiene permisos suficientes.');
         }
     }
 

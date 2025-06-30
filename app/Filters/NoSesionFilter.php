@@ -13,7 +13,7 @@ class NoSesionFilter implements FilterInterface
         $session = session();
 
         if (session()->has('usuario_id')) {
-            return redirect()->to(base_url('/'));
+            return redirect()->to(base_url(''));
         }
     }
 

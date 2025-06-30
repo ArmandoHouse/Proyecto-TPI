@@ -10,15 +10,12 @@ use CodeIgniter\Router\RouteCollection;
 
 
 $routes->group('/', ['namespace' => 'App\Controllers\front'], function ($routes) {
-
-    $routes->get('logout', 'Autenticacion::logout', ['filter' => ['sesion_valida']]);
-
-    $routes->group('', ['filter' => 'no_sesion'], function ($routes) {
-        $routes->get('login', 'Autenticacion::login');
-        $routes->post('login', 'Autenticacion::loginPost');
-        $routes->get('registro', 'Autenticacion::registro');
-        $routes->post('registro', 'Autenticacion::registroPost');
-    });
+    
+    $routes->get('login', 'Autenticacion::login');
+    $routes->post('login', 'Autenticacion::loginPost');
+    $routes->get('registro', 'Autenticacion::registro');
+    $routes->post('registro', 'Autenticacion::registroPost');
+    $routes->get('logout', 'Autenticacion::logout');
 
     $routes->group('', ['filter' => 'no_admin'], function ($routes) {
         $routes->get('', 'Principal::index');
