@@ -9,7 +9,8 @@ use App\Models\UsuarioModel;
 
 class Pedidos extends BaseController
 {
-    public function index() {
+    public function index()
+    {
         $pedidoModel = new PedidoModel();
 
         // Obtener filtros desde GET
@@ -33,10 +34,17 @@ class Pedidos extends BaseController
             $builder->where('pedidos.estado', $estado);
         }
 
+        $id = $this->request->getGet('id');
+
+        if ($id) {
+            $builder->where('pedidos.id', $id);
+        }
+
         $pedidos = $builder->orderBy('pedidos.created_at', 'DESC')->findAll();
 
         // Pasar los filtros a la vista para mantener los valores en los inputs
         $filtros = [
+            'id' => $id,
             'cliente' => $cliente,
             'estado' => $estado,
         ];

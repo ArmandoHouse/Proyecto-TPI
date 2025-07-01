@@ -16,6 +16,9 @@
     <h2>Pedidos realizados</h2>
     <!-- Filtros -->
     <form method="get" class="row g-3 mb-4">
+        <div class="col-md-2">
+            <input type="text" name="id" value="<?= esc($filtros['id'] ?? '') ?>" class="form-control" placeholder="ID de pedido">
+        </div>
         <div class="col-md-4">
             <input type="text" name="cliente" value="<?= esc($filtros['cliente'] ?? '') ?>" class="form-control" placeholder="Buscar por cliente...">
         </div>

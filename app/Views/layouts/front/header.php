@@ -173,7 +173,7 @@
               <a href="#" class="text-white text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown">
                 <span class="d-none d-md-inline"><?= esc($session->get('username')) ?></span>
               </a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">               
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                 <li><a class="dropdown-item" href="<?= base_url('perfil') ?>">Mi perfil</a></li>
                 <li><a class="dropdown-item" href="<?= base_url('consultas') ?>">Mis consultas</a></li>
                 <li><a class="dropdown-item" href="<?= base_url('pedidos') ?>">Mis pedidos</a></li>
@@ -197,7 +197,8 @@
   use App\Models\CategoriaModel;
 
   $categoriaModel = new CategoriaModel();
-  $categorias = $categoriaModel->findAll();
+  $categorias = $categoriaModel->getDisponibles();
+
   ?>
 
   <!-- Menú de Navegación: Fondo azul -->

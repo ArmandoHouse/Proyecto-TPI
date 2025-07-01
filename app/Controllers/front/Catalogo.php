@@ -66,8 +66,9 @@ class Catalogo extends BaseController
 
         $categoria = $categoriaModel->find($id);
 
-        if (!$categoria) {
-            return redirect()->to(base_url(''))->with('error', 'Categoría no encontrada');
+        // Si la categoría no existe o está oculta, redirigir o mostrar error
+        if (!$categoria || $categoria['estado'] !== 'disponible') {
+            return redirect()->to(base_url(''))->with('error', 'Categoría no disponible.');
         }
 
         // Filtros desde GET

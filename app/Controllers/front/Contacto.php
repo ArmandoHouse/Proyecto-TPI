@@ -4,12 +4,20 @@ namespace App\Controllers\front;
 
 use App\Controllers\BaseController;
 use App\Models\ContactoModel;
+use App\Models\UsuarioModel;
+
 
 class Contacto extends BaseController
 {
     public function index(): string
     {
-        return view('front/contacto');
+        $usuario = null;
+        if (session('usuario_id')) {
+            $usuarioModel = new UsuarioModel();
+            $usuario = $usuarioModel->find(session('usuario_id'));
+        }
+
+        return view('front/contacto', ['usuario' => $usuario]);
     }
 
     public function enviar()

@@ -1,21 +1,47 @@
 <?php
 
 namespace App\Controllers\back;
+
 use App\Controllers\BaseController;
 
 use App\Models\CategoriaModel;
 
 class Categorias extends BaseController
-{    
-    
-    public function index() {
+{
+
+    public function index()
+    {
         $categoriaModel = new CategoriaModel();
 
-        $data['categorias'] = $categoriaModel->findAll();
+        // Obtener filtros desde GET
+        $nombre = $this->request->getGet('nombre');
+        $estado = $this->request->getGet('estado');
+        $id     = $this->request->getGet('id');
+
+        $builder = $categoriaModel;
+
+        if ($nombre) {
+            $builder = $builder->like('nombre', $nombre);
+        }
+        if ($estado) {
+            $builder = $builder->where('estado', $estado);
+        }
+        if ($id) {
+            $builder = $builder->where('id', $id);
+        }
+
+        $data['categorias'] = $builder->findAll();
+
+        // Pasar los filtros a la vista para mantener los valores en los inputs
+        $data['filtros'] = [
+            'nombre' => $nombre,
+            'estado' => $estado,
+            'id'     => $id,
+        ];
 
         return view('back/categorias/index', $data);
     }
-
+    
     public function agregarCategoria()
     {
         return view('back/categorias/cargar');
@@ -34,7 +60,7 @@ class Categorias extends BaseController
             return redirect()->back()->with('error', 'El nombre de la categoría es obligatorio.');
         }
 
-         // Buscar si existe una categoría con ese nombre (aunque esté dada de baja)
+        // Buscar si existe una categoría con ese nombre (aunque esté dada de baja)
         $existente = $categoriaModel->where('nombre', $nombre)->first();
 
         if ($existente) {
@@ -56,41 +82,6 @@ class Categorias extends BaseController
         return redirect()->to(base_url('admin/categorias'))->with('success', 'Categoría guardada con éxito.');
     }
 
-    public function activar($id)
-    {
-        $categoriaModel = new CategoriaModel();
-        $categoriaModel->update($id, ['estado' => 'disponible']);
-
-        return redirect()->to(base_url('admin/categorias'))->with('success', 'Categoría activada correctamente');
-    }
-
-    public function ocultar($id)
-    {
-        $categoriaModel = new CategoriaModel();
-
-        $categoriaModel->update($id, ['estado' => 'oculto']);
-
-        return redirect()->to(base_url('admin/categorias'))->with('success', 'Categoría ocultada correctamente');
-    }
-
-    public function eliminar($id)
-    {
-        $categoriaModel = new CategoriaModel();
-
-        $categoriaModel->delete($id);
-
-        return redirect()->to(base_url('admin/categorias'))->with('success', 'Categoría eliminada correctamente');
-    }
-
-    public function inactivas()
-    {
-        $categoriaModel = new CategoriaModel();
-        $data['categorias'] = $categoriaModel->where('estado', 'oculto')->findAll();
-        $data['inactivas'] = true;
-
-        return view('back/categorias/index', $data);
-    }
-
     public function editar($id)
     {
         $categoriaModel = new CategoriaModel();
@@ -108,6 +99,7 @@ class Categorias extends BaseController
         $categoriaModel = new CategoriaModel();
         $nombre = $this->request->getPost('nombre');
         $descripcion = $this->request->getPost('descripcion');
+        $estado = $this->request->getPost('estado'); // <-- Agrega esto
 
         // Validar que el nombre no esté vacío
         if (empty($nombre)) {
@@ -116,10 +108,24 @@ class Categorias extends BaseController
 
         $categoriaModel->update($id, [
             'nombre' => $nombre,
-            'descripcion' => $descripcion
+            'descripcion' => $descripcion,
+            'estado' => $estado
         ]);
 
         return redirect()->to(base_url('admin/categorias'))->with('success', 'Categoría actualizada correctamente.');
     }
 
+    public function eliminar($id)
+    {
+        $categoriaModel = new CategoriaModel();
+        $categoria = $categoriaModel->find($id);
+
+        if (!$categoria) {
+            return redirect()->to(base_url('admin/categorias'))->with('error', 'Categoría no encontrada.');
+        }
+
+        $categoriaModel->delete($id);
+
+        return redirect()->to(base_url('admin/categorias'))->with('success', 'Categoría eliminada correctamente.');
+    }
 }

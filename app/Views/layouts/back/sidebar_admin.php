@@ -50,6 +50,12 @@ main {
                 Contactos
             </a>
         </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center" href="<?= base_url('admin/consultas') ?>">
+                <i class="bi bi-chat-right-text me-2"></i>
+                Consultas
+            </a>
+        </li>
         <li class="nav-item">
             <a class="nav-link text-danger d-flex align-items-center" href="<?= base_url('logout') ?>">
                 <i class="bi bi-box-arrow-right me-2"></i>

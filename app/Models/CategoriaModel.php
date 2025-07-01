@@ -18,11 +18,16 @@ class CategoriaModel extends Model
 
     protected $useAutoIncrement = true;
     protected $returnType     = 'array';
-    
+
     protected $useTimestamps = true;
     protected $useSoftDeletes = true;
 
     protected $createdField = 'created_at';
     protected $updatedField = 'updated_at';
     protected $deletedField = 'deleted_at';
+
+    public function getDisponibles()
+    {
+        return $this->where('estado', 'disponible')->findAll();
+    }
 }
