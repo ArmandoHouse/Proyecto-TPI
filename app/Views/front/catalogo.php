@@ -8,13 +8,29 @@
         border-radius: 16px;
         transition: box-shadow 0.2s, transform 0.2s;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        /* Asegura que llene el alto del contenedor */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-producto img {
+        object-fit: contain;
+        height: 200px;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+    }
+
+    .card-producto .card-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     .card-producto:hover {
         box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
         transform: translateY(-4px) scale(1.03);
     }
-
 
     .custom-pagination .page-circle {
         display: inline-flex;
@@ -45,6 +61,17 @@
         width: auto;
         height: auto;
     }
+
+    .filtro-producto {
+        border-radius: 16px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .filtro-producto:hover {
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+        /* No uses transform aquí */
+    }
 </style>
 
 <?= $this->endSection() ?>
@@ -70,7 +97,6 @@
                 <input type="hidden" name="precio_max" value="<?= esc($_GET['precio_max'] ?? '') ?>">
                 <label for="orden" class="me-2 mb-0 fw-bold">Ordenar por</label>
                 <select name="orden" id="orden" class="form-select d-inline-block w-auto" style="display:inline-block;" onchange="this.form.submit()">
-                    <option value="">Más relevantes</option>
                     <option value="precio_asc" <?= (($_GET['orden'] ?? '') === 'precio_asc') ? 'selected' : '' ?>>Menor precio</option>
                     <option value="precio_desc" <?= (($_GET['orden'] ?? '') === 'precio_desc') ? 'selected' : '' ?>>Mayor precio</option>
                 </select>
@@ -95,7 +121,7 @@
     <div class="row">
         <!-- Filtros -->
         <div class="col-md-3 mb-4">
-            <div class="card p-3">
+            <div class="card filtro-producto p-3">
                 <form method="get">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
@@ -104,8 +130,9 @@
                     <div class="mb-3">
                         <label class="form-label">Rango de precio</label>
                         <div class="d-flex gap-2">
-                            <input type="number" class="form-control" name="precio_min" placeholder="Mín" min="0" value="<?= esc($_GET['precio_min'] ?? '') ?>">
-                            <input type="number" class="form-control" name="precio_max" placeholder="Máx" min="0" value="<?= esc($_GET['precio_max'] ?? '') ?>">
+                            <input type="text" class="form-control" name="precio_min" placeholder="Mín" value="<?= esc($_GET['precio_min'] ?? '') ?>">
+                            <input type="text" class="form-control" name="precio_max" placeholder="Máx" value="<?= esc($_GET['precio_max'] ?? '') ?>">
+
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Filtrar</button>
@@ -115,7 +142,7 @@
 
         <!-- Productos -->
         <div class="col-md-9">
-            <div class="row">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
                 <?php if (!empty($productos)): ?>
                     <?php foreach ($productos as $i => $producto): ?>
                         <div class="col-md-4 mb-4">
