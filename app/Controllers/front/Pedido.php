@@ -42,7 +42,7 @@ class Pedido extends BaseController
 
         return view('front/pedidos/ver', ['pedido' => $pedido, 'items' => $items]);
     }
-  
+
 
     public function generar($productoId)
     {
@@ -50,22 +50,32 @@ class Pedido extends BaseController
         $productoModel = new ProductoModel();
 
         $usuarioId = session('usuario_id');
-        $cantidad = $this->request->getPost('cantidad'); // Obtener la cantidad desde el formulario
+        $cantidad = $this->request->getPost('cantidad');
 
-        // Verificar si el producto existe
-        $producto = $productoModel->find($productoId);
-        if (!$producto) {
-            return redirect()->to(base_url('catalogo'))->with('error', 'Producto no encontrado');
-        }
+        // // Verificar si el producto existe
+        // $producto = $productoModel->find($productoId);
+        // if (!$producto) {
+        //     return redirect()->to(base_url('catalogo'))->with('error', 'Producto no encontrado');
+        // }
 
-        // Validar stock
-        if ($cantidad > $producto['stock']) {
-            return redirect()->back()->withInput()->with('error', 'La cantidad seleccionada supera el stock disponible.');
+        // // Validar stock
+        // if ($cantidad > $producto['stock']) {
+        //     return redirect()->back()->withInput()->with('error', 'La cantidad seleccionada supera el stock disponible.');
+        // }
+
+        $validacion = $productoModel->validarDisponibilidad($productoId, $cantidad);
+        if (isset($validacion['error'])) {
+            switch ($validacion['error']) {
+                case 'error_producto':
+                    return redirect()->back()->with('error', 'Producto no encontrado');
+                case 'error_stock':
+                    return redirect()->back()->with('error', 'La cantidad seleccionada supera el stock disponible.');
+            }
         }
 
         // Crear el pedido
         $pedidoId = $pedidoModel->crearPedido($usuarioId, [['producto_id' => $productoId, 'cantidad' => $cantidad]]);
-      
+
         // Redirigir al detalle del pedido
         return redirect()->to(base_url('pedidos/ver/' . $pedidoId))->with('success', 'Pedido generado exitosamente');
     }

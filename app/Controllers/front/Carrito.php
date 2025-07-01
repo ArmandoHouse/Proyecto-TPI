@@ -32,15 +32,28 @@ class Carrito extends BaseController
         $productoModel = new ProductoModel();
         $producto = $productoModel->find($productoId);
 
-        if (!$producto) {
-            return redirect()->to(base_url('catalogo'))->with('error', 'Producto no encontrado');
-        }
+        // // Verifica si existe el producto
+        // if (!$producto) {
+        //     return redirect()->to(base_url('catalogo'))->with('error', 'Producto no encontrado');
+        // }
+
+        // $cantidad = (int) ($this->request->getPost('cantidad') ?? 1);
+
+        // // Validar stock
+        // if ($cantidad > $producto['stock']) {
+        //     return redirect()->back()->withInput()->with('error', 'La cantidad seleccionada supera el stock disponible.');
+        // }
 
         $cantidad = (int) ($this->request->getPost('cantidad') ?? 1);
 
-        // Validar stock
-        if ($cantidad > $producto['stock']) {
-            return redirect()->back()->withInput()->with('error', 'La cantidad seleccionada supera el stock disponible.');
+        $validacion = $productoModel->validarDisponibilidad($productoId, $cantidad);
+        if (isset($validacion['error'])) {
+            switch ($validacion['error']) {
+                case 'error_producto':
+                    return redirect()->back()->with('error', 'Producto no encontrado');              
+                case 'error_stock':
+                    return redirect()->back()->with('error', 'La cantidad seleccionada supera el stock disponible.');
+            }
         }
 
         $usuarioId = session('usuario_id');
@@ -66,7 +79,18 @@ class Carrito extends BaseController
             ]);
         }
 
-        return redirect()->to(base_url('catalogo/ver_producto/' . $productoId))->with('success', 'Producto agregado al carrito');
+        $isAjax = $this->request->isAJAX();
+
+        if ($redirectTo = $this->request->getPost('redirect_to')) {
+            if ($isAjax) {
+                return $this->response->setJSON(['success' => 'Producto agregado al carrito']);
+            }
+            return redirect()->to($redirectTo)->with('success', 'Producto agregado al carrito');
+        }
+        if ($isAjax) {
+            return $this->response->setJSON(['success' => 'Producto agregado al carrito']);
+        }
+        return redirect()->back()->with('success', 'Producto agregado al carrito');
     }
 
     public function eliminar($carritoId)
@@ -96,13 +120,25 @@ class Carrito extends BaseController
             return redirect()->to(base_url('carrito'))->with('error', 'No hay productos en el carrito.');
         }
 
-        $pedidoModel = $pedidoModel->crearPedido($usuarioId, $carritoItems);
+        // Crear el pedido
+        $pedidoId = $pedidoModel->crearPedido($usuarioId, $carritoItems);
 
         // Soft delete de los items del carrito
         foreach ($carritoItems as $item) {
             $carritoItemModel->delete($item['id']);
         }
 
-        return redirect()->to(base_url('carrito'))->with('mensaje', 'Compra finalizada con éxito');
+        return redirect()->to(base_url('pedidos/ver/' . $pedidoId))->with('success', 'Pedido realizado con éxito');
+    }
+
+    public function vaciar()
+    {
+        $usuarioId = session('usuario_id');
+        $carritoItemModel = new CarritoItemModel();
+
+        // Eliminar todos los items del carrito del usuario
+        $carritoItemModel->where('usuario_id', $usuarioId)->delete();
+
+        return redirect()->to(base_url('carrito'))->with('mensaje', 'Carrito vaciado con éxito');
     }
 }

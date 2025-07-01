@@ -4,6 +4,15 @@
 
 <?= $this->section('styles') ?>
 <link rel="stylesheet" href="<?= base_url('assets/css/views/principal.css') ?>">
+
+<style>
+    .img-carrito {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+    }
+</style>
+
 <?= $this->endSection() ?>
 
 <?= $this->section('contenido') ?>
@@ -46,7 +55,7 @@
                 ?>
                     <tr>
                         <td style="width: 100px;">
-                            <img src="<?= base_url('assets/img/' . $item['imagen']) ?>" class="img-fluid rounded" alt="<?= esc($item['nombre']) ?>">
+                            <img src="<?= base_url('assets/img/' . $item['imagen']) ?>" class="img-fluid rounded img-carrito" alt="<?= esc($item['nombre']) ?>">
                         </td>
                         <td><?= esc($item['nombre']) ?></td>
                         <td>$<?= number_format($item['precio'], 0, ',', '.') ?></td>
@@ -68,11 +77,19 @@
                 </tr>
             </tfoot>
         </table>
-        <a href="<?= base_url('') ?>" class="btn btn-outline-secondary">← Seguir comprando</a>
-        <form action="<?= base_url('carrito/comprar') ?>" method="post">
-            <?= csrf_field() ?>
-            <button type="submit" class="btn btn-success">Realizar compra</button>
-        </form>
+        <div class="d-flex justify-content-between mt-3">
+            <div>
+                <a href="<?= base_url('') ?>" class="btn btn-outline-secondary">Seguir comprando</a>
+                <form action="<?= base_url('carrito/comprar') ?>" method="post" class="d-inline m-0">
+                    <?= csrf_field() ?>
+                    <button type="submit" class="btn btn-success">Realizar compra</button>
+                </form>
+            </div>
+            <form action="<?= base_url('carrito/vaciar') ?>" method="post" class="d-inline">
+                <?= csrf_field() ?>
+                <button type="submit" class="btn btn-danger btn-sm">Vaciar carrito</button>
+            </form>
+        </div>
     <?php endif; ?>
 </div>
 <?= $this->endSection() ?>

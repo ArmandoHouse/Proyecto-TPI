@@ -1,0 +1,78 @@
+CRITICAL - 2025-07-01 11:24:59 --> ErrorException: Trying to access array offset on value of type int
+[Method: POST, Route: carrito/comprar]
+in APPPATH\Controllers\front\Carrito.php on line 106.
+ 1 APPPATH\Controllers\front\Carrito.php(106): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Controllers\\front\\Carrito.php', 106)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Carrito->comprar()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-01 11:27:25 --> ErrorException: Trying to access array offset on value of type int
+[Method: POST, Route: carrito/comprar]
+in APPPATH\Controllers\front\Carrito.php on line 106.
+ 1 APPPATH\Controllers\front\Carrito.php(106): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Controllers\\front\\Carrito.php', 106)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Carrito->comprar()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-01 12:02:50 --> ErrorException: Undefined variable $producto
+[Method: GET, Route: catalogo/ver_catalogo/6]
+in APPPATH\Views\front\catalogo.php on line 147.
+ 1 APPPATH\Views\front\catalogo.php(147): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $producto', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\catalogo.php', 147)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\catalogo.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/catalogo', [], true)
+ 5 APPPATH\Controllers\front\Catalogo.php(136): view('front/catalogo', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Catalogo->ver_catalogo('6')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Catalogo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-01 12:03:40 --> ErrorException: Undefined variable $producto
+[Method: GET, Route: catalogo/ver_catalogo/5]
+in APPPATH\Views\front\catalogo.php on line 186.
+ 1 APPPATH\Views\front\catalogo.php(186): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $producto', 'E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\catalogo.php', 186)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\front\\catalogo.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/catalogo', [], true)
+ 5 APPPATH\Controllers\front\Catalogo.php(136): view('front/catalogo', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Catalogo->ver_catalogo('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Catalogo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-01 13:47:41 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\ProductoModel::validarDisponibilidad
+[Method: POST, Route: carrito/agregar/7]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\front\Carrito.php(49): CodeIgniter\Model->__call('validarDisponibilidad', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Carrito->agregar('7')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-01 13:47:57 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\ProductoModel::validarDisponibilidad
+[Method: POST, Route: pedidos/generar/9]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\front\Pedido.php(66): CodeIgniter\Model->__call('validarDisponibilidad', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Pedido->generar('9')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Pedido))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-01 13:48:54 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\ProductoModel::validarDisponibilidad
+[Method: POST, Route: carrito/agregar/9]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\front\Carrito.php(49): CodeIgniter\Model->__call('validarDisponibilidad', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Carrito->agregar('9')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

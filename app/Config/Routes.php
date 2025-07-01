@@ -42,6 +42,7 @@ $routes->group('/', ['namespace' => 'App\Controllers\front'], function ($routes)
             $routes->post('carrito/agregar/(:num)', 'Carrito::agregar/$1');
             $routes->post('carrito/eliminar/(:num)', 'Carrito::eliminar/$1');
             $routes->post('carrito/comprar', 'Carrito::comprar');
+            $routes->post('carrito/vaciar', 'Carrito::vaciar');
 
             $routes->get('pedidos', 'Pedido::index');
             $routes->get('pedidos/ver/(:num)', 'Pedido::ver/$1');
