@@ -7,7 +7,7 @@ use App\Controllers\BaseController;
 use App\Models\CarritoItemModel;
 use App\Models\ProductoModel;
 use App\Models\PedidoModel;
-use App\Models\PedidoItemModel;
+use App\Models\UsuarioModel;
 
 class Carrito extends BaseController
 {
@@ -50,7 +50,7 @@ class Carrito extends BaseController
         if (isset($validacion['error'])) {
             switch ($validacion['error']) {
                 case 'error_producto':
-                    return redirect()->back()->with('error', 'Producto no encontrado');              
+                    return redirect()->back()->with('error', 'Producto no encontrado');
                 case 'error_stock':
                     return redirect()->back()->with('error', 'La cantidad seleccionada supera el stock disponible.');
             }
@@ -112,6 +112,13 @@ class Carrito extends BaseController
         $usuarioId = session('usuario_id');
         $carritoItemModel = new CarritoItemModel();
         $pedidoModel = new PedidoModel();
+
+        // Validar datos de facturación
+        $usuarioModel = new UsuarioModel();
+        $validacion = $usuarioModel->validarDatosFacturacion(session('usuario_id'));
+        if (isset($validacion['error'])) {
+            return redirect()->back()->with('error', $validacion['error']);
+        }
 
         // Obtener los items del carrito del usuario
         $carritoItems = $carritoItemModel->where('usuario_id', $usuarioId)->findAll();

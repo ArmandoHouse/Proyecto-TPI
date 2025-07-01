@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\PedidoModel;
 use App\Models\PedidoItemModel;
 use App\Models\ProductoModel;
+use App\Models\UsuarioModel;
 
 class Pedido extends BaseController
 {
@@ -40,7 +41,51 @@ class Pedido extends BaseController
             ->join('productos', 'productos.id = pedidos_items.producto_id')
             ->findAll();
 
-        return view('front/pedidos/ver', ['pedido' => $pedido, 'items' => $items]);
+        // Calcular totales y armar productos
+        $products = [];
+        $subtotal = 0;
+        foreach ($items as $item) {
+            $productSubtotal = $item['producto_precio'] * $item['cantidad'];
+            $products[] = [
+                'id' => $item['producto_id'],
+                'name' => $item['producto_nombre'],
+                'quantity' => $item['cantidad'],
+                'unitPrice' => $item['producto_precio'],
+                'subtotal' => $productSubtotal,
+            ];
+            $subtotal += $productSubtotal;
+        }
+
+        // Calcular impuestos y total
+        $tax = $subtotal * 0.21;
+        $total = $subtotal + $tax;
+
+        // Armar el array para JS
+        $pedidoData = [
+            'invoice' => [
+                'number' => 'INV-' . date('Y', strtotime($pedido['created_at'])) . '-' . str_pad($pedido['id'], 6, '0', STR_PAD_LEFT),
+                'date' => $pedido['created_at'],
+            ],
+            'client' => [
+                'name' => $pedido['usuario_nombre'] . ' ' . $pedido['usuario_apellido'],
+                'email' => $pedido['usuario_email'],
+                'dni' => $pedido['usuario_dni'] ?? '-',
+                'phone' => $pedido['usuario_telefono'] ?? '-',
+                'address' => $pedido['usuario_direccion'] ?? '-',
+            ],
+            'products' => $products,
+            'totals' => [
+                'subtotal' => $subtotal,
+                'tax' => $tax,
+                'total' => $total,
+            ],
+        ];
+
+        return view('front/pedidos/ver', [
+            'pedidoData' => $pedidoData,
+            'pedido' => $pedido,
+            'items' => $items,
+        ]);
     }
 
 
@@ -62,6 +107,13 @@ class Pedido extends BaseController
         // if ($cantidad > $producto['stock']) {
         //     return redirect()->back()->withInput()->with('error', 'La cantidad seleccionada supera el stock disponible.');
         // }
+        
+        // Validar datos de facturación
+        $usuarioModel = new UsuarioModel();   
+        $validacion = $usuarioModel->validarDatosFacturacion(session('usuario_id'));
+        if (isset($validacion['error'])) {
+            return redirect()->back()->with('error', $validacion['error']);
+        }
 
         $validacion = $productoModel->validarDisponibilidad($productoId, $cantidad);
         if (isset($validacion['error'])) {

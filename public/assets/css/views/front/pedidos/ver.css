@@ -1,0 +1,196 @@
+/* CSS personalizado solo para lo que Bootstrap 5 no puede hacer */
+
+/* Gradiente personalizado para la cabecera de la factura */
+.invoice-header {
+  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 50%, #1e3a8a 100%);
+}
+
+/* Card de detalles de factura con efecto glassmorphism */
+.invoice-details-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Icono de la empresa con fondo semi-transparente */
+.company-icon {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  backdrop-filter: blur(10px);
+}
+
+/* Efecto hover personalizado para botones */
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Gradiente sutil para el fondo del body */
+body.bg-light {
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #e0f2fe 30%,
+    #f1f5f9 70%,
+    #f8fafc 100%
+  ) !important;
+  min-height: 100vh;
+}
+
+/* Sombra personalizada para la tarjeta principal */
+.card.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Estilo para las filas de la tabla */
+.table-hover tbody tr:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+  transition: background-color 0.15s ease-in-out;
+}
+
+/* Card de productos para mobile con mejor diseño */
+.product-card-mobile {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.product-card-mobile:hover {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Iconos con color primario personalizado */
+.text-primary {
+  color: #3b82f6 !important;
+}
+
+/* Botones con border-radius personalizado */
+.btn {
+  border-radius: 0.75rem;
+}
+
+/* Animación suave para las transiciones */
+* {
+  transition-property: transform, box-shadow, background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+/* Mejoras para impresión */
+@media print {
+  body.bg-light {
+    background: white !important;
+  }
+
+  .invoice-header {
+    background: #3b82f6 !important;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  .btn,
+  .d-grid {
+    display: none !important;
+  }
+
+  .card {
+    box-shadow: none !important;
+    border: 2px solid #000 !important;
+  }
+
+  .d-none.d-md-block {
+    display: block !important;
+  }
+
+  .d-md-none {
+    display: none !important;
+  }
+
+  .container-fluid {
+    padding: 0 !important;
+  }
+
+  /* Asegurar que los colores se impriman */
+  .text-primary,
+  .fw-bold {
+    color: #000 !important;
+  }
+
+  .invoice-header * {
+    color: white !important;
+  }
+}
+
+/* Responsive mejoras */
+@media (max-width: 576px) {
+  .display-5 {
+    font-size: 2rem;
+  }
+
+  .btn-lg {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .invoice-header {
+    padding: 1.5rem !important;
+  }
+}
+
+/* Mejoras para tablets */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .invoice-header {
+    padding: 2rem !important;
+  }
+}
+
+/* Estilo personalizado para números de factura */
+#invoiceNumber {
+  letter-spacing: 1px;
+}
+
+/* Estilo para totales destacados */
+#finalAmount {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+}
+
+/* Hover effect para las filas de productos */
+.table tbody tr {
+  cursor: default;
+}
+
+/* Bordes redondeados para las cards */
+.card {
+  border-radius: 1rem !important;
+}
+
+.card-header:first-child {
+  border-radius: 1rem 1rem 0 0 !important;
+}
+
+/* Spacing personalizado */
+.gap-3 {
+  gap: 1rem !important;
+}
+
+/* Estilo para los badges si los necesitas después */
+.badge {
+  border-radius: 0.5rem;
+}

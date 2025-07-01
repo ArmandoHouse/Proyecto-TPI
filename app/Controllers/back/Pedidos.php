@@ -9,17 +9,42 @@ use App\Models\UsuarioModel;
 
 class Pedidos extends BaseController
 {
-    public function index()
-    {
+    public function index() {
         $pedidoModel = new PedidoModel();
 
-        $pedidos = $pedidoModel
-            ->select('pedidos.*, usuarios.nombre, usuarios.apellido, usuarios.email')
-            ->join('usuarios', 'usuarios.id = pedidos.usuario_id')
-            ->orderBy('pedidos.created_at', 'DESC')
-            ->findAll();
+        // Obtener filtros desde GET
+        $cliente = $this->request->getGet('cliente');
+        $estado = $this->request->getGet('estado');
 
-        return view('back/pedidos/index', ['pedidos' => $pedidos]);
+        $builder = $pedidoModel
+            ->select('pedidos.*, usuarios.nombre, usuarios.apellido, usuarios.email')
+            ->join('usuarios', 'usuarios.id = pedidos.usuario_id');
+
+        // Filtro por nombre o apellido de cliente
+        if ($cliente) {
+            $builder->groupStart()
+                ->like('usuarios.nombre', $cliente)
+                ->orLike('usuarios.apellido', $cliente)
+                ->groupEnd();
+        }
+
+        // Filtro por estado
+        if ($estado) {
+            $builder->where('pedidos.estado', $estado);
+        }
+
+        $pedidos = $builder->orderBy('pedidos.created_at', 'DESC')->findAll();
+
+        // Pasar los filtros a la vista para mantener los valores en los inputs
+        $filtros = [
+            'cliente' => $cliente,
+            'estado' => $estado,
+        ];
+
+        return view('back/pedidos/index', [
+            'pedidos' => $pedidos,
+            'filtros' => $filtros,
+        ]);
     }
 
     public function ver($id)
@@ -44,9 +69,9 @@ class Pedidos extends BaseController
         $estados = [
             'pendiente' => 'Pendiente',
             'confirmado' => 'Confirmado',
-            'Pagado' => 'Pagado',
-            'entregado' => 'Entregado',
-            'cancelado' => 'Cancelado'
+            'cancelado' => 'Cancelado',
+            'enviado' => 'Enviado',
+            'entregado' => 'Entregado'
         ];
 
         return view('back/pedidos/ver', [
@@ -60,7 +85,7 @@ class Pedidos extends BaseController
     public function editar($id)
     {
         $request = $this->request;
-     
+
         $pedidoModel = new PedidoModel();
         $pedido = $pedidoModel->find($id);
 
