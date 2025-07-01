@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers\front;
+
 use App\Controllers\BaseController;
 
 use App\Models\UsuarioModel;
@@ -100,7 +101,7 @@ class Autenticacion extends BaseController
         if (!$usuario || !password_verify($password, $usuario['password'])) {
             return redirect()->to(base_url('login'))->withInput()->with('error', 'Email o contraseña incorrectos.');
         }
-   
+
         session()->set([
             'usuario_id' => $usuario['id'],
             'username' => $usuario['username'],
@@ -109,7 +110,11 @@ class Autenticacion extends BaseController
             'logueado' => true
         ]);
 
-        return redirect()->to(base_url(''));
+        if (in_array($usuario['rol'], ['admin', 'super_admin'])) {
+            return redirect()->to(base_url('admin'));
+        } else {
+            return redirect()->to(base_url(''));
+        }
     }
 
     public function logout()

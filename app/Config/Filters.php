@@ -43,7 +43,6 @@ class Filters extends BaseFilters
         'sesion_admin'  => SesionAdminFilter::class,
         'no_admin' => NoAdminFilter::class,
         'no_sesion' => NoSesionFilter::class
-
     ];
 
     /**

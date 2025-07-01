@@ -12,7 +12,7 @@ class NoAdminFilter implements FilterInterface
     {
         $session = session();
         if (in_array($session->get('rol'), ['admin', 'super_admin'])) {
-            return redirect()->to(base_url(''));
+            return redirect()->to(base_url('admin'));
         }
     }
 
