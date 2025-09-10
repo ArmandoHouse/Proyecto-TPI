@@ -56,3 +56,321 @@ in APPPATH\Views\front\principal.php on line 168.
  9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-10 08:49:43 --> mysqli_sql_exception: Unknown column 'usuarios.dni' in 'field list' in C:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pedidos...', 0)
+#1 C:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedidos...')
+#2 C:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedidos...')
+#3 C:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos...', Array, false)
+#4 C:\xampp\htdocs\Proyecto-TPI\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto-TPI\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\Proyecto-TPI\app\Controllers\front\Pedido.php(32): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\front\Pedido->ver('22')
+#8 C:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Pedido))
+#9 C:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-10 08:49:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'usuarios.dni' in 'field list'
+[Method: GET, Route: pedidos/ver/22]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = :pedidos.id:
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\front\Pedido.php(32): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Pedido->ver('22')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Pedido))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 08:49:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'usuarios.dni' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = \'22\'
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = \'22\'
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = :pedidos.id:
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\front\Pedido.php(32): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Pedido->ver('22')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Pedido))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 08:49:43 --> [Caused by] mysqli_sql_exception: Unknown column 'usuarios.dni' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = \'22\'
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = \'22\'
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = \'22\'
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = :pedidos.id:
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\front\Pedido.php(32): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Pedido->ver('22')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Pedido))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-10 08:50:59 --> mysqli_sql_exception: Unknown column 'usuarios.dni' in 'field list' in C:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pedidos...', 0)
+#1 C:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedidos...')
+#2 C:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedidos...')
+#3 C:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos...', Array, false)
+#4 C:\xampp\htdocs\Proyecto-TPI\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto-TPI\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\Proyecto-TPI\app\Controllers\front\Pedido.php(30): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\front\Pedido->ver('22')
+#8 C:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Pedido))
+#9 C:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-10 08:50:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'usuarios.dni' in 'field list'
+[Method: GET, Route: pedidos/ver/22]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = :pedidos.id:
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\front\Pedido.php(30): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Pedido->ver('22')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Pedido))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 08:50:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'usuarios.dni' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = \'22\'
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = \'22\'
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = :pedidos.id:
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\front\Pedido.php(30): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Pedido->ver('22')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Pedido))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 08:50:59 --> [Caused by] mysqli_sql_exception: Unknown column 'usuarios.dni' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = \'22\'
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = \'22\'
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = \'22\'
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = :pedidos.id:
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\front\Pedido.php(30): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Pedido->ver('22')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Pedido))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-10 08:51:05 --> mysqli_sql_exception: Unknown column 'usuarios.dni' in 'field list' in C:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pedidos...', 0)
+#1 C:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedidos...')
+#2 C:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedidos...')
+#3 C:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos...', Array, false)
+#4 C:\xampp\htdocs\Proyecto-TPI\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto-TPI\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\Proyecto-TPI\app\Controllers\front\Pedido.php(30): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\front\Pedido->ver('22')
+#8 C:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Pedido))
+#9 C:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-10 08:51:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'usuarios.dni' in 'field list'
+[Method: GET, Route: pedidos/ver/22]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = :pedidos.id:
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\front\Pedido.php(30): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Pedido->ver('22')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Pedido))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 08:51:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'usuarios.dni' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = \'22\'
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = \'22\'
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = :pedidos.id:
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\front\Pedido.php(30): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Pedido->ver('22')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Pedido))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 08:51:05 --> [Caused by] mysqli_sql_exception: Unknown column 'usuarios.dni' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = \'22\'
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = \'22\'
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = \'22\'
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pedidos`.*, `usuarios`.`nombre` as `usuario_nombre`, `usuarios`.`apellido` as `usuario_apellido`, `usuarios`.`email` as `usuario_email`, `usuarios`.`dni` as `usuario_dni`, `usuarios`.`telefono` as `usuario_telefono`, `usuarios`.`direccion` as `usuario_direccion`
+FROM `pedidos`
+JOIN `usuarios` ON `usuarios`.`id` = `pedidos`.`usuario_id`
+WHERE `pedidos`.`id` = :pedidos.id:
+AND `pedidos`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\front\Pedido.php(30): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Pedido->ver('22')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Pedido))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 09:16:22 --> ParseError: syntax error, unexpected token "<", expecting end of file
+[Method: GET, Route: pedidos/ver/23]
+in APPPATH\Views\front\pedidos\ver.php on line 2.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/pedidos/ver', [], true)
+ 3 APPPATH\Controllers\front\Pedido.php(82): view('front/pedidos/ver', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Pedido->ver('23')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Pedido))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 09:17:36 --> ParseError: syntax error, unexpected token "<", expecting end of file
+[Method: GET, Route: pedidos/ver/23]
+in APPPATH\Views\front\pedidos\ver.php on line 2.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/pedidos/ver', [], true)
+ 3 APPPATH\Controllers\front\Pedido.php(82): view('front/pedidos/ver', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Pedido->ver('23')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Pedido))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

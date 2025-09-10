@@ -23,11 +23,9 @@ class Pedido extends BaseController
         $pedidoModel = new PedidoModel();
         $pedidoItemModel = new PedidoItemModel();
 
-        $pedido = $pedidoModel->find($id_pedido);
-
         $pedido = $pedidoModel
             ->where('pedidos.id', $id_pedido)
-            ->select('pedidos.*, usuarios.nombre as usuario_nombre, usuarios.apellido as usuario_apellido, usuarios.email as usuario_email')
+            ->select('pedidos.*, usuarios.nombre as usuario_nombre, usuarios.apellido as usuario_apellido, usuarios.email as usuario_email, usuarios.dni as usuario_dni, usuarios.telefono as usuario_telefono, usuarios.direccion as usuario_direccion')
             ->join('usuarios', 'usuarios.id = pedidos.usuario_id')
             ->first();
 
@@ -45,12 +43,12 @@ class Pedido extends BaseController
         $products = [];
         $subtotal = 0;
         foreach ($items as $item) {
-            $productSubtotal = $item['producto_precio'] * $item['cantidad'];
+            $productSubtotal = (float)($item['producto_precio'] ?? 0) * (int)($item['cantidad'] ?? 0);
             $products[] = [
-                'id' => $item['producto_id'],
-                'name' => $item['producto_nombre'],
-                'quantity' => $item['cantidad'],
-                'unitPrice' => $item['producto_precio'],
+                'id' => $item['producto_id'] ?? 0,
+                'name' => $item['producto_nombre'] ?? '-',
+                'quantity' => $item['cantidad'] ?? 0,
+                'unitPrice' => $item['producto_precio'] ?? 0,
                 'subtotal' => $productSubtotal,
             ];
             $subtotal += $productSubtotal;
@@ -63,17 +61,17 @@ class Pedido extends BaseController
         // Armar el array para JS
         $pedidoData = [
             'invoice' => [
-                'number' => 'INV-' . date('Y', strtotime($pedido['created_at'])) . '-' . str_pad($pedido['id'], 6, '0', STR_PAD_LEFT),
-                'date' => $pedido['created_at'],
+                'number' => 'INV-' . (isset($pedido['created_at']) ? date('Y', strtotime($pedido['created_at'])) : date('Y')) . '-' . str_pad($pedido['id'] ?? 0, 6, '0', STR_PAD_LEFT),
+                'date' => $pedido['created_at'] ?? '-',
             ],
             'client' => [
-                'name' => $pedido['usuario_nombre'] . ' ' . $pedido['usuario_apellido'],
-                'email' => $pedido['usuario_email'],
+                'name' => trim(($pedido['usuario_nombre'] ?? '-') . ' ' . ($pedido['usuario_apellido'] ?? '-')),
+                'email' => $pedido['usuario_email'] ?? '-',
                 'dni' => $pedido['usuario_dni'] ?? '-',
                 'phone' => $pedido['usuario_telefono'] ?? '-',
                 'address' => $pedido['usuario_direccion'] ?? '-',
             ],
-            'products' => $products,
+            'products' => $products, // array de productos
             'totals' => [
                 'subtotal' => $subtotal,
                 'tax' => $tax,

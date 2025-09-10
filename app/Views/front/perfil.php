@@ -57,7 +57,19 @@ Inicio de Sesión
                         <div class="col-sm-9">
                             <input type="text" name="direccion" id="direccion" class="form-control" value="<?= esc($usuario['direccion'] ?? '') ?>">
                         </div>
-                    </div>                   
+                    </div> 
+                    <div class="row mb-3">
+                        <div class="col-sm-3"><label for="telefono" class="mb-0">Telefono</label></div>
+                        <div class="col-sm-9">
+                            <input type="text" name="telefono" id="telefono" class="form-control" value="<?= esc($usuario['telefono'] ?? '') ?>">
+                        </div>
+                    </div>       
+                    <div class="row mb-3">
+                        <div class="col-sm-3"><label for="dni" class="mb-0">DNI</label></div>
+                        <div class="col-sm-9">
+                            <input type="text" name="dni" id="dni" class="form-control" value="<?= esc($usuario['dni'] ?? '') ?>">
+                        </div>
+                    </div>               
                     <div class="row mb-3">
                         <div class="col-sm-3"><label for="email" class="mb-0">Email</label></div>
                         <div class="col-sm-9">

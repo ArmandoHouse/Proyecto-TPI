@@ -33,7 +33,9 @@ class Perfil extends BaseController
             'username' => 'required|min_length[3]|max_length[30]',
             'nombre' => 'required|min_length[2]|max_length[40]',
             'apellido' => 'required|min_length[2]|max_length[30]',
-            'direccion' => 'permit_empty|max_length[100]'
+            'direccion' => 'permit_empty|max_length[100]',
+            'telefono' => 'permit_empty|max_length[15]',
+            'dni' => 'permit_empty|max_length[10]'
         ]);
 
         if (!$this->validate($validation->getRules())) {
@@ -45,7 +47,9 @@ class Perfil extends BaseController
             'username' => $this->request->getPost('username'),
             'nombre' => $this->request->getPost('nombre'),
             'apellido' => $this->request->getPost('apellido'),
-            'direccion' => $this->request->getPost('direccion')
+            'direccion' => $this->request->getPost('direccion'),
+            'telefono' => $this->request->getPost('telefono'),
+            'dni' => $this->request->getPost('dni')
         ];
 
         if (!$usuarioModel->update($usuarioId, $datosUsuario)) {
@@ -77,6 +81,12 @@ class Perfil extends BaseController
         }
         if (empty($usuario['direccion'])) {
             $camposFaltantes[] = 'dirección';
+        }
+        if (empty($usuario['telefono'])) {
+            $camposFaltantes[] = 'telefono';
+        }
+        if (empty($usuario['dni'])) {
+            $camposFaltantes[] = 'dni';
         }
         if (!empty($camposFaltantes)) {
             $mensaje = 'Debe completar los siguientes campos obligatorios: ' . implode(', ', $camposFaltantes) . '.';

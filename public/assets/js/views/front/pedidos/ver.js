@@ -1,3 +1,4 @@
+console.log("JS de factura cargado");
 function formatDate(date) {
   const d = new Date(date);
   const day = String(d.getDate()).padStart(2, '0');
@@ -344,6 +345,7 @@ function initializeInvoice(customData = null) {
   initializeEventListeners();
 
   console.log("Factura con Bootstrap 5 inicializada correctamente");
+  
 }
 
 // API pública para usar desde CodeIgniter
@@ -360,9 +362,21 @@ window.InvoiceApp = {
 };
 
 // Inicialización automática cuando el DOM esté listo
-document.addEventListener("DOMContentLoaded", function () {
-  if (typeof pedidoData !== "undefined") {
-    InvoiceApp.init(pedidoData);
-  }
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof pedidoData !== 'undefined') {
+        updateInvoiceInfo(pedidoData);
+        renderProductsTable(pedidoData.products);
+        renderProductsMobile(pedidoData.products);
+        updateTotalsDisplay(pedidoData.totals);
+    }
+
+    var printBtn = document.getElementById('printBtn');
+    if (printBtn) {
+        printBtn.addEventListener('click', printInvoice);
+    }
+    var continueBtn = document.getElementById('continueBtn');
+    if (continueBtn) {
+        continueBtn.addEventListener('click', continueShopping);
+    }
 });
 

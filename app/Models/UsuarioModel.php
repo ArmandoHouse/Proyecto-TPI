@@ -13,6 +13,8 @@ class UsuarioModel extends Model
         'nombre',
         'apellido',
         'direccion',
+        'telefono',
+        'dni',
         'username',
         'email',
         'password',
@@ -44,8 +46,8 @@ class UsuarioModel extends Model
             return ['error' => 'Usuario no encontrado'];
         }
        
-        if (empty($usuario['direccion'])) {
-            return ['error' => 'Debe completar su dirección de facturación antes de comprar.'];
+        if (empty($usuario['direccion']) || empty($usuario['dni']) || empty($usuario['telefono'])) {
+            return ['error' => 'Debe completar los datos de su perfil antes de comprar.'];
         }
      
         return ['ok' => true];
