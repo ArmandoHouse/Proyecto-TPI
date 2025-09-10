@@ -33,7 +33,7 @@
 
     <?php if (empty($carrito)) : ?>
         <div class="alert alert-info">Tu carrito está vacío.</div>
-        <a href="<?= site_url('catalogo/ver_catalogo/1') ?>" class="btn btn-primary">Ir al catálogo</a>
+        <a href="<?= site_url('catalogo/ver_catalogo') ?>" class="btn btn-primary">Ir al catálogo</a>
     <?php else : ?>
         <table class="table table-bordered align-middle">
             <thead class="table-light">

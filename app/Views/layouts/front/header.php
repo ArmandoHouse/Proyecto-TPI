@@ -7,6 +7,8 @@
             $cantidadCarrito += isset($item['cantidad']) ? (int)$item['cantidad'] : 1;
         }
     }
+    // Verificar si el usuario está logueado
+    $usuarioLogueado = session()->get('usuario_id') !== null;
 ?>
 <style>
 .cart-badge {
@@ -56,25 +58,56 @@
 
         <!-- Icons -->
         <nav class="ms-auto d-flex align-items-center gap-3">
-          <a href="<?= base_url('login')?>" class="d-inline-flex align-items-center text-decoration-none text-muted small">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round" class="me-1">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-              <circle cx="12" cy="7" r="4" />
-            </svg>
-            <span class="d-none d-lg-inline">Mi cuenta</span>
-          </a>
-          <a href="<?= base_url('carrito')?>" class="position-relative text-decoration-none text-muted">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 6h15l-1.5 9h-13z" />
-              <circle cx="9" cy="20" r="1" />
-              <circle cx="18" cy="20" r="1" />
-            </svg>
-            <?php if ($cantidadCarrito > 0): ?>
-                <span class="cart-badge"><?= $cantidadCarrito ?></span>
-            <?php endif; ?>
-          </a>
+          <?php if ($usuarioLogueado): ?>
+            <div class="dropdown">
+              <a href="#" class="d-inline-flex align-items-center text-decoration-none text-muted small dropdown-toggle" id="cuentaDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" class="me-1">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                <span class="d-none d-lg-inline">Mi cuenta</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cuentaDropdown">
+                <li><a class="dropdown-item" href="<?= base_url('perfil') ?>">Mi perfil</a></li>
+                <li><a class="dropdown-item" href="<?= base_url('pedidos') ?>">Mis pedidos</a></li>
+                <li><a class="dropdown-item" href="<?= base_url('consultas') ?>">Mis consultas</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item text-danger" href="<?= base_url('logout') ?>">Cerrar sesión</a></li>
+              </ul>
+            </div>
+            <a href="<?= base_url('carrito')?>" class="position-relative text-decoration-none text-muted">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 6h15l-1.5 9h-13z" />
+                <circle cx="9" cy="20" r="1" />
+                <circle cx="18" cy="20" r="1" />
+              </svg>
+              <?php if ($cantidadCarrito > 0): ?>
+                  <span class="cart-badge"><?= $cantidadCarrito ?></span>
+              <?php endif; ?>
+            </a>
+          <?php else: ?>
+            <a href="<?= base_url('login')?>" class="d-inline-flex align-items-center text-decoration-none text-muted small">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="me-1">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <span class="d-none d-lg-inline">Mi cuenta</span>
+            </a>
+            <a href="<?= base_url('login')?>" class="position-relative text-decoration-none text-muted">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 6h15l-1.5 9h-13z" />
+                <circle cx="9" cy="20" r="1" />
+                <circle cx="18" cy="20" r="1" />
+              </svg>
+              <?php if ($cantidadCarrito > 0): ?>
+                  <span class="cart-badge"><?= $cantidadCarrito ?></span>
+              <?php endif; ?>
+            </a>
+          <?php endif; ?>
         </nav>
       </div>
     </div>
