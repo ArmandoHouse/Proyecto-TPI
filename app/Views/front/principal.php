@@ -5,7 +5,7 @@ ZonaHW - Venta de Hardware
 <?= $this->endSection() ?>
 
 <?= $this->section('styles') ?>
-<link rel="stylesheet" href="<?= base_url('assets/css/views/principal.css') ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/views/front/principal.css') ?>">
 <?= $this->endSection() ?>
 
 <?php if (session()->getFlashdata('mensaje')): ?>

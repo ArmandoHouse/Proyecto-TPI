@@ -1,0 +1,132 @@
+ERROR - 2025-09-09 22:55:03 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:202
+Stack trace:
+#0 E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php(202): mysqli->real_connect('localhost', 'root', '', 'zonahw', 3306, '', 0)
+#1 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `carrito...', Array, false)
+#4 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\front\Carrito.php(24): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\front\Carrito->index()
+#6 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
+#7 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 E:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `carrito...', Array, false)
+#3 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\front\Carrito.php(24): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\front\Carrito->index()
+#5 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
+#6 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 E:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2025-09-09 22:55:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: carrito]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `carrito_items`.`id` as `carrito_id`, `productos`.`id` as `producto_id`, `productos`.`nombre`, `productos`.`imagen`, `productos`.`precio`, `carrito_items`.`cantidad`
+FROM `carrito_items`
+JOIN `productos` ON `productos`.`id` = `carrito_items`.`producto_id`
+WHERE `carrito_items`.`usuario_id` IS NULL', [], false)
+ 3 APPPATH\Controllers\front\Carrito.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Carrito->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-09 22:55:07 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:202
+Stack trace:
+#0 E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php(202): mysqli->real_connect('localhost', 'root', '', 'zonahw', 3306, '', 0)
+#1 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `carrito...', Array, false)
+#4 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\front\Carrito.php(24): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\front\Carrito->index()
+#6 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
+#7 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 E:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `carrito...', Array, false)
+#3 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\front\Carrito.php(24): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\front\Carrito->index()
+#5 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
+#6 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 E:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2025-09-09 22:55:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: carrito]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `carrito_items`.`id` as `carrito_id`, `productos`.`id` as `producto_id`, `productos`.`nombre`, `productos`.`imagen`, `productos`.`precio`, `carrito_items`.`cantidad`
+FROM `carrito_items`
+JOIN `productos` ON `productos`.`id` = `carrito_items`.`producto_id`
+WHERE `carrito_items`.`usuario_id` IS NULL', [], false)
+ 3 APPPATH\Controllers\front\Carrito.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Carrito->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-09 22:56:25 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:202
+Stack trace:
+#0 E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php(202): mysqli->real_connect('localhost', 'root', '', 'zonahw', 3306, '', 0)
+#1 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `carrito...', Array, false)
+#4 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\front\Carrito.php(24): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\front\Carrito->index()
+#6 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
+#7 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 E:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in E:\xampp\htdocs\Proyecto-TPI\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\xampp\htdocs\Proyecto-TPI\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `carrito...', Array, false)
+#3 E:\xampp\htdocs\Proyecto-TPI\app\Controllers\front\Carrito.php(24): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(933): App\Controllers\front\Carrito->index()
+#5 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
+#6 E:\xampp\htdocs\Proyecto-TPI\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 E:\xampp\htdocs\Proyecto-TPI\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 E:\xampp\htdocs\Proyecto-TPI\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2025-09-09 22:56:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: carrito]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `carrito_items`.`id` as `carrito_id`, `productos`.`id` as `producto_id`, `productos`.`nombre`, `productos`.`imagen`, `productos`.`precio`, `carrito_items`.`cantidad`
+FROM `carrito_items`
+JOIN `productos` ON `productos`.`id` = `carrito_items`.`producto_id`
+WHERE `carrito_items`.`usuario_id` IS NULL', [], false)
+ 3 APPPATH\Controllers\front\Carrito.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Carrito->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Carrito))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

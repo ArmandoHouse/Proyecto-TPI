@@ -3,7 +3,7 @@
 <?= $this->section('titulo') ?>Carrito - ZonaHardware<?= $this->endSection() ?>
 
 <?= $this->section('styles') ?>
-<link rel="stylesheet" href="<?= base_url('assets/css/views/principal.css') ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/views/front/principal.css') ?>">
 
 <style>
     .img-carrito {

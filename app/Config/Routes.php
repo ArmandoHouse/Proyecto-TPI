@@ -4,9 +4,7 @@ use CodeIgniter\Router\RouteCollection;
 
 /**
  * @var RouteCollection $routes
- */
-
-
+*/
 
 
 $routes->group('/', ['namespace' => 'App\Controllers\front'], function ($routes) {

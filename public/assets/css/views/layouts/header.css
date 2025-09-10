@@ -1,3 +1,4 @@
+/* Restored header CSS for CI4 header */
 :root {
   --brand: 205 80% 60%;
   --brand-dark: 212 45% 8%;
@@ -27,13 +28,10 @@
 /* Search */
 .search-input {
   padding-left: 0.75rem;
-  padding-right: 2.5rem;
-  /* Reduce el espacio para el botón */
+  padding-right: 3.2rem;
   border-radius: 6px;
   background: rgba(0, 0, 0, 0.02);
-  min-width: 280px;
-  height: 38px;
-  /* Asegura altura uniforme */
+  min-width: 280px
 }
 
 @media (min-width:768px) {
@@ -43,22 +41,6 @@
 }
 
 .search-btn {
-  position: absolute;
-  right: 8px;
-  /* Más cerca del borde */
-  top: 50%;
-  transform: translateY(-50%);
-  border-radius: 6px;
-  background: transparent;
-  /* Sin fondo azul */
-  color: hsl(var(--brand));
-  border: none;
-  padding: 0;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: absolute;
   right: 4px;
   top: 50%;
@@ -102,8 +84,10 @@
   background: transparent
 }
 
-/* Prevent primary nav wrapping and allow horizontal scroll on small widths */
+/* Prevent primary nav wrapping and allow overflow visible for megamenu */
 .bg-brand-dark .nav {
+  overflow: visible;
+  -webkit-overflow-scrolling: touch;
   white-space: nowrap
 }
 
@@ -153,15 +137,180 @@
   white-space: nowrap;
 }
 
-/* Hide primary nav on narrow screens < 830px */
+/* Burger button visibility */
+.burger-btn {
+  display: none
+}
+
 @media (max-width: 829px) {
   .primary-nav {
     display: none !important
   }
+
+  .burger-btn {
+    display: inline-flex !important
+  }
 }
 
 @media (min-width: 830px) {
+  .primary-nav {
+    display: block
+  }
+
   .burger-btn {
-    display: none !important;
+    display: none !important
+  }
+}
+
+
+/* Mega dropdown styles aligned to container */
+.mega-dropdown {
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: 1050;
+}
+
+.mega-dropdown .mega-panel {
+  margin: 0 auto;
+  max-width: 72rem;
+  background: #fff;
+  color: #111;
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.12);
+  display: flex;
+  gap: 24px
+}
+
+.mega-dropdown .mega-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 160px
+}
+
+.mega-dropdown a {
+  color: #0b1220;
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 6px
+}
+
+.mega-dropdown a:hover {
+  background: #f8fafc
+}
+
+/* Indicator rotation when open */
+#mega-catalog-toggler[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+  transition: transform .15s ease
+}
+
+/* Small helpers */
+.mega-dropdown .mega-panel a {
+  display: block
+}
+
+
+
+/* Mega panel structure */
+.mega-dropdown .mega-panel {
+  margin: 0 auto;
+  max-width: 72rem;
+  background: #fff;
+  color: #111;
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.2);
+  display: flex;
+  gap: 24px
+}
+
+.mega-dropdown .mega-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 160px
+}
+
+.mega-dropdown a {
+  color: #0b1220;
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background .12s ease, color .12s ease, transform .06s ease
+}
+
+.mega-dropdown a:hover,
+.mega-dropdown a:focus {
+  background: hsl(var(--brand));
+  color: #fff;
+  transform: translateY(-1px)
+}
+
+
+/* Search */
+.search-input {
+  padding-left: 0.75rem;
+  padding-right: 2.5rem;
+  /* Reduce el espacio para el botón */
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.02);
+  min-width: 280px;
+  height: 38px;
+  /* Asegura altura uniforme */
+}
+
+@media (min-width:768px) {
+  .search-input {
+    min-width: 420px
+  }
+}
+
+.search-btn {
+  position: absolute;
+  right: 8px;
+  /* Más cerca del borde */
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 6px;
+  background: transparent;
+  /* Sin fondo azul */
+  color: hsl(var(--brand));
+  border: none;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 6px;
+  background: hsl(var(--brand));
+  color: #fff;
+  border: none;
+  padding: 6px 8px
+}
+
+.mega-dropdown {
+  left: 50% !important;
+  transform: translateX(calc(-165%)) !important;
+  width: auto;
+}
+@media (max-width: 1024px) {
+  .mega-dropdown {
+    transform: translateX(calc(-50% + 60px)) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .mega-dropdown {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 100%
   }
 }
