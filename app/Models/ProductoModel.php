@@ -28,4 +28,19 @@ class ProductoModel extends Model
     protected $createdField = 'created_at';
     protected $updatedField = 'updated_at';
     protected $deletedField = 'deleted_at';
+
+    
+    public function validarDisponibilidad($productoId, $cantidad = 1)
+    {
+        $producto = $this->find($productoId);
+
+        if (!$producto) {
+            return ['error' => 'error_producto'];
+        }   
+        if ($cantidad > $producto['stock']) {
+            return ['error' => 'error_stock'];
+        }
+        return ['producto' => $producto];
+    }
+
 }

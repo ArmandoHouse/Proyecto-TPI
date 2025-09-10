@@ -1,6 +1,15 @@
 <?= $this->extend('layouts/back/plantilla_admin') ?>
 
+
+
 <?= $this->section('contenido') ?>
+<style>
+    .img-producto-tabla {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+    }
+</style>
 
 <div class="container my-4">
     <h2>Detalle del Pedido #<?= $pedido['id'] ?></h2>
@@ -15,7 +24,7 @@
                         <option value="<?= $estado ?>" <?= $pedido['estado'] === $estado ? 'selected' : '' ?>><?= ucfirst($estado) ?></option>
                     <?php endforeach; ?>
                 </select>
-                <button type="submit" class="btn btn-sm btn-primary ms-2">Actualizar</button>
+                <button type="submit" class="btn btn-sm btn-primary ms-2">Actualizar</butto n>
             </form>
         </div>
         <div class="col-md-6">
@@ -23,6 +32,7 @@
             <p><strong>Nombre:</strong> <?= esc($usuario['nombre']) . ' ' . esc($usuario['apellido']) ?></p>
             <p><strong>Email:</strong> <?= esc($usuario['email']) ?></p>
             <p><strong>Teléfono:</strong> <?= esc($usuario['telefono'] ?? '-') ?></p>
+            <p><strong>DNI:</strong> <?= esc($usuario['dni'] ?? '-') ?></p>
             <p><strong>Domicilio de entrega:</strong> <?= esc($pedido['direccion_envio'] ?? '-') ?></p>
         </div>
     </div>
@@ -41,13 +51,13 @@
             <tbody>
                 <?php $total = 0; ?>
                 <?php foreach ($items as $item): ?>
-                    <?php $subtotal = $item['precio_unitario'] * $item['cantidad']; $total += $subtotal; ?>
+                    <?php $subtotal = $item['precio_unitario'] * $item['cantidad'];
+                    $total += $subtotal; ?>
                     <tr>
-                        <td>
+                        <td  style="width: 100px;">
                             <?php if (!empty($item['imagen'])): ?>
-                                <img src="<?= base_url('assets/img/' . $item['imagen']) ?>" alt="" style="width:60px;">
-                            <?php endif; ?>
-                        </td>
+                            <img src="<?= base_url('assets/img/' . $item['imagen']) ?>" alt="" class="img-producto-tabla"> <?php endif; ?>
+                        </td>                        
                         <td><?= esc($item['nombre']) ?></td>
                         <td><?= $item['cantidad'] ?></td>
                         <td>$<?= number_format($item['precio_unitario'], 2, ',', '.') ?></td>

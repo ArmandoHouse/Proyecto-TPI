@@ -27,7 +27,7 @@ class Pedido extends BaseController
 
         $pedido = $pedidoModel
             ->where('pedidos.id', $id_pedido)
-            ->select('pedidos.*, usuarios.nombre as usuario_nombre, usuarios.apellido as usuario_apellido, usuarios.email as usuario_email,  usuarios.direccion as usuario_direccion')
+            ->select('pedidos.*, usuarios.nombre as usuario_nombre, usuarios.apellido as usuario_apellido, usuarios.email as usuario_email')
             ->join('usuarios', 'usuarios.id = pedidos.usuario_id')
             ->first();
 
@@ -41,57 +41,94 @@ class Pedido extends BaseController
             ->join('productos', 'productos.id = pedidos_items.producto_id')
             ->findAll();
 
-        return view('front/pedidos/ver', ['pedido' => $pedido, 'items' => $items]);
+        // Calcular totales y armar productos
+        $products = [];
+        $subtotal = 0;
+        foreach ($items as $item) {
+            $productSubtotal = $item['producto_precio'] * $item['cantidad'];
+            $products[] = [
+                'id' => $item['producto_id'],
+                'name' => $item['producto_nombre'],
+                'quantity' => $item['cantidad'],
+                'unitPrice' => $item['producto_precio'],
+                'subtotal' => $productSubtotal,
+            ];
+            $subtotal += $productSubtotal;
+        }
+
+        // Calcular impuestos y total
+        $tax = $subtotal * 0.21;
+        $total = $subtotal + $tax;
+
+        // Armar el array para JS
+        $pedidoData = [
+            'invoice' => [
+                'number' => 'INV-' . date('Y', strtotime($pedido['created_at'])) . '-' . str_pad($pedido['id'], 6, '0', STR_PAD_LEFT),
+                'date' => $pedido['created_at'],
+            ],
+            'client' => [
+                'name' => $pedido['usuario_nombre'] . ' ' . $pedido['usuario_apellido'],
+                'email' => $pedido['usuario_email'],
+                'dni' => $pedido['usuario_dni'] ?? '-',
+                'phone' => $pedido['usuario_telefono'] ?? '-',
+                'address' => $pedido['usuario_direccion'] ?? '-',
+            ],
+            'products' => $products,
+            'totals' => [
+                'subtotal' => $subtotal,
+                'tax' => $tax,
+                'total' => $total,
+            ],
+        ];
+
+        return view('front/pedidos/ver', [
+            'pedidoData' => $pedidoData,
+            'pedido' => $pedido,
+            'items' => $items,
+        ]);
     }
+
 
     public function generar($productoId)
     {
         $pedidoModel = new PedidoModel();
-        $pedidoItemModel = new PedidoItemModel();
         $productoModel = new ProductoModel();
-        $usuarioModel = new UsuarioModel();
 
-        $usuarioId = session('usuario_id'); // Obtener el ID del usuario desde la sesión
+        $usuarioId = session('usuario_id');
+        $cantidad = $this->request->getPost('cantidad');
 
-        // Verificar si el usuario existe
-        $usuario = $usuarioModel->find($usuarioId);
-        if (!$usuario) {
-            return redirect()->to(base_url('login'))->with('error', 'Usuario no encontrado.');
+        // // Verificar si el producto existe
+        // $producto = $productoModel->find($productoId);
+        // if (!$producto) {
+        //     return redirect()->to(base_url('catalogo'))->with('error', 'Producto no encontrado');
+        // }
+
+        // // Validar stock
+        // if ($cantidad > $producto['stock']) {
+        //     return redirect()->back()->withInput()->with('error', 'La cantidad seleccionada supera el stock disponible.');
+        // }
+        
+        // Validar datos de facturación
+        $usuarioModel = new UsuarioModel();   
+        $validacion = $usuarioModel->validarDatosFacturacion(session('usuario_id'));
+        if (isset($validacion['error'])) {
+            return redirect()->back()->with('error', $validacion['error']);
         }
 
-        // Comprobar si la dirección del usuario está completa
-        if (empty($usuario['direccion'])) {
-            return redirect()->to(base_url('perfil/chequear_informacion'))->with('error', 'Debe completar su informacion personal antes de confirmar el pedido.');
+        $validacion = $productoModel->validarDisponibilidad($productoId, $cantidad);
+        if (isset($validacion['error'])) {
+            switch ($validacion['error']) {
+                case 'error_producto':
+                    return redirect()->back()->with('error', 'Producto no encontrado');
+                case 'error_stock':
+                    return redirect()->back()->with('error', 'La cantidad seleccionada supera el stock disponible.');
+            }
         }
-
-        // Verificar si el producto existe
-        $producto = $productoModel->find($productoId);
-        if (!$producto) {
-            return redirect()->to(base_url('catalogo'))->with('error', 'Producto no encontrado.');
-        }
-
-        // Calcular el total del pedido
-        $cantidad = 1; // Por defecto, se genera el pedido con una unidad
-        $total = $producto['precio'] * $cantidad;
 
         // Crear el pedido
-        $pedidoId = $pedidoModel->insert([
-            'usuario_id'       => $usuarioId,
-            'direccion_envio'  => $usuario['direccion'],
-            'estado'           => 'pendiente',
-            'total'            => $total,
-            'fecha'            => date('Y-m-d H:i:s')
-        ]);
-
-        // Crear el item del pedido
-        $pedidoItemModel->insert([
-            'pedido_id'   => $pedidoId,
-            'producto_id' => $productoId,
-            'cantidad'    => $cantidad,
-            'precio_unitario' => $producto['precio']
-        ]);
+        $pedidoId = $pedidoModel->crearPedido($usuarioId, [['producto_id' => $productoId, 'cantidad' => $cantidad]]);
 
         // Redirigir al detalle del pedido
-        return redirect()->to(base_url('pedidos/ver/' . $pedidoId))->with('success', 'Pedido generado exitosamente.');
+        return redirect()->to(base_url('pedidos/ver/' . $pedidoId))->with('success', 'Pedido generado exitosamente');
     }
 }

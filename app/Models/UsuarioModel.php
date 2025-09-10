@@ -35,4 +35,19 @@ class UsuarioModel extends Model
     protected $createdField = 'created_at';
     protected $updatedField = 'updated_at';
     protected $deletedField = 'deleted_at';
+
+
+    public function validarDatosFacturacion($usuarioId)
+    {
+        $usuario = $this->find($usuarioId);
+        if (!$usuario) {
+            return ['error' => 'Usuario no encontrado'];
+        }
+       
+        if (empty($usuario['direccion'])) {
+            return ['error' => 'Debe completar su dirección de facturación antes de comprar.'];
+        }
+     
+        return ['ok' => true];
+    }
 }

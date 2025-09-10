@@ -1,0 +1,34 @@
+CRITICAL - 2025-09-08 18:46:55 --> CodeIgniter\View\Exceptions\ViewException: Archivo inválido: layouts/front/header.php
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/front/header.php')
+ 2 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('layouts/front/header', null, true)
+ 3 APPPATH\Views\layouts\front\plantilla.php(14): CodeIgniter\View\View->include('layouts/front/header')
+ 4 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\layouts\\front\\plantilla.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layouts/front/plantilla', [], true)
+ 7 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/principal', [], true)
+ 8 APPPATH\Controllers\front\Principal.php(12): view('front/principal')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Principal->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Principal))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-08 18:47:02 --> CodeIgniter\View\Exceptions\ViewException: Archivo inválido: layouts/front/header.php
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/front/header.php')
+ 2 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('layouts/front/header', null, true)
+ 3 APPPATH\Views\layouts\front\plantilla.php(14): CodeIgniter\View\View->include('layouts/front/header')
+ 4 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\Proyecto-TPI\\app\\Views\\layouts\\front\\plantilla.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layouts/front/plantilla', [], true)
+ 7 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/principal', [], true)
+ 8 APPPATH\Controllers\front\Principal.php(12): view('front/principal')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\front\Principal->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\front\Principal))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

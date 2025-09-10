@@ -8,13 +8,29 @@
         border-radius: 16px;
         transition: box-shadow 0.2s, transform 0.2s;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        /* Asegura que llene el alto del contenedor */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-producto img {
+        object-fit: contain;
+        height: 200px;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+    }
+
+    .card-producto .card-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     .card-producto:hover {
         box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
         transform: translateY(-4px) scale(1.03);
     }
-
 
     .custom-pagination .page-circle {
         display: inline-flex;
@@ -45,6 +61,17 @@
         width: auto;
         height: auto;
     }
+
+    .filtro-producto {
+        border-radius: 16px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .filtro-producto:hover {
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+        /* No uses transform aquí */
+    }
 </style>
 
 <?= $this->endSection() ?>
@@ -70,7 +97,6 @@
                 <input type="hidden" name="precio_max" value="<?= esc($_GET['precio_max'] ?? '') ?>">
                 <label for="orden" class="me-2 mb-0 fw-bold">Ordenar por</label>
                 <select name="orden" id="orden" class="form-select d-inline-block w-auto" style="display:inline-block;" onchange="this.form.submit()">
-                    <option value="">Más relevantes</option>
                     <option value="precio_asc" <?= (($_GET['orden'] ?? '') === 'precio_asc') ? 'selected' : '' ?>>Menor precio</option>
                     <option value="precio_desc" <?= (($_GET['orden'] ?? '') === 'precio_desc') ? 'selected' : '' ?>>Mayor precio</option>
                 </select>
@@ -95,7 +121,7 @@
     <div class="row">
         <!-- Filtros -->
         <div class="col-md-3 mb-4">
-            <div class="card p-3">
+            <div class="card filtro-producto p-3">
                 <form method="get">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
@@ -104,8 +130,9 @@
                     <div class="mb-3">
                         <label class="form-label">Rango de precio</label>
                         <div class="d-flex gap-2">
-                            <input type="number" class="form-control" name="precio_min" placeholder="Mín" min="0" value="<?= esc($_GET['precio_min'] ?? '') ?>">
-                            <input type="number" class="form-control" name="precio_max" placeholder="Máx" min="0" value="<?= esc($_GET['precio_max'] ?? '') ?>">
+                            <input type="text" class="form-control" name="precio_min" placeholder="Mín" value="<?= esc($_GET['precio_min'] ?? '') ?>">
+                            <input type="text" class="form-control" name="precio_max" placeholder="Máx" value="<?= esc($_GET['precio_max'] ?? '') ?>">
+
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Filtrar</button>
@@ -115,7 +142,7 @@
 
         <!-- Productos -->
         <div class="col-md-9">
-            <div class="row">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
                 <?php if (!empty($productos)): ?>
                     <?php foreach ($productos as $i => $producto): ?>
                         <div class="col-md-4 mb-4">
@@ -128,11 +155,13 @@
                                     <?php endif; ?>
                                     <div class="card-body d-flex flex-column">
                                         <h5 class="card-title"><?= esc($producto['nombre']) ?></h5>
-                                        <form action="<?= base_url('carrito/agregar/' . $producto['id']) ?>" method="post" class="mt-auto">
-                                            <button type="submit" class="btn btn-success w-100 mb-2">Agregar al carrito</button>
-                                        </form>
                                         <div class="text-center fw-bold fs-5 text-primary">
                                             $<?= number_format($producto['precio'], 2, ',', '.') ?>
+                                            <form action="<?= base_url('carrito/agregar/' . $producto['id']) ?>" method="post" class="form-agregar-carrito">
+                                                <?= csrf_field() ?>
+                                                <input type="hidden" name="redirect_to" value="<?= current_url() ?>">
+                                                <button type="submit" class="btn btn-success w-100 mb-2">Agregar al carrito</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -153,7 +182,58 @@
 </div>
 
 
+<!-- Toast container -->
+<div aria-live="polite" aria-atomic="true" class="position-fixed top-0 end-0 p-3" style="z-index: 1080;">
+    <div id="toastCarrito" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body" id="toastCarritoMsg">
+                Producto agregado al carrito.
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+        </div>
+    </div>
+</div>
 
+<script>
+document.querySelectorAll('.form-agregar-carrito').forEach(form => {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
 
+        const formData = new FormData(form);
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            let msg = 'Producto agregado al carrito.';
+            let toastEl = document.getElementById('toastCarrito');
+            // Remueve ambas clases antes de agregar la correcta
+            toastEl.classList.remove('text-bg-success', 'text-bg-danger');
+            if (data && data.success) {
+                msg = data.success;
+                toastEl.classList.add('text-bg-success');
+            } else if (data && data.error) {
+                msg = data.error;
+                toastEl.classList.add('text-bg-danger');
+            }
+            document.getElementById('toastCarritoMsg').textContent = msg;
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        })
+        .catch(() => {
+            let toastEl = document.getElementById('toastCarrito');
+            toastEl.classList.remove('text-bg-success');
+            toastEl.classList.add('text-bg-danger');
+            document.getElementById('toastCarritoMsg').textContent = 'Ocurrió un error.';
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        });
+    });
+});
+</script>
 
 <?= $this->endSection() ?>

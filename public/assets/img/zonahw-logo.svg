@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 160 40" role="img" aria-label="zonahw logo">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="hsl(var(--brand-red))" stop-opacity="1"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0.95)" stop-opacity="0.2"/>
+    </linearGradient>
+    <style>
+      .b{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; font-weight:700; font-size:18px; fill:#fff}
+    </style>
+  </defs>
+  <!-- rounded badge -->
+  <rect x="0" y="0" width="40" height="40" rx="6" fill="hsl(var(--brand-red))" />
+  <!-- monogram ZH -->
+  <text x="20" y="26" text-anchor="middle" class="b">ZH</text>
+  <!-- wordmark -->
+  <text x="56" y="26" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-weight="700" font-size="18" fill="hsl(var(--brand-dark))">zonahw</text>
+</svg>

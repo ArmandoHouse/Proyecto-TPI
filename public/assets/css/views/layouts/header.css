@@ -1,75 +1,167 @@
-.search-bar {
-    width: 100%;
+:root {
+  --brand: 205 80% 60%;
+  --brand-dark: 212 45% 8%;
 }
 
-.search-bar .input-group {
-    border-radius: 5px;
-    overflow: hidden;
-    background-color: white;
+.site-header {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-.search-bar .form-control {
-    border: none;
-    padding-left: 20px;
+.logo .brand-mark {
+  letter-spacing: -0.02em
 }
 
-.search-bar .btn {
-    border: none;
-    padding: 10px 20px;
-    background-color: unset !important;
-    color: black !important;
+.logo-text {
+  font-weight: 700;
+  color: #0f172a
 }
 
-.fondo {
-    background-color: #3a3a3a;
-    color: white;
+.center-container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%
 }
 
-.fondo .btn {
-    color: white;
-    background-color: #727271;
+/* Search */
+.search-input {
+  padding-left: 0.75rem;
+  padding-right: 2.5rem;
+  /* Reduce el espacio para el botón */
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.02);
+  min-width: 280px;
+  height: 38px;
+  /* Asegura altura uniforme */
 }
 
-.btn-circle {
-    width: 40px;
-    height: 40px;
-    padding: 6px 0px;
-    border-radius: 30px;
-    text-align: center;
-    font-size: 12px;
-    line-height: 1.42857;
+@media (min-width:768px) {
+  .search-input {
+    min-width: 420px
+  }
 }
 
-.icon {
-    font-size: 1.25em !important;
+.search-btn {
+  position: absolute;
+  right: 8px;
+  /* Más cerca del borde */
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 6px;
+  background: transparent;
+  /* Sin fondo azul */
+  color: hsl(var(--brand));
+  border: none;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 6px;
+  background: hsl(var(--brand));
+  color: #fff;
+  border: none;
+  padding: 6px 8px
 }
 
-.logo {
-    min-width: 100px;
+/* Cart badge */
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: hsl(var(--brand));
+  color: #fff;
+  font-size: 11px;
+  width: 20px;
+  height: 20px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 600
 }
 
-.logo .logo-text {
-    font-size: 1.8rem;
-    font-style: italic;
+/* Dark nav */
+.bg-brand-dark {
+  background: hsl(var(--brand-dark));
 }
 
-.navbar li {
-    font-size: 1.1em;
+.nav .nav-link {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+  transition: color .15s ease
 }
 
-/* Estilos responsive */
-@media (max-width: 767px) {
-    .btn-circle {
-        width: 36px;
-        height: 36px;
-        font-size: 10px;
-    }
+.bg-brand-dark .nav .nav-link:hover {
+  color: hsl(var(--brand)) !important;
+  background: transparent
+}
 
-    .logo .logo-text {
-        font-size: 1.4rem;
-    }
+/* Prevent primary nav wrapping and allow horizontal scroll on small widths */
+.bg-brand-dark .nav {
+  white-space: nowrap
+}
 
-    .navbar-nav .nav-item {
-        margin: 0.5rem 0;
-    }
+.bg-brand-dark .nav .nav-item {
+  display: inline-block
+}
+
+/* Optional: hide scrollbar in webkit browsers for cleaner look */
+.bg-brand-dark .nav::-webkit-scrollbar {
+  height: 6px
+}
+
+.bg-brand-dark .nav::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px
+}
+
+/* Offcanvas */
+.offcanvas-header.bg-brand-dark {
+  background: hsl(var(--brand-dark));
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 0;
+  color: inherit
+}
+
+/* Primary nav exact sizing to match design */
+.primary-nav ul,
+.primary-nav .nav,
+.primary-nav li {
+  align-items: center;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+.primary-nav a,
+.primary-nav .nav-link {
+  font-size: 13px;
+  /* exact size requested */
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  padding: 16px 10px;
+  /* vertical/horizontal padding to control width */
+  white-space: nowrap;
+}
+
+/* Hide primary nav on narrow screens < 830px */
+@media (max-width: 829px) {
+  .primary-nav {
+    display: none !important
+  }
+}
+
+@media (min-width: 830px) {
+  .burger-btn {
+    display: none !important;
+  }
 }

@@ -17,9 +17,9 @@
             <?= session()->getFlashdata('error') ?>
         </div>
     <?php endif; ?>
-    
+
     <form method="get" class="row g-3 align-items-end mb-4">
-        
+
         <!-- Filtro por nombre -->
         <div class="col-md-4">
             <label for="nombre" class="form-label">Buscar por nombre o usuario</label>
@@ -62,8 +62,8 @@
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Email</th>
-                    <th>Rol</th>
                     <th>Creado</th>
+                    <th>Rol</th>
                     <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
@@ -76,8 +76,8 @@
                             <td><?= esc($usuario['nombre']) ?></td>
                             <td><?= esc($usuario['apellido']) ?></td>
                             <td><?= esc($usuario['email']) ?></td>
+                            <td><?= date('d/m/Y H:i', strtotime($usuario['created_at'])) ?></td>
                             <td><?= esc($usuario['rol']) ?></td>
-                            <td></td>
                             <td>
                                 <?= $usuario['estado'] == 'activo' ? '<span class="badge bg-success">Activo</span>' : '<span class="badge bg-danger">Suspendido</span>' ?>
                             </td>

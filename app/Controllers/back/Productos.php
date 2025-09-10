@@ -60,6 +60,11 @@ class Productos extends BaseController
             return redirect()->back()->with('error', 'Error al subir la imagen');
         }
 
+        $stock = (int) $request->getPost('stock');
+        if ($stock < 1) {
+            return redirect()->back()->with('error', 'El stock debe ser un número entero mayor a 0');
+        }
+
         // Guardar en DB
         $productoModel = new ProductoModel();
         $productoModel->insert([
