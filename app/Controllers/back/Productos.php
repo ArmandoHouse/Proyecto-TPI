@@ -96,36 +96,45 @@ class Productos extends BaseController
     }
 
     public function editarProductoPost($id)
-    {
-        $request = $this->request;
-        $productoModel = new ProductoModel();
-        $producto = $productoModel->find($id);
+{
+    $request = $this->request;
+    $productoModel = new ProductoModel();
+    $producto = $productoModel->find($id);
 
-        if (!$producto) {
-            return redirect()->to(base_url('admin/productos'))->with('error', 'Producto no encontrado');
-        }
-
-        // Validar y procesar imagen
-        $imagen = $request->getFile('imagen');
-
-        if ($imagen->isValid() && !$imagen->hasMoved()) {
-            $nuevoNombre = $imagen->getRandomName();
-            $imagen->move('assets/img', $nuevoNombre);
-            $producto['imagen'] = $nuevoNombre;
-        }
-
-        $producto = [
-            'nombre'       => $request->getPost('nombre'),
-            'descripcion'  => $request->getPost('descripcion'),
-            'precio'       => $request->getPost('precio'),
-            'stock'        => $request->getPost('stock'),
-            'estado'       => $request->getPost('estado')
-        ];
-
-        $productoModel->update($id, $producto);
-
-        return redirect()->to(base_url('admin/productos'))->with('mensaje', 'Producto actualizado con éxito');
+    if (!$producto) {
+        return redirect()->to(base_url('admin/productos'))->with('error', 'Producto no encontrado');
     }
+
+    // Preparar los datos actualizados
+    $data = [
+        'nombre'       => $request->getPost('nombre'),
+        'descripcion'  => $request->getPost('descripcion'),
+        'precio'       => $request->getPost('precio'),
+        'stock'        => $request->getPost('stock'),
+        'estado'       => $request->getPost('estado'),
+        'categoria_id' => $request->getPost('categoria_id') // ✅ se agrega categoría
+    ];
+
+    // Validar y procesar imagen
+    $imagen = $request->getFile('imagen');
+    if ($imagen && $imagen->isValid() && !$imagen->hasMoved()) {
+        $nuevoNombre = $imagen->getRandomName();
+        $imagen->move('assets/img', $nuevoNombre);
+        $data['imagen'] = $nuevoNombre;
+
+        // Opcional: eliminar imagen anterior si existe
+        if (!empty($producto['imagen']) && file_exists('assets/img/' . $producto['imagen'])) {
+            unlink('assets/img/' . $producto['imagen']);
+        }
+    }
+
+    // Actualizar producto
+    $productoModel->update($id, $data);
+
+    return redirect()->to(base_url('admin/productos'))->with('mensaje', 'Producto actualizado con éxito');
+}
+
+
 
     public function eliminarProducto($id)
     {

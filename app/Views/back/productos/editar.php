@@ -34,6 +34,17 @@
             <input type="number" step="0.01" class="form-control" id="precio" name="precio" value="<?= esc($producto['precio']) ?>" min="0" required>
         </div>
         <div class="mb-3">
+            <label for="categoria_id" class="form-label">Categoría</label>
+            <select name="categoria_id" id="categoria_id" class="form-select" required>
+                <?php foreach ($categorias as $cat): ?>
+                    <option value="<?= $cat['id'] ?>" <?= ($producto['categoria_id'] == $cat['id']) ? 'selected' : '' ?>>
+                        <?= esc($cat['nombre']) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+
+        <div class="mb-3">
             <label for="estado" class="form-label">Estado</label>
             <select class="form-select" id="estado" name="estado" required>
                 <option value="disponible" <?= $producto['estado'] === 'disponible' ? 'selected' : '' ?>>Disponible</option>
