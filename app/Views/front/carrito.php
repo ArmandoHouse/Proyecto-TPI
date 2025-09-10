@@ -79,7 +79,7 @@
         </table>
         <div class="d-flex justify-content-between mt-3">
             <div>
-                <a href="<?= base_url('') ?>" class="btn btn-outline-secondary">Seguir comprando</a>
+                <a href="<?= base_url('catalogo/ver_catalogo') ?>" class="btn btn-link text-secondary">Seguir comprando</a>
                 <form action="<?= base_url('carrito/comprar') ?>" method="post" class="d-inline m-0">
                     <?= csrf_field() ?>
                     <button type="submit" class="btn btn-success">Realizar compra</button>

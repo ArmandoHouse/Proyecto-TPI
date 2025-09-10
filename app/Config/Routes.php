@@ -31,6 +31,7 @@ $routes->group('/', ['namespace' => 'App\Controllers\front'], function ($routes)
         $routes->post('contacto/enviar', 'Contacto::enviar');
 
         // Catalogo
+        $routes->get('catalogo/ver_catalogo', 'Catalogo::ver_catalogo');
         $routes->get('catalogo/ver_catalogo/(:num)', 'Catalogo::ver_catalogo/$1');
         $routes->get('catalogo/ver_producto/(:num)', 'Catalogo::ver_producto/$1');
 

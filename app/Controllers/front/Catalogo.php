@@ -59,16 +59,21 @@ class Catalogo extends BaseController
         return floatval($valor);
     }
 
-    public function ver_catalogo($id)
+    public function ver_catalogo($id = null)
     {
         $productoModel = new ProductoModel();
         $categoriaModel = new CategoriaModel();
+        $categorias = $categoriaModel->where('estado', 'disponible')->findAll();
 
-        $categoria = $categoriaModel->find($id);
+        // Si hay id, filtra por categoría
+        if ($id !== null) {
+            $categoria = $categoriaModel->find($id);
 
-        // Si la categoría no existe o está oculta, redirigir o mostrar error
-        if (!$categoria || $categoria['estado'] !== 'disponible') {
-            return redirect()->to(base_url(''))->with('error', 'Categoría no disponible.');
+            // Si la categoría no existe o está oculta, redirigir o mostrar error
+            if (!$categoria || $categoria['estado'] !== 'disponible') {
+                return redirect()->to(base_url(''))->with('error', 'Categoría no disponible.');
+            }
+            $productoModel->where('categoria_id', $id);
         }
 
         // Filtros desde GET
@@ -77,6 +82,12 @@ class Catalogo extends BaseController
         $precioMax = $this->request->getGet('precio_max');
         $paginaParam = $this->request->getGet('pagina');
         $porPagina = 6;
+
+        // Filtro por categoría desde GET
+        $categoriaFiltro = $this->request->getGet('categoria');
+        if ($categoriaFiltro) {
+            $productoModel->where('categoria_id', $categoriaFiltro);
+        }
 
         // Normalizar precios
         if ($precioMin !== null && $precioMin !== '') {
@@ -88,9 +99,8 @@ class Catalogo extends BaseController
             $productoModel->where('precio <=', $precioMax);
         }
 
-        // Construir la consulta con filtros
-        $productoModel->where('categoria_id', $id)
-            ->where('estado', 'disponible');
+        // Estado disponible
+        $productoModel->where('estado', 'disponible');
 
         if (!empty($nombre)) {
             $productoModel->like('nombre', $nombre);
@@ -103,15 +113,16 @@ class Catalogo extends BaseController
         }
 
         // Ordenar por precio
-
         $orden = $this->request->getGet('orden');
+        $orderField = 'id';
+        $orderDirection = 'DESC';
 
         if ($orden === 'precio_asc') {
-            $productoModel->orderBy('precio', 'ASC');
+            $orderField = 'precio';
+            $orderDirection = 'ASC';
         } elseif ($orden === 'precio_desc') {
-            $productoModel->orderBy('precio', 'DESC');
-        } else {
-            $productoModel->orderBy('id', 'DESC'); // Orden por defecto
+            $orderField = 'precio';
+            $orderDirection = 'DESC';
         }
 
         // Contar total de productos filtrados
@@ -122,13 +133,13 @@ class Catalogo extends BaseController
         // Obtener productos según paginación o "todo"
         if ($paginaParam === 'todo') {
             $productos = $productoModel
-                ->orderBy('id', 'DESC')
+                ->orderBy($orderField, $orderDirection)
                 ->findAll();
             $paginaActual = 'todo';
         } else {
             $paginaActual = (int)($paginaParam ?? 1);
             $productos = $productoModel
-                ->orderBy('id', 'DESC')
+                ->orderBy($orderField, $orderDirection)
                 ->paginate($porPagina, 'productos', $paginaActual);
         }
 
@@ -136,10 +147,11 @@ class Catalogo extends BaseController
 
         return view('front/catalogo', [
             'productos' => $productos,
-            'nombreCategoria' => $categoria['nombre'],
+            'nombreCategoria' => $id ? $categoria['nombre'] : 'Todos los productos',
             'paginaActual' => $paginaActual,
             'totalPaginas' => $totalPaginas,
-            'pager' => $pager
+            'pager' => $pager,
+            'categorias' => $categorias
         ]);
     }
 

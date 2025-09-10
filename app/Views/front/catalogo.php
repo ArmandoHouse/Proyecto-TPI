@@ -124,6 +124,17 @@
             <div class="card filtro-producto p-3">
                 <form method="get">
                     <div class="mb-3">
+                        <label for="categoria" class="form-label">Categoría</label>
+                        <select class="form-select" id="categoria" name="categoria">
+                            <option value="">Todas</option>
+                            <?php foreach ($categorias as $cat): ?>
+                                <option value="<?= $cat['id'] ?>" <?= ($_GET['categoria'] ?? '') == $cat['id'] ? 'selected' : '' ?>>
+                                    <?= esc($cat['nombre']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" value="<?= esc($_GET['nombre'] ?? '') ?>">
                     </div>
@@ -132,7 +143,6 @@
                         <div class="d-flex gap-2">
                             <input type="text" class="form-control" name="precio_min" placeholder="Mín" value="<?= esc($_GET['precio_min'] ?? '') ?>">
                             <input type="text" class="form-control" name="precio_max" placeholder="Máx" value="<?= esc($_GET['precio_max'] ?? '') ?>">
-
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Filtrar</button>
@@ -160,7 +170,7 @@
                                             <form action="<?= base_url('carrito/agregar/' . $producto['id']) ?>" method="post" class="form-agregar-carrito">
                                                 <?= csrf_field() ?>
                                                 <input type="hidden" name="redirect_to" value="<?= current_url() ?>">
-                                                <button type="submit" class="btn btn-success w-100 mb-2">Agregar al carrito</button>
+                                                <a href="<?= base_url('catalogo/ver_producto/' . $producto['id']) ?>" class="btn btn-primary w-100 mb-2">Ver</a>
                                             </form>
                                         </div>
                                     </div>

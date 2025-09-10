@@ -31,29 +31,38 @@
       <p class="text-muted"><?= esc($producto['descripcion']) ?></p>
       <h4 class="text-primary">$<?= number_format($producto['precio'], 0, ',', '.') ?></h4>
 
+      <?php
+        // Verifica si el usuario está logueado (ajusta el nombre de la variable de sesión si es necesario)
+        $usuarioLogueado = session()->get('usuario_id') !== null;
+      ?>
       <div class="mt-4">
-        <div class="d-flex align-items-end flex-wrap gap-2">
-          <!-- Input de cantidad fuera de los formularios -->
-          <div>
-            <label for="cantidad" class="form-label">Cantidad</label>
-            <input type="number" name="cantidad" id="cantidad" value="1" min="1" max="<?= esc($producto['stock']) ?>" class="form-control" style="width: 100px;">
+          <div class="d-flex align-items-end flex-wrap gap-2">
+              <!-- Input de cantidad fuera de los formularios -->
+              <div>
+                  <label for="cantidad" class="form-label">Cantidad</label>
+                  <input type="number" name="cantidad" id="cantidad" value="1" min="1" max="<?= esc($producto['stock']) ?>" class="form-control" style="width: 100px;">
+              </div>
+
+              <?php if ($usuarioLogueado): ?>
+                  <!-- Formulario para agregar al carrito -->
+                  <form action="<?= base_url('carrito/agregar/' . $producto['id']) ?>" method="post" class="form-agregar-carrito">
+                      <?= csrf_field() ?>
+                      <input type="hidden" name="cantidad" id="cantidad_carrito" value="1">
+                      <input type="hidden" name="redirect_to" value="<?= current_url() ?>">
+                      <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                  </form>
+
+                  <!-- Formulario para comprar ahora -->
+                  <form action="<?= base_url('pedidos/generar/' . $producto['id']) ?>" method="post">
+                      <?= csrf_field() ?>
+                      <input type="hidden" name="cantidad" id="cantidad_comprar" value="1">
+                      <button type="submit" class="btn btn-success">Comprar ahora</button>
+                  </form>
+              <?php else: ?>
+                  <a href="<?= base_url('login') ?>" class="btn btn-primary">Agregar al carrito</a>
+                  <a href="<?= base_url('login') ?>" class="btn btn-success">Comprar ahora</a>
+              <?php endif; ?>
           </div>
-
-          <!-- Formulario para agregar al carrito -->
-          <form action="<?= base_url('carrito/agregar/' . $producto['id']) ?>" method="post" class="form-agregar-carrito">
-            <?= csrf_field() ?>
-            <input type="hidden" name="cantidad" id="cantidad_carrito" value="1">
-            <input type="hidden" name="redirect_to" value="<?= current_url() ?>">
-            <button type="submit" class="btn btn-primary">Agregar al carrito</button>
-          </form>
-
-          <!-- Formulario para comprar ahora -->
-          <form action="<?= base_url('pedidos/generar/' . $producto['id']) ?>" method="post">
-            <?= csrf_field() ?>
-            <input type="hidden" name="cantidad" id="cantidad_comprar" value="1">
-            <button type="submit" class="btn btn-success">Comprar ahora</button>
-          </form>
-        </div>
       </div>
 
     </div>
